@@ -64,11 +64,41 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="CNG子母站站工程量与投资匡算.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CNG子母站站工程量与投资匡算.Designer.cs">
+      <DependentUpon>CNG子母站站工程量与投资匡算.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CNG子母站设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CNG子母站设置.Designer.cs">
+      <DependentUpon>CNG子母站设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CNG标准站工程量与投资匡算.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CNG标准站工程量与投资匡算.Designer.cs">
+      <DependentUpon>CNG标准站工程量与投资匡算.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CNG标准站设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CNG标准站设置.Designer.cs">
+      <DependentUpon>CNG标准站设置.cs</DependentUpon>
+    </Compile>
     <Compile Include="LNG分析-气化站计算-设置.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LNG分析-气化站计算-设置.Designer.cs">
       <DependentUpon>LNG分析-气化站计算-设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LNG点供站和卫星站工程量与投资匡算.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LNG点供站和卫星站工程量与投资匡算.Designer.cs">
+      <DependentUpon>LNG点供站和卫星站工程量与投资匡算.cs</DependentUpon>
     </Compile>
     <Compile Include="加气子站-设置.cs">
       <SubType>Form</SubType>
@@ -117,6 +147,18 @@
     </Compile>
     <Compile Include="管道分析-工程量计算.Designer.cs">
       <DependentUpon>管道分析-工程量计算.cs</DependentUpon>
+    </Compile>
+    <Compile Include="综合分析-临界曲线法.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="综合分析-临界曲线法.Designer.cs">
+      <DependentUpon>综合分析-临界曲线法.cs</DependentUpon>
+    </Compile>
+    <Compile Include="综合分析-临界曲线法设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="综合分析-临界曲线法设置.Designer.cs">
+      <DependentUpon>综合分析-临界曲线法设置.cs</DependentUpon>
     </Compile>
     <Compile Include="耗钢量计算.cs">
       <SubType>Form</SubType>
@@ -172,8 +214,23 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CNG子母站站工程量与投资匡算.resx">
+      <DependentUpon>CNG子母站站工程量与投资匡算.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CNG子母站设置.resx">
+      <DependentUpon>CNG子母站设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CNG标准站工程量与投资匡算.resx">
+      <DependentUpon>CNG标准站工程量与投资匡算.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CNG标准站设置.resx">
+      <DependentUpon>CNG标准站设置.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LNG分析-气化站计算-设置.resx">
       <DependentUpon>LNG分析-气化站计算-设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LNG点供站和卫星站工程量与投资匡算.resx">
+      <DependentUpon>LNG点供站和卫星站工程量与投资匡算.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="加气子站-设置.resx">
       <DependentUpon>加气子站-设置.cs</DependentUpon>
@@ -198,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="管道分析-工程量计算.resx">
       <DependentUpon>管道分析-工程量计算.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="综合分析-临界曲线法.resx">
+      <DependentUpon>综合分析-临界曲线法.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="综合分析-临界曲线法设置.resx">
+      <DependentUpon>综合分析-临界曲线法设置.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="耗钢量计算.resx">
       <DependentUpon>耗钢量计算.cs</DependentUpon>
@@ -253,6 +316,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

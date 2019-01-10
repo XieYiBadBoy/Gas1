@@ -224,6 +224,7 @@
             // radioButton1
             // 
             resources.ApplyResources(this.radioButton1, "radioButton1");
+            this.radioButton1.Checked = true;
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;

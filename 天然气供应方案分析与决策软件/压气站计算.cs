@@ -28,12 +28,24 @@ namespace 天然气供应方案分析与决策软件
             pesCalculateStyleNoWasteLevel = 0 //无耗气水平管
         }
 
-      
+        private bool m_blnInputStandardVolumeFlowRate; //是否输入了标准流量
+        private bool m_blnInputUpstreamAbsolutePressure; //是否输入了上游绝对压力
+        private bool m_blnInputDownstreamAbsolutePressure; //是否输入了下游绝对压力
+        private bool m_blnInputGasSpecificGravity; //是否输入了气体比重
+        private bool m_blnInputGasTemperature; //是否输入了气体温度
+        private bool m_blnInputInsideDiameter; //是否输入了管线直径
+        private bool m_blnInputAbsoluteRoughness; //是否输入了管线粗糙度
+        private bool m_blnInputPipelineLength; //是否输入了管线长度
+        private bool m_blnInputMaximumPipelineAbsolutePressure; //是否输入了最大管线绝对压力
+        private bool m_blnInputMiddleStationCompressRatio; //是否输入了中间站压比
+        private double m_dblUpstreamAbsolutePressure; //上游绝对压力
+        private double m_dblDownstreamAbsolutePressure; //下游绝对压力
         private double m_dblMaximumPipelineAbsolutePressure; //最大管线绝对压力
         private double m_dblActualVolumeFlowRate; //实际体积流量
         private double m_dblStandardVolumeFlowRate; //标准体积流量
-
+        private double m_dblPipelineLength; //管线长度
         private double m_dblInsideDiameter; //管线内径
+        private double m_dblGasTemperature; //气体温度
         private double m_dblGasSpecificGravity; //气体比重
         private double m_dblAbsoluteRoughness; //管线绝对粗糙度
         private double m_dblFirstStationCompressRatio; //首站压比
@@ -103,28 +115,41 @@ namespace 天然气供应方案分析与决策软件
 
 
 
-            
-            //if (IsValidate())
-            //{
-            //按计算类型分类计算
-            //if (m_pesCalculateStyle ==   pesCalculateStyleNoWasteLevel)
-            //{
-            //求解无耗气水平管线(不存在特殊的情况)
-            //对局部变量赋值
-            dblQB = Convert.ToDouble(txtInput1.Text); //标准体积流量
-            dblPI = Convert.ToDouble(txtInput2.Text); //上游压力
-            dblPO = Convert.ToDouble(txtInput3.Text);//下游压力
-            dblG = Convert.ToDouble(ComStation.PipeGasWeight); //气体比重
-            dblT = Convert.ToDouble(ComStation.PipeTep)+273.15; //气体温度
-            dblKE = Convert.ToDouble(ComStation.PipeRough); //管线绝对粗糙度
-            dblD = Convert.ToDouble(txtInput4.Text); //管线内径
-            dblLP = Convert.ToDouble(txtInput5.Text); //管线长度
-            dblPM = Convert.ToDouble(txtInput6.Text); //最大管线绝对压力
 
-            //求解过程
-            //**********************以下为核心代码**************************
-            //按<管道工程电算程序集>的要求转换单位制
-            dblQB = dblQB * (35.3147 * 3600 * 24);  //流量
+                //if (IsValidate())
+                //{
+                //按计算类型分类计算
+                //if (m_pesCalculateStyle ==   pesCalculateStyleNoWasteLevel)
+                //{
+                //求解无耗气水平管线(不存在特殊的情况)
+                //对局部变量赋值
+
+
+                m_dblStandardVolumeFlowRate = Convert.ToDouble(txtInput1.Text); //标准体积流量
+                m_dblUpstreamAbsolutePressure = Convert.ToDouble(txtInput2.Text); //上游压力
+                m_dblDownstreamAbsolutePressure = Convert.ToDouble(txtInput3.Text);//下游压力
+                m_dblGasSpecificGravity = Convert.ToDouble(ComStation.PipeGasWeight); //气体比重
+                m_dblGasTemperature = Convert.ToDouble(ComStation.PipeTep)+273.15; //气体温度
+                m_dblAbsoluteRoughness = Convert.ToDouble(ComStation.PipeRough); //管线绝对粗糙度
+                m_dblInsideDiameter = Convert.ToDouble(txtInput4.Text); //管线内径
+                m_dblPipelineLength = Convert.ToDouble(txtInput5.Text); //管线长度
+                m_dblMaximumPipelineAbsolutePressure = Convert.ToDouble(txtInput6.Text); //最大管线绝对压力
+                m_dblMiddleStationCompressRatio = Convert.ToDouble(txtInput7.Text);
+
+                dblQB = m_dblStandardVolumeFlowRate; //标准体积流量
+                dblPI = m_dblUpstreamAbsolutePressure; //上游压力
+                dblPO = m_dblDownstreamAbsolutePressure; //下游压力
+                dblG = m_dblGasSpecificGravity; //气体比重
+                dblT = m_dblGasTemperature; //气体温度
+                dblKE = m_dblAbsoluteRoughness; //管线绝对粗糙度
+                dblD = m_dblInsideDiameter; //管线内径
+                dblLP = m_dblPipelineLength; //管线长度
+                dblPM = m_dblMaximumPipelineAbsolutePressure; //最大管线绝对压力
+
+                //求解过程
+                //**********************以下为核心代码**************************
+                //按<管道工程电算程序集>的要求转换单位制
+                dblQB = dblQB * (35.3147 * 3600 * 24);  //流量
             dblQM = dblQB / 1000000;     //流量换算
             dblPI = dblPI / 6894.76;  //上游压力
             dblPO = dblPO / 6894.76;//下游压力
@@ -132,7 +157,7 @@ namespace 天然气供应方案分析与决策软件
             dblD = dblD / 0.0254;   //内径
             dblKE = dblKE / 0.0254; //<电算程序集中所用的绝对粗糙度实际单位是英寸>    粗糙度
             dblPM = dblPM / 6894.76;   //最大压力
-            dblT = dblT * ((double)9 / 5); //(兰式温度)      // 绝对温度转兰式温度     绝对温度=摄氏度+273.15;
+            dblT = (dblT) * ((double)9 / 5); //(兰式温度)      // 绝对温度转兰式温度     绝对温度=摄氏度+273.15;
 
             //开始计算
             dblPU = dblPI;   //上游压力转换为上游绝对压力
@@ -184,8 +209,8 @@ namespace 天然气供应方案分析与决策软件
                 m_intCompressionStationsCount = 0; //压缩机站总数
                 m_dblGeneralCompressionStationsPower = 0; //压缩机站总功率
                                                           //确定实际体积流量
-                m_dblActualVolumeFlowRate = m_dblStandardVolumeFlowRate * ((mc_dblStandardAirPressure * dblZ) / (dblPA * 6894.76 * 1));
-                m_dblAverageVelocity = System.Convert.ToDouble((4 * m_dblActualVolumeFlowRate) / (mc_dblPai * m_dblInsideDiameter * m_dblInsideDiameter)); //平均速度
+                m_dblActualVolumeFlowRate = m_dblStandardVolumeFlowRate * ((mc_dblStandardAirPressure * dblZ) / (dblPA * 6894.76 * 1));//m_dblActualVolumeFlowRate=71117969
+                    m_dblAverageVelocity = System.Convert.ToDouble((4 * m_dblActualVolumeFlowRate) / (mc_dblPai * m_dblInsideDiameter * m_dblInsideDiameter)); //平均速度
                 dblRE = System.Convert.ToDouble(477.5 * ((dblQB * dblG) / (8 * dblD)) * (14.73 / 520));
 
                 if (dblRE > dblNC)
@@ -225,39 +250,39 @@ namespace 天然气供应方案分析与决策软件
 
                 m_dblReyonldsNumber = dblRE; //雷诺数
                 m_dblDarcyFrictionFactor = dblF; //达西摩阻系数
-                #region
-                //激发获取计算参数的事件
-                //m_strCalculateProcess = "No Compression Required.";
-                //if (ShowCalculateProcessEvent != null)
-                //    ShowCalculateProcessEvent(m_strCalculateProcess);
-                //m_strCalculateProcess = "Calculations Terminated.";
-                //if (ShowCalculateProcessEvent != null)
-                //    ShowCalculateProcessEvent(m_strCalculateProcess);
-                ////显示具体参数
-                //m_strCalculateProcess = "f_DarcyFrictionFactor=" + Str(m_dblDarcyFrictionFactor).Trim();
-                //if (ShowCalculateProcessEvent != null)
-                //    ShowCalculateProcessEvent(m_strCalculateProcess);
-                //m_strCalculateProcess = "V_AverageVelocity=" + Str(m_dblAverageVelocity).Trim();
-                //if (ShowCalculateProcessEvent != null)
-                //    ShowCalculateProcessEvent(m_strCalculateProcess);
-                //m_strCalculateProcess = "Q_StandardVolumeFlowRate=" + Str(m_dblStandardVolumeFlowRate).Trim();
-                //if (ShowCalculateProcessEvent != null)
-                //    ShowCalculateProcessEvent(m_strCalculateProcess);
-                //m_strCalculateProcess = "Q_ActualVolumeFlowRate=" + Str(m_dblActualVolumeFlowRate).Trim();
-                //if (ShowCalculateProcessEvent != null)
-                //    ShowCalculateProcessEvent(m_strCalculateProcess);
+                    #region
+                    //激发获取计算参数的事件
+                    //m_strCalculateProcess = "No Compression Required.";
+                    //if (ShowCalculateProcessEvent != null)
+                    //    ShowCalculateProcessEvent(m_strCalculateProcess);
+                    //m_strCalculateProcess = "Calculations Terminated.";
+                    //if (ShowCalculateProcessEvent != null)
+                    //    ShowCalculateProcessEvent(m_strCalculateProcess);
+                    ////显示具体参数
+                    //m_strCalculateProcess = "f_DarcyFrictionFactor=" + Str(m_dblDarcyFrictionFactor).Trim();
+                    //if (ShowCalculateProcessEvent != null)
+                    //    ShowCalculateProcessEvent(m_strCalculateProcess);
+                    //m_strCalculateProcess = "V_AverageVelocity=" + Str(m_dblAverageVelocity).Trim();
+                    //if (ShowCalculateProcessEvent != null)
+                    //    ShowCalculateProcessEvent(m_strCalculateProcess);
+                    //m_strCalculateProcess = "Q_StandardVolumeFlowRate=" + Str(dblQB).Trim();
+                    //if (ShowCalculateProcessEvent != null)
+                    //    ShowCalculateProcessEvent(m_strCalculateProcess);
+                    //m_strCalculateProcess = "Q_ActualVolumeFlowRate=" + Str(m_dblActualVolumeFlowRate).Trim();
+                    //if (ShowCalculateProcessEvent != null)
+                    //    ShowCalculateProcessEvent(m_strCalculateProcess);
 
-                ////修改对象标记
-                //m_blnRefresh = true;
-                //m_blnEnabled = true;
-                //goto PROC_EXIT;
+                    ////修改对象标记
+                    //m_blnRefresh = true;
+                    //m_blnEnabled = true;
+                    //goto PROC_EXIT;
+                    #endregion
+                }
                 #endregion
-            }
-            #endregion
-            #region
+                #region
 
-            //判断需要一个压缩机的情况
-            dblPU = dblPM;
+                //判断需要一个压缩机的情况
+                dblPU = dblPM;
             dblL = dblLP;
 
             dblPA = dblPU;
@@ -275,7 +300,7 @@ namespace 天然气供应方案分析与决策软件
                         "CGasTechnicsCompressionSchedule" + "-" + "Calculate()");
                     Close();
                 }
-                dblC5 = System.Convert.ToDouble(Math.Sqrt(1 / dblZ));
+                dblC5 = Convert.ToDouble(Math.Sqrt(1 / dblZ));
 
                 if ((dblL * (Math.Pow((dblQB / (77.5 * dblC3 * dblC5 * dblC6 * dblC9)), 2))) > Math.Pow(dblPU, 2))
                 {
@@ -617,7 +642,7 @@ namespace 天然气供应方案分析与决策软件
             else
             {
                 dblT = dblTemperature;
-                dblT = System.Convert.ToDouble(((double)9 / 5) * dblT);
+                //dblT = System.Convert.ToDouble(((double)9 / 5) * dblT);
             }
 
             //求解气体压缩因子

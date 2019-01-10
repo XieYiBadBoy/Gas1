@@ -64,17 +64,9 @@
             this.Clobutton3 = new System.Windows.Forms.Button();
             this.Clebutton2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtInput5 = new System.Windows.Forms.TextBox();
-            this.txtInput4 = new System.Windows.Forms.TextBox();
-            this.lblInput5 = new System.Windows.Forms.Label();
-            this.lblInput4 = new System.Windows.Forms.Label();
-            this.lblInput2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.txtInput1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comInput1 = new System.Windows.Forms.ComboBox();
+            this.lblInput11 = new System.Windows.Forms.Label();
             this.lblInput10 = new System.Windows.Forms.Label();
             this.txtInput3 = new System.Windows.Forms.TextBox();
             this.lblInput9 = new System.Windows.Forms.Label();
@@ -82,9 +74,17 @@
             this.lblInput8 = new System.Windows.Forms.Label();
             this.lblInput7 = new System.Windows.Forms.Label();
             this.lblInput6 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comInput1 = new System.Windows.Forms.ComboBox();
-            this.lblInput11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtInput5 = new System.Windows.Forms.TextBox();
+            this.txtInput4 = new System.Windows.Forms.TextBox();
+            this.txtInput1 = new System.Windows.Forms.TextBox();
+            this.lblInput5 = new System.Windows.Forms.Label();
+            this.lblInput4 = new System.Windows.Forms.Label();
+            this.lblInput2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -453,112 +453,38 @@
             this.groupBox1.Text = "输入";
             this.groupBox1.UseWaitCursor = true;
             // 
-            // label12
+            // label13
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(214, 92);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(23, 12);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "MPa";
-            this.label12.UseWaitCursor = true;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(213, 151);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 12);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "t,h";
+            this.label13.UseWaitCursor = true;
             // 
-            // label11
+            // comInput1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(214, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(23, 12);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "MPa";
-            this.label11.UseWaitCursor = true;
+            this.comInput1.FormattingEnabled = true;
+            this.comInput1.Items.AddRange(new object[] {
+            "5",
+            "6",
+            "7"});
+            this.comInput1.Location = new System.Drawing.Point(106, 148);
+            this.comInput1.Name = "comInput1";
+            this.comInput1.Size = new System.Drawing.Size(100, 20);
+            this.comInput1.TabIndex = 47;
+            this.comInput1.UseWaitCursor = true;
             // 
-            // label9
+            // lblInput11
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(212, 31);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 12);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Nm3/d";
-            this.label9.UseWaitCursor = true;
-            // 
-            // txtInput5
-            // 
-            this.txtInput5.Location = new System.Drawing.Point(106, 90);
-            this.txtInput5.Name = "txtInput5";
-            this.txtInput5.Size = new System.Drawing.Size(100, 21);
-            this.txtInput5.TabIndex = 12;
-            this.txtInput5.UseWaitCursor = true;
-            // 
-            // txtInput4
-            // 
-            this.txtInput4.Location = new System.Drawing.Point(106, 57);
-            this.txtInput4.Name = "txtInput4";
-            this.txtInput4.Size = new System.Drawing.Size(100, 21);
-            this.txtInput4.TabIndex = 11;
-            this.txtInput4.UseWaitCursor = true;
-            // 
-            // lblInput5
-            // 
-            this.lblInput5.AutoSize = true;
-            this.lblInput5.Location = new System.Drawing.Point(8, 94);
-            this.lblInput5.Name = "lblInput5";
-            this.lblInput5.Size = new System.Drawing.Size(101, 12);
-            this.lblInput5.TabIndex = 6;
-            this.lblInput5.Text = "压缩机入口压力：";
-            this.lblInput5.UseWaitCursor = true;
-            // 
-            // lblInput4
-            // 
-            this.lblInput4.AutoSize = true;
-            this.lblInput4.Location = new System.Drawing.Point(8, 60);
-            this.lblInput4.Name = "lblInput4";
-            this.lblInput4.Size = new System.Drawing.Size(101, 12);
-            this.lblInput4.TabIndex = 5;
-            this.lblInput4.Text = "压缩机出口压力：";
-            this.lblInput4.UseWaitCursor = true;
-            // 
-            // lblInput2
-            // 
-            this.lblInput2.AutoSize = true;
-            this.lblInput2.Location = new System.Drawing.Point(6, 29);
-            this.lblInput2.Name = "lblInput2";
-            this.lblInput2.Size = new System.Drawing.Size(89, 12);
-            this.lblInput2.TabIndex = 3;
-            this.lblInput2.Text = "设计体积流量：";
-            this.lblInput2.UseWaitCursor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(344, 21);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(268, 63);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "计算类型";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 25);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(83, 16);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "标准站计算";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // txtInput1
-            // 
-            this.txtInput1.Location = new System.Drawing.Point(107, 23);
-            this.txtInput1.Name = "txtInput1";
-            this.txtInput1.Size = new System.Drawing.Size(100, 21);
-            this.txtInput1.TabIndex = 9;
-            this.txtInput1.UseWaitCursor = true;
+            this.lblInput11.AutoSize = true;
+            this.lblInput11.Location = new System.Drawing.Point(8, 151);
+            this.lblInput11.Name = "lblInput11";
+            this.lblInput11.Size = new System.Drawing.Size(101, 12);
+            this.lblInput11.TabIndex = 46;
+            this.lblInput11.Text = "压缩机补气时间：";
+            this.lblInput11.UseWaitCursor = true;
             // 
             // lblInput10
             // 
@@ -626,38 +552,113 @@
             this.lblInput6.Text = "低压区容积：";
             this.lblInput6.UseWaitCursor = true;
             // 
-            // label13
+            // label12
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(213, 151);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 12);
-            this.label13.TabIndex = 48;
-            this.label13.Text = "t,h";
-            this.label13.UseWaitCursor = true;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(214, 92);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(23, 12);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "MPa";
+            this.label12.UseWaitCursor = true;
             // 
-            // comInput1
+            // label11
             // 
-            this.comInput1.FormattingEnabled = true;
-            this.comInput1.Items.AddRange(new object[] {
-            "5",
-            "6",
-            "7"});
-            this.comInput1.Location = new System.Drawing.Point(106, 148);
-            this.comInput1.Name = "comInput1";
-            this.comInput1.Size = new System.Drawing.Size(100, 20);
-            this.comInput1.TabIndex = 47;
-            this.comInput1.UseWaitCursor = true;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(214, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(23, 12);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "MPa";
+            this.label11.UseWaitCursor = true;
             // 
-            // lblInput11
+            // label9
             // 
-            this.lblInput11.AutoSize = true;
-            this.lblInput11.Location = new System.Drawing.Point(8, 151);
-            this.lblInput11.Name = "lblInput11";
-            this.lblInput11.Size = new System.Drawing.Size(101, 12);
-            this.lblInput11.TabIndex = 46;
-            this.lblInput11.Text = "压缩机补气时间：";
-            this.lblInput11.UseWaitCursor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(212, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 12);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Nm3/d";
+            this.label9.UseWaitCursor = true;
+            // 
+            // txtInput5
+            // 
+            this.txtInput5.Location = new System.Drawing.Point(106, 90);
+            this.txtInput5.Name = "txtInput5";
+            this.txtInput5.Size = new System.Drawing.Size(100, 21);
+            this.txtInput5.TabIndex = 12;
+            this.txtInput5.UseWaitCursor = true;
+            // 
+            // txtInput4
+            // 
+            this.txtInput4.Location = new System.Drawing.Point(106, 57);
+            this.txtInput4.Name = "txtInput4";
+            this.txtInput4.Size = new System.Drawing.Size(100, 21);
+            this.txtInput4.TabIndex = 11;
+            this.txtInput4.UseWaitCursor = true;
+            // 
+            // txtInput1
+            // 
+            this.txtInput1.Location = new System.Drawing.Point(107, 23);
+            this.txtInput1.Name = "txtInput1";
+            this.txtInput1.Size = new System.Drawing.Size(100, 21);
+            this.txtInput1.TabIndex = 9;
+            this.txtInput1.UseWaitCursor = true;
+            // 
+            // lblInput5
+            // 
+            this.lblInput5.AutoSize = true;
+            this.lblInput5.Location = new System.Drawing.Point(8, 94);
+            this.lblInput5.Name = "lblInput5";
+            this.lblInput5.Size = new System.Drawing.Size(101, 12);
+            this.lblInput5.TabIndex = 6;
+            this.lblInput5.Text = "压缩机入口压力：";
+            this.lblInput5.UseWaitCursor = true;
+            // 
+            // lblInput4
+            // 
+            this.lblInput4.AutoSize = true;
+            this.lblInput4.Location = new System.Drawing.Point(8, 60);
+            this.lblInput4.Name = "lblInput4";
+            this.lblInput4.Size = new System.Drawing.Size(101, 12);
+            this.lblInput4.TabIndex = 5;
+            this.lblInput4.Text = "压缩机出口压力：";
+            this.lblInput4.UseWaitCursor = true;
+            // 
+            // lblInput2
+            // 
+            this.lblInput2.AutoSize = true;
+            this.lblInput2.Location = new System.Drawing.Point(6, 29);
+            this.lblInput2.Name = "lblInput2";
+            this.lblInput2.Size = new System.Drawing.Size(89, 12);
+            this.lblInput2.TabIndex = 3;
+            this.lblInput2.Text = "设计体积流量：";
+            this.lblInput2.UseWaitCursor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Location = new System.Drawing.Point(344, 21);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(268, 63);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "计算类型";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 25);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(83, 16);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "标准站计算";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // Windows5
             // 

@@ -154,7 +154,7 @@ namespace 天然气供应方案分析与决策软件
             double BL9 = BL7 * BL8 / (Math.Pow(D3, 5));
             double BL10 = P2 * P2 - BL9;
             PP1 = Math.Pow(BL10, 0.5);
-            return PP1;
+            return PP1; 
         }
         #endregion
         #region 计算管线上游表压

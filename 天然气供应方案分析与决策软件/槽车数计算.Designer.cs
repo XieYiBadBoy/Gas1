@@ -64,7 +64,7 @@
             this.groupBox1.Controls.Add(this.lblInput1);
             this.groupBox1.Location = new System.Drawing.Point(1, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 254);
+            this.groupBox1.Size = new System.Drawing.Size(233, 254);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "输入";
@@ -129,9 +129,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(275, 12);
+            this.groupBox2.Location = new System.Drawing.Point(240, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(268, 121);
+            this.groupBox2.Size = new System.Drawing.Size(233, 121);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "计算类型";
@@ -139,6 +139,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(7, 17);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(107, 16);
@@ -152,9 +153,9 @@
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.txtOutput1);
             this.groupBox3.Controls.Add(this.lblOutput1);
-            this.groupBox3.Location = new System.Drawing.Point(275, 139);
+            this.groupBox3.Location = new System.Drawing.Point(240, 139);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(268, 127);
+            this.groupBox3.Size = new System.Drawing.Size(233, 127);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "输出";
@@ -192,7 +193,7 @@
             this.groupBox5.Controls.Add(this.button5);
             this.groupBox5.Location = new System.Drawing.Point(1, 272);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(542, 65);
+            this.groupBox5.Size = new System.Drawing.Size(472, 56);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             // 
@@ -207,7 +208,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(440, 20);
+            this.button4.Location = new System.Drawing.Point(396, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
@@ -216,7 +217,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(331, 20);
+            this.button5.Location = new System.Drawing.Point(294, 20);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 4;
@@ -225,7 +226,7 @@
             // 
             // Clobutton3
             // 
-            this.Clobutton3.Location = new System.Drawing.Point(465, 354);
+            this.Clobutton3.Location = new System.Drawing.Point(397, 343);
             this.Clobutton3.Name = "Clobutton3";
             this.Clobutton3.Size = new System.Drawing.Size(75, 23);
             this.Clobutton3.TabIndex = 12;
@@ -235,7 +236,7 @@
             // 
             // Clebutton2
             // 
-            this.Clebutton2.Location = new System.Drawing.Point(374, 354);
+            this.Clebutton2.Location = new System.Drawing.Point(295, 343);
             this.Clebutton2.Name = "Clebutton2";
             this.Clebutton2.Size = new System.Drawing.Size(75, 23);
             this.Clebutton2.TabIndex = 11;
@@ -245,7 +246,7 @@
             // 
             // Calbutton1
             // 
-            this.Calbutton1.Location = new System.Drawing.Point(283, 354);
+            this.Calbutton1.Location = new System.Drawing.Point(194, 343);
             this.Calbutton1.Name = "Calbutton1";
             this.Calbutton1.Size = new System.Drawing.Size(75, 23);
             this.Calbutton1.TabIndex = 10;
@@ -257,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 401);
+            this.ClientSize = new System.Drawing.Size(478, 376);
             this.Controls.Add(this.Clobutton3);
             this.Controls.Add(this.Clebutton2);
             this.Controls.Add(this.Calbutton1);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.Calbutton1 = new System.Windows.Forms.Button();
             this.Clebutton2 = new System.Windows.Forms.Button();
             this.Clobutton3 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -217,7 +219,6 @@
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(101, 16);
             this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
             this.radioButton5.Text = "管内内径（D）";
             this.radioButton5.UseVisualStyleBackColor = true;
             this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
@@ -229,7 +230,6 @@
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(77, 16);
             this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Text = "管长（L）";
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
@@ -241,7 +241,6 @@
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(113, 16);
             this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "流体体积流量(F)";
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
@@ -253,7 +252,6 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(125, 16);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "上游绝对压力（U）";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged_1);
@@ -261,6 +259,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(7, 17);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(125, 16);
@@ -466,11 +465,16 @@
             this.Clobutton3.UseVisualStyleBackColor = true;
             this.Clobutton3.Click += new System.EventHandler(this.button6_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Windows1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 401);
+            this.ClientSize = new System.Drawing.Size(563, 401);
             this.Controls.Add(this.Clobutton3);
             this.Controls.Add(this.Clebutton2);
             this.Controls.Add(this.Calbutton1);
@@ -536,5 +540,6 @@
         private System.Windows.Forms.Button Calbutton1;
         private System.Windows.Forms.Button Clebutton2;
         private System.Windows.Forms.Button Clobutton3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

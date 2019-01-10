@@ -224,7 +224,7 @@
             // PipelineAnalyChecked5
             // 
             this.PipelineAnalyChecked5.AutoSize = true;
-            this.PipelineAnalyChecked5.Location = new System.Drawing.Point(6, 374);
+            this.PipelineAnalyChecked5.Location = new System.Drawing.Point(6, 383);
             this.PipelineAnalyChecked5.Name = "PipelineAnalyChecked5";
             this.PipelineAnalyChecked5.Size = new System.Drawing.Size(192, 16);
             this.PipelineAnalyChecked5.TabIndex = 42;
@@ -235,7 +235,7 @@
             // PipelineAnalyChecked3
             // 
             this.PipelineAnalyChecked3.AutoSize = true;
-            this.PipelineAnalyChecked3.Location = new System.Drawing.Point(7, 352);
+            this.PipelineAnalyChecked3.Location = new System.Drawing.Point(7, 357);
             this.PipelineAnalyChecked3.Name = "PipelineAnalyChecked3";
             this.PipelineAnalyChecked3.Size = new System.Drawing.Size(162, 16);
             this.PipelineAnalyChecked3.TabIndex = 40;
@@ -246,7 +246,7 @@
             // PipelineAnalyChecked2
             // 
             this.PipelineAnalyChecked2.AutoSize = true;
-            this.PipelineAnalyChecked2.Location = new System.Drawing.Point(7, 329);
+            this.PipelineAnalyChecked2.Location = new System.Drawing.Point(7, 332);
             this.PipelineAnalyChecked2.Name = "PipelineAnalyChecked2";
             this.PipelineAnalyChecked2.Size = new System.Drawing.Size(222, 16);
             this.PipelineAnalyChecked2.TabIndex = 39;
@@ -467,7 +467,6 @@
             this.radioButtonAPI5L.Name = "radioButtonAPI5L";
             this.radioButtonAPI5L.Size = new System.Drawing.Size(89, 16);
             this.radioButtonAPI5L.TabIndex = 2;
-            this.radioButtonAPI5L.TabStop = true;
             this.radioButtonAPI5L.Text = "按 API5L(A)";
             this.radioButtonAPI5L.UseVisualStyleBackColor = true;
             this.radioButtonAPI5L.CheckedChanged += new System.EventHandler(this.radioButtonAPI5L_CheckedChanged);
@@ -479,7 +478,6 @@
             this.radioButtonGb1999.Name = "radioButtonGb1999";
             this.radioButtonGb1999.Size = new System.Drawing.Size(143, 16);
             this.radioButtonGb1999.TabIndex = 1;
-            this.radioButtonGb1999.TabStop = true;
             this.radioButtonGb1999.Text = "按GB/T9711.1-1999(2)";
             this.radioButtonGb1999.UseVisualStyleBackColor = true;
             this.radioButtonGb1999.CheckedChanged += new System.EventHandler(this.radioButtonGb1999_CheckedChanged);
@@ -487,6 +485,7 @@
             // radioButtonGb1997
             // 
             this.radioButtonGb1997.AutoSize = true;
+            this.radioButtonGb1997.Checked = true;
             this.radioButtonGb1997.Location = new System.Drawing.Point(6, 25);
             this.radioButtonGb1997.Name = "radioButtonGb1997";
             this.radioButtonGb1997.Size = new System.Drawing.Size(143, 16);

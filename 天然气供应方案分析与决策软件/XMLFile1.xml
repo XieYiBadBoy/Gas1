@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <CNGPrimaryStationRoughEstimate>
+    //CNG子母站工程量与投资kuangsuan
+    <Supply>86</Supply>
+    <PrimaryStationScale1>50</PrimaryStationScale1>  
+    <PrimaryStationScale2>30</PrimaryStationScale2>
+    <PrimaryStationScale3>25</PrimaryStationScale3>
+    <PrimaryStationScale4>20</PrimaryStationScale4>
+    <PrimaryStationScale5>15</PrimaryStationScale5>
+    <PrimaryStationScale6>10</PrimaryStationScale6>
+    <PrimaryStationCount1>1</PrimaryStationCount1>
+    <PrimaryStationCount2>1</PrimaryStationCount2>
+    <PrimaryStationCount3>1</PrimaryStationCount3>
+    <PrimaryStationCount4>0</PrimaryStationCount4>
+    <PrimaryStationCount5>0</PrimaryStationCount5>
+    <PrimaryStationCount6>0</PrimaryStationCount6>
+    <SubstationScale1>2</SubstationScale1>
+    <SubstationScale2>1.5</SubstationScale2>
+    <SubstationCount1>43</SubstationCount1>
+    <SubstationCount2>0</SubstationCount2>
+    <BundleCount>108</BundleCount>
+    <TractorCount>54</TractorCount>
+    <PermanentFloorArea>23.4</PermanentFloorArea>
+    <TemporaryFloorArea>0</TemporaryFloorArea>
+    <ProjectTime>8</ProjectTime>
+    <Investment>64380</Investment>
+  </CNGPrimaryStationRoughEstimate>
+  //
+  <CNGSubstationRoughEstimate>
+    <Supply>86</Supply> 
+    
+  </CNGSubstationRoughEstimate>
+  
+</configuration>

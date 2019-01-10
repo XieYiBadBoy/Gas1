@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="天然气供应方案分析与决策软件.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="b" Type="System.String" Scope="User">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="c" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0.4</Value>
+    </Setting>
+    <Setting Name="a" Type="System.String" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="Setting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">89</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

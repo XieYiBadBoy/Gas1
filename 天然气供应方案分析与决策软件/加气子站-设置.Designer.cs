@@ -74,7 +74,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-1, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(448, 267);
+            this.tabControl1.Size = new System.Drawing.Size(396, 267);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -83,7 +83,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(440, 241);
+            this.tabPage1.Size = new System.Drawing.Size(388, 241);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "参数（P）";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(6, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 212);
+            this.groupBox1.Size = new System.Drawing.Size(376, 212);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " ";
@@ -343,7 +343,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(365, 285);
+            this.button4.Location = new System.Drawing.Point(317, 286);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(78, 23);
             this.button4.TabIndex = 12;
@@ -352,7 +352,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(284, 285);
+            this.button3.Location = new System.Drawing.Point(236, 286);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(78, 23);
             this.button3.TabIndex = 11;
@@ -361,7 +361,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(203, 285);
+            this.button2.Location = new System.Drawing.Point(155, 286);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(78, 23);
             this.button2.TabIndex = 10;
@@ -372,7 +372,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(7, 285);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.Size = new System.Drawing.Size(104, 23);
             this.button1.TabIndex = 9;
             this.button1.Text = "恢复默认值（D）";
             this.button1.UseVisualStyleBackColor = true;
@@ -381,7 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 347);
+            this.ClientSize = new System.Drawing.Size(404, 319);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

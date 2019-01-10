@@ -31,6 +31,9 @@ namespace 天然气供应方案分析与决策软件
         public Windows7 w7;    //LNG液化站计算
         public CompressorCalculate compressorcalculate;
         public StellConsumptionCalaulate ConsumptionStell;
+        public CNGWindowsProject CNGProjectRoughEstimate;
+        public CNGStanardStationProjectAndInvestment CngStandardStationProjectAndInvestment;
+        public ComprehensiveAnalysCriticalCurveMethod CriticalCurveMethod;
 
         private void 工艺计算ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -266,6 +269,27 @@ namespace 天然气供应方案分析与决策软件
         private void 选项ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SendKeys.Send("^{F}");
+        }
+
+        private void 子母站匡算ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CNGProjectRoughEstimate = new CNGWindowsProject();
+            CNGProjectRoughEstimate.MdiParent = this;
+            CNGProjectRoughEstimate.Show();
+        }
+
+        private void 标准站匡算ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CngStandardStationProjectAndInvestment = new CNGStanardStationProjectAndInvestment();
+            CngStandardStationProjectAndInvestment.MdiParent = this;
+            CngStandardStationProjectAndInvestment.Show();
+        }
+
+        private void 临界曲线法ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CriticalCurveMethod = new ComprehensiveAnalysCriticalCurveMethod();
+            CriticalCurveMethod.MdiParent = this;
+            CriticalCurveMethod.Show();
         }
     }
 }

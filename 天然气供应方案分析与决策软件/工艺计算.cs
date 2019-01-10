@@ -52,6 +52,7 @@ namespace 天然气供应方案分析与决策软件
                 MessageBox.Show(ex.Message);
             }
         }
+
         #endregion
         #region  计算上游绝对压力   （已检查 2018-09-14）
         private void Add2()
@@ -86,6 +87,7 @@ namespace 天然气供应方案分析与决策软件
                 MessageBox.Show(ex.Message);
             }
         }
+        
         #endregion     
         #region   计算流体体积流量
         private void Add3()

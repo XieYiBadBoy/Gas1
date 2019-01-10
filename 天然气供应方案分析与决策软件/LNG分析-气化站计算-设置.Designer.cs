@@ -332,7 +332,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(176, 62);
+            this.label4.Location = new System.Drawing.Point(176, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 12);
             this.label4.TabIndex = 30;
@@ -358,7 +358,7 @@
             // 
             // txtInput2
             // 
-            this.txtInput2.Location = new System.Drawing.Point(102, 56);
+            this.txtInput2.Location = new System.Drawing.Point(102, 44);
             this.txtInput2.Name = "txtInput2";
             this.txtInput2.Size = new System.Drawing.Size(67, 21);
             this.txtInput2.TabIndex = 20;
@@ -367,7 +367,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-2, 60);
+            this.label2.Location = new System.Drawing.Point(-3, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 12);
             this.label2.TabIndex = 19;
