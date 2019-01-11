@@ -17,14 +17,45 @@ namespace 天然气供应方案分析与决策软件
         {
             InitializeComponent();
         }
-        int MiddleVariable1;
+
+        int MiddleVariable1;    //母站1规模数量  最大规模的数量
         int MiddleVariable2;
         int MiddleVariable3;
         int MiddleVariable4;
         int MiddleVariable5;
         int MiddleVariable6;
-        int MiddleVariable7;
+        int MiddleVariable7;    //标准站1规模数量 最大规模的数量
         int MiddleVariable8;
+
+        double PrimaryStationScale1Investment;//母站规模1投资  最大
+        double PrimaryStationScale2Investment;
+        double PrimaryStationScale3Investment;
+        double PrimaryStationScale4Investment;
+        double PrimaryStationScale5Investment;
+        double PrimaryStationScale6Investment;
+
+        double PrimaryStationScale1Area;      //占地面积  最大
+        double PrimaryStationScale2Area;
+        double PrimaryStationScale3Area;
+        double PrimaryStationScale4Area;
+        double PrimaryStationScale5Area;
+        double PrimaryStationScale6Area;
+
+        double PrimaryStationScale1ProjectTime;  //工期  最大
+        double PrimaryStationScale2ProjectTime;
+        double PrimaryStationScale3ProjectTime;
+        double PrimaryStationScale4ProjectTime;
+        double PrimaryStationScale5ProjectTime;
+        double PrimaryStationScale6ProjectTime;
+
+        double SubstationScale1Investment;      //子站规模1投资  最大
+        double SubstationScale2Investment;
+
+        double SubstationScale1Area;            //子站占地面积 最大
+        double SubstationScale2Area;
+
+        double SubstationScale1ProjectTime;   //子站工期 最大
+        double SubstationScale2ProjectTime;
 
         public CNGSubstationSet CngSubstationSet=new CNGSubstationSet();
   
@@ -68,15 +99,23 @@ namespace 天然气供应方案分析与决策软件
         {
             CngSubstationSet = new CNGSubstationSet();
             //CngSubstationSet.MdiParent = this;
-            CngSubstationSet.Show();
+            CngSubstationSet.ShowDialog 
+                ();
         }
 
         private void ScaleLargeToSmall(int  Variable)
         {
             int v = Variable;
             int[] s = new int[6] { 0,0,0,0,0,0};
-            int[] a = new int[6] { 50, 30, 25, 20, 15, 10 };
-
+            int [] a = new int[6];
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("template.gsa"); //加载xml文件
+            a[0] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1"));
+            a[1] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale2"));
+            a[2] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale3"));
+            a[3] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale4"));
+            a[4] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale5"));
+            a[5] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale6"));
             for (int i = 0; i < 6; i++)
             {
                 s[i] = v / a[i];
@@ -107,7 +146,15 @@ namespace 天然气供应方案分析与决策软件
             }
             
             int[] s = new int[6];
-            int[] a = new int[6] { 50, 30, 25, 20, 15, 10 };
+            int[] a = new int[6];
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+            a[0] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1"));
+            a[1] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale2"));
+            a[2] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale3"));
+            a[3] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale4"));
+            a[4] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale5"));
+            a[5] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale6"));
             for (int i = 0; i < 6; i++)
             {
                 s[i] = v / a[i];
@@ -126,9 +173,22 @@ namespace 天然气供应方案分析与决策软件
         }
         private void Calculate()
         {
-            try
-            {
+          
                 double targetValue1 = Convert.ToDouble(txtInput1.Text);
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+                double SubstationScale1 = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale1"));
+                double SubstationScale2 = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale2"));
+                textBox2.Text = ReadXml(xmlDoc, "PrimaryStationScale1");
+                textBox3.Text = ReadXml(xmlDoc, "PrimaryStationScale2");
+                textBox4.Text = ReadXml(xmlDoc, "PrimaryStationScale3");
+                textBox5.Text = ReadXml(xmlDoc, "PrimaryStationScale4");
+                textBox6.Text = ReadXml(xmlDoc, "PrimaryStationScale5");
+                textBox7.Text = ReadXml(xmlDoc, "PrimaryStationScale6");
+                textBox14.Text= ReadXml(xmlDoc, "SubstationScale1");
+                textBox15.Text = ReadXml(xmlDoc, "SubstationScale2");
+                radioButton1.Text = textBox14.Text + "万方/座";
+                radioButton2.Text = textBox15.Text + "万方/座";
 
                 if (targetValue1 < 0)
                 {
@@ -152,12 +212,12 @@ namespace 天然气供应方案分析与决策软件
                     MiddleVariable6 = Convert.ToInt32(txtOuput6.Text);
                     if (radioButton1.Checked == true)
                     {
-                        txtOuput7.Text = Math.Ceiling(targetValue1 / 2).ToString();
+                        txtOuput7.Text = Math.Ceiling(targetValue1 / SubstationScale1).ToString();//2
                         txtOuput8.Text = "0";
                     }
                     else
                     {
-                        txtOuput8.Text = Math.Ceiling(targetValue1 / 1.5).ToString();
+                        txtOuput8.Text = Math.Ceiling(targetValue1 / SubstationScale2).ToString();//1.5
                         txtOuput7.Text = "0";
                     }
 
@@ -174,26 +234,52 @@ namespace 天然气供应方案分析与决策软件
                     if (radioButton1.Checked == true)
                     {
                         txtOuput8.Text = "0";
-                        txtOuput7.Text = Math.Ceiling(targetValue1 / 2).ToString();
+                        txtOuput7.Text = Math.Ceiling(targetValue1 / SubstationScale1).ToString();//2
 
 
                     }
                     else
                     {
                         txtOuput7.Text = "0";
-                        txtOuput8.Text = Math.Ceiling(targetValue1 / 1.5).ToString();
+                        txtOuput8.Text = Math.Ceiling(targetValue1 / SubstationScale2).ToString();//1.5
                     }
                 }
                 MiddleVariable7 = Convert.ToInt32(txtOuput7.Text);
                 MiddleVariable8 = Convert.ToInt32(txtOuput8.Text);
-                double BundleInvestment = Convert.ToDouble(Properties.Settings.Default.b);
-                double TractorInvestment = Convert.ToDouble(Properties.Settings.Default.a);
-                double BundleStorageGasScale = Convert.ToDouble(Properties.Settings.Default.c);
+                double BundleInvestment = Convert.ToDouble(ReadXml(xmlDoc, "BundleInvestment"));
+                double TractorInvestment = Convert.ToDouble(ReadXml(xmlDoc, "TractorInvestment"));
+                double BundleStorageGasScale = Convert.ToDouble(ReadXml(xmlDoc, "BundleScale"));
+                PrimaryStationScale1Investment= Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Investment"));
+                PrimaryStationScale2Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2Investment"));
+                PrimaryStationScale3Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3Investment"));
+                PrimaryStationScale4Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4Investment"));
+                PrimaryStationScale5Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5Investment"));
+                PrimaryStationScale6Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6Investment"));
 
-                double Bundle = Math.Ceiling((MiddleVariable7 * 2 / BundleStorageGasScale + MiddleVariable8 * 1.5 / BundleStorageGasScale) / 2);//管束车
-                double PermanentFloorArea = MiddleVariable1 * 2.5 + MiddleVariable2 * 2 + MiddleVariable3 * 1.7 + MiddleVariable4 * 1.5 + MiddleVariable5 * 1.3 + MiddleVariable6 * 1 + MiddleVariable7 * 0.4 + MiddleVariable8 * 0.3;
-                double PrimaryStationInvestment = MiddleVariable1 * 4500 + MiddleVariable2 * 3500 + MiddleVariable3 * 3100 + MiddleVariable4 * 2800 + MiddleVariable5 * 2500 + MiddleVariable6 * 2000;
-                double SubstationInvestment = MiddleVariable7 * 900 + MiddleVariable8 * 750;
+                PrimaryStationScale1Area= Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Area"));
+                PrimaryStationScale2Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2Area"));
+                PrimaryStationScale3Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3Area"));
+                PrimaryStationScale4Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4Area"));
+                PrimaryStationScale5Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5Area"));
+                PrimaryStationScale6Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6Area"));
+
+                PrimaryStationScale1ProjectTime= Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime"));
+                PrimaryStationScale2ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2ProjectTime"));
+                PrimaryStationScale3ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3ProjectTime"));
+                PrimaryStationScale4ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4ProjectTime"));
+                PrimaryStationScale5ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5ProjectTime"));
+                PrimaryStationScale6ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6ProjectTime"));
+
+                SubstationScale1Area = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale1Area"));
+                SubstationScale2Area = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale2Area"));
+
+                SubstationScale1Investment = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale1Investment"));
+                SubstationScale2Investment = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale2Investment"));
+
+                double Bundle = Math.Ceiling((MiddleVariable7 * SubstationScale1 / BundleStorageGasScale + MiddleVariable8 * SubstationScale2 / BundleStorageGasScale) / 2);//管束车
+                double PermanentFloorArea = MiddleVariable1 * PrimaryStationScale1Area + MiddleVariable2 * PrimaryStationScale2Area + MiddleVariable3 * PrimaryStationScale3Area + MiddleVariable4 * PrimaryStationScale4Area + MiddleVariable5 * PrimaryStationScale5Area + MiddleVariable6 * PrimaryStationScale6Area + MiddleVariable7 * SubstationScale1Area + MiddleVariable8 * SubstationScale2Area;
+                double PrimaryStationInvestment = MiddleVariable1 * PrimaryStationScale1Investment + MiddleVariable2 * PrimaryStationScale2Investment + MiddleVariable3 * PrimaryStationScale3Investment + MiddleVariable4 * PrimaryStationScale4Investment + MiddleVariable5 * PrimaryStationScale5Investment + MiddleVariable6 * PrimaryStationScale6Investment;
+                double SubstationInvestment = MiddleVariable7 * SubstationScale1Investment + MiddleVariable8 * SubstationScale2Investment;
                 double BundleAndTractorInvestment = TractorInvestment * (Bundle / 2) + BundleInvestment * Bundle;
                 double Investment = PrimaryStationInvestment + SubstationInvestment + BundleAndTractorInvestment;
                 double ProjectTime = 0;
@@ -225,11 +311,11 @@ namespace 天然气供应方案分析与决策软件
                 txtOuput13.Text = "0.000";//临时占地
                 txtOuput14.Text = Investment.ToString(); //总投资
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
         private void button2_Click(object sender, EventArgs e)
         {

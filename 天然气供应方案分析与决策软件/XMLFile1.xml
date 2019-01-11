@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <CNGPrimaryStationRoughEstimate>
-    //CNG子母站工程量与投资kuangsuan
+    <!--CNG子母站工程量与投资匡算-->
     <Supply>86</Supply>
     <PrimaryStationScale1>50</PrimaryStationScale1>  
     <PrimaryStationScale2>30</PrimaryStationScale2>
@@ -25,11 +25,45 @@
     <TemporaryFloorArea>0</TemporaryFloorArea>
     <ProjectTime>8</ProjectTime>
     <Investment>64380</Investment>
-  </CNGPrimaryStationRoughEstimate>
-  //
-  <CNGSubstationRoughEstimate>
-    <Supply>86</Supply> 
-    
-  </CNGSubstationRoughEstimate>
-  
+    <PrimaryStationScale1Investment>4500</PrimaryStationScale1Investment>
+    <PrimaryStationScale2Investment>3500</PrimaryStationScale2Investment>
+    <PrimaryStationScale3Investment>3100</PrimaryStationScale3Investment>
+    <PrimaryStationScale4Investment>2800</PrimaryStationScale4Investment>
+    <PrimaryStationScale5Investment>2500</PrimaryStationScale5Investment>
+    <PrimaryStationScale6Investment>2000</PrimaryStationScale6Investment>
+    <PrimaryStationScale1Area>2.5</PrimaryStationScale1Area>
+    <PrimaryStationScale2Area>2</PrimaryStationScale2Area>
+    <PrimaryStationScale3Area>1.7</PrimaryStationScale3Area>
+    <PrimaryStationScale4Area>1.5</PrimaryStationScale4Area>
+    <PrimaryStationScale5Area>1.3</PrimaryStationScale5Area>
+    <PrimaryStationScale6Area>1</PrimaryStationScale6Area>
+    <PrimaryStationScale1ProjectTime>8</PrimaryStationScale1ProjectTime>
+    <PrimaryStationScale2ProjectTime>7</PrimaryStationScale2ProjectTime>
+    <PrimaryStationScale3ProjectTime>6</PrimaryStationScale3ProjectTime>
+    <PrimaryStationScale4ProjectTime>5</PrimaryStationScale4ProjectTime>
+    <PrimaryStationScale5ProjectTime>5</PrimaryStationScale5ProjectTime>
+    <PrimaryStationScale6ProjectTime>5</PrimaryStationScale6ProjectTime>
+    <SubstationScale1Investment>900</SubstationScale1Investment>
+    <SubstationScale2Investment>750</SubstationScale2Investment>
+    <SubstationScale1Area>0.4</SubstationScale1Area>
+    <SubstationScale2Area>0.3</SubstationScale2Area>
+    <SubstationScale1ProjectTime>5</SubstationScale1ProjectTime>
+    <SubstationScale2ProjectTime>4</SubstationScale2ProjectTime>
+    <BundleInvestment>120</BundleInvestment>
+    <TractorInvestment>30</TractorInvestment>
+    <BundleScale>0.4</BundleScale>
+</CNGPrimaryStationRoughEstimate>
+  <!--CNG标准站站工程量与投资匡算-->
+  <CNGStandardStationRoughEstimate>
+    <Supply>86</Supply>
+    <StandardStationScale>2</StandardStationScale>
+    <StandardStationCount>43</StandardStationCount>
+    <PermanentFloorArea>21.5</PermanentFloorArea>
+    <TemporaryFloorArea>0</TemporaryFloorArea>
+    <ProjectTime>8</ProjectTime>
+    <Investment>64380</Investment>
+    <StandardStationInvestment>1000</StandardStationInvestment>
+    <StandardStationArea>0.5</StandardStationArea>
+    <SandardStationProjectTime>5</SandardStationProjectTime>
+  </CNGStandardStationRoughEstimate> 
 </configuration>

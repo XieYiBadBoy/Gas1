@@ -460,7 +460,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "CNGStanardStationProjectAndInvestment";
-            this.Text = " ";
+            this.Text = " CNG分析--标准站工程量与投资匡算";
             this.Load += new System.EventHandler(this.CNGStanardStationProjectAndInvestment_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

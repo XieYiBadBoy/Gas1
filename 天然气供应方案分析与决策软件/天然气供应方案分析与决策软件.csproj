@@ -100,6 +100,12 @@
     <Compile Include="LNG点供站和卫星站工程量与投资匡算.Designer.cs">
       <DependentUpon>LNG点供站和卫星站工程量与投资匡算.cs</DependentUpon>
     </Compile>
+    <Compile Include="LNG点供站和卫星站设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LNG点供站和卫星站设置.Designer.cs">
+      <DependentUpon>LNG点供站和卫星站设置.cs</DependentUpon>
+    </Compile>
     <Compile Include="加气子站-设置.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     <EmbeddedResource Include="LNG点供站和卫星站工程量与投资匡算.resx">
       <DependentUpon>LNG点供站和卫星站工程量与投资匡算.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LNG点供站和卫星站设置.resx">
+      <DependentUpon>LNG点供站和卫星站设置.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="加气子站-设置.resx">
       <DependentUpon>加气子站-设置.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,7 +327,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="XMLFile1.xml" />
+    <Content Include="XMLFile1.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
