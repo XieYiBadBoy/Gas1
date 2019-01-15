@@ -1,6 +1,6 @@
 ﻿namespace 天然气供应方案分析与决策软件
 {
-    partial class LNG点供站和卫星站设置
+    partial class LNGProjectAndInvestmentSet
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,7 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(7, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(506, 187);
+            this.groupBox1.Size = new System.Drawing.Size(503, 210);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "母站";
@@ -89,13 +89,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(500, 167);
+            this.dataGridView1.Size = new System.Drawing.Size(497, 190);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "母站规模（万方/天）";
+            this.Column1.HeaderText = "母站规模万方/天）";
             this.Column1.Name = "Column1";
             // 
             // Column2
@@ -136,7 +137,7 @@
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(7, 195);
+            this.groupBox2.Location = new System.Drawing.Point(7, 221);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(503, 68);
             this.groupBox2.TabIndex = 2;
@@ -167,6 +168,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "0.1";
             // 
             // textBox1
             // 
@@ -174,6 +176,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "600";
             // 
             // label2
             // 
@@ -195,7 +198,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 281);
+            this.button1.Location = new System.Drawing.Point(14, 307);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 23);
             this.button1.TabIndex = 26;
@@ -205,7 +208,7 @@
             // label52
             // 
             this.label52.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label52.Location = new System.Drawing.Point(7, 269);
+            this.label52.Location = new System.Drawing.Point(7, 295);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(500, 2);
             this.label52.TabIndex = 25;
@@ -213,36 +216,40 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(432, 281);
+            this.button6.Location = new System.Drawing.Point(432, 307);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 24;
             this.button6.Text = "应用（A）";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(333, 281);
+            this.button5.Location = new System.Drawing.Point(333, 307);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 23;
             this.button5.Text = "取消（C）";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(234, 281);
+            this.button2.Location = new System.Drawing.Point(234, 307);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 22;
             this.button2.Text = "确定（O）";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // LNG点供站和卫星站设置
+            // LNGProjectAndInvestmentSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 314);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(516, 338);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label52);
             this.Controls.Add(this.button6);
@@ -250,7 +257,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "LNG点供站和卫星站设置";
+            this.Name = "LNGProjectAndInvestmentSet";
             this.Text = "LNG点供站和卫星站设置";
             this.Load += new System.EventHandler(this.LNG点供站和卫星站设置_Load);
             this.groupBox1.ResumeLayout(false);
@@ -267,12 +274,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -285,5 +286,11 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

@@ -26,6 +26,24 @@ namespace 天然气供应方案分析与决策软件
         }
         private void CNG标准站设置_Load(object sender, EventArgs e)
         {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
+            this.dataGridView2.Rows[0].Cells[0].Value = XMLRead(xmlDoc, "StandardStationScale");
+            this.dataGridView2.Rows[0].Cells[1].Value = XMLRead(xmlDoc, "StandardStationInvestment");
+            this.dataGridView2.Rows[0].Cells[2].Value = XMLRead(xmlDoc, "StandardStationArea");
+            this.dataGridView2.Rows[0].Cells[3].Value = XMLRead(xmlDoc, "SandardStationProjectTime");
+        }
+        private void SaveElement()
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
+            XmlNode xn0 = xmlDoc.SelectSingleNode("configuration/CNGStandardStationRoughEstimate/StandardStationScale");
+            xn0.InnerText = this.dataGridView2.Rows[0].Cells[0].Value.ToString();
+
+            XmlNode xn1 = xmlDoc.SelectSingleNode("configuration/CNGStandardStationRoughEstimate/StandardStationInvestment");
+            xn1.InnerText = this.dataGridView2.Rows[0].Cells[1].Value.ToString();
 
             XmlNode xn2 = xmlDoc.SelectSingleNode("configuration/CNGStandardStationRoughEstimate/StandardStationArea");
             xn2.InnerText = this.dataGridView2.Rows[0].Cells[2].Value.ToString();

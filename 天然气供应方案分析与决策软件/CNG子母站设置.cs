@@ -115,7 +115,6 @@ namespace 天然气供应方案分析与决策软件
         private string ReadXml(XmlDocument xmlDoc, string s)
         {
             string Str = "configuration/CNGPrimaryStationRoughEstimate/" + s;
-
             XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
             return xn0.InnerText;
         }
@@ -265,7 +264,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void label5_Click(object sender, EventArgs e)
         {
-
+             
         }
 
         private void label6_Click(object sender, EventArgs e)

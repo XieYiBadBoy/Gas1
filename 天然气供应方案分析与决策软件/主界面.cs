@@ -18,7 +18,7 @@ namespace 天然气供应方案分析与决策软件
             MdiClient m = new MdiClient();
             this.Controls.Add(m);
             m.Dock = DockStyle.Fill;
-            m.BackgroundImage = Properties.Resources.BackgroundImage;
+           // m.BackgroundImage = Properties.Resources.BackgroundImage;
         }
         public Windows1 w1;   // 管道工艺计算 
         public Windows2 w2;   // 母站计算
@@ -34,6 +34,7 @@ namespace 天然气供应方案分析与决策软件
         public CNGWindowsProject CNGProjectRoughEstimate;
         public CNGStanardStationProjectAndInvestment CngStandardStationProjectAndInvestment;
         public ComprehensiveAnalysCriticalCurveMethod CriticalCurveMethod;
+        public LNGProjectAndInvestment LngProjectAndInvestment;
 
         private void 工艺计算ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -63,9 +64,16 @@ namespace 天然气供应方案分析与决策软件
 
         private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("是否关闭本系统？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            if (DialogResult.Yes == MessageBox.Show("是否关闭当前窗口？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
-               this.Close();
+                //Form[] frm = this.MdiChildren;
+                //for (int i = 0; i < frm.Length; i++)
+                //{
+                //   if (frm[i].Focused==true)
+                //    {
+                //        frm[i].Close();
+                //    }
+                //}
             }
             else
             {
@@ -76,9 +84,13 @@ namespace 天然气供应方案分析与决策软件
 
         private void 关闭所有ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("是否关闭本系统？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            if (DialogResult.Yes == MessageBox.Show("是否关闭所有窗口？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
-                System.Environment.Exit(0);
+                foreach (Form frm in this.MdiChildren)
+                {
+                    frm.Close();
+                }
+                Reset();
             }
             else
             {
@@ -91,15 +103,44 @@ namespace 天然气供应方案分析与决策软件
             //1.创建一个文件打开对话框
             OpenFileDialog ofd = new OpenFileDialog();
             //设置对话框属性:允许选择多个文件
-            //ofd.Multiselect = true;
+            ofd.Multiselect = true;
+            ofd.Filter = "gsa(*.gsa)|*.gsa";
             //2.打开对话框
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 //3.成功选择，获取被选择的文件名
                 string selectedFile = ofd.FileName;        //Multiselect 为 false时;
                 string[] selectedFiles = ofd.FileNames;  //Multiselect 为 true时;
-                                                         //TODO...
+
+                AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开文件："+ selectedFile);
+                bianjiToolStripMenuItem.Visible = true;
+  
+                gunadaofenxiToolStripMenuItem.Visible = true;
+                CNGfenxiToolStripMenuItem.Visible = true;
+                CNGfenxiToolStripMenuItem.Visible = true;
+                LNGFENXIToolStripMenuItem.Visible = true;
+                PILAINGFENXIToolStripMenuItem.Visible = true;
+                ZOHEFENXIToolStripMenuItem.Visible = true;
+                TONGJUToolStripMenuItem.Visible = true;
+                CHANGKOUToolStripMenuItem.Visible = true;
+                GAUNBIToolStripMenuItem.Visible = true;
+                GUANBISUOYOUToolStripMenuItem.Visible = true;
+                BAOCUNToolStripMenuItem.Visible = true;
+                LINGCUNWEIToolStripMenuItem.Visible = true;
+                //toolStripLabel1.Visible = true;
+                //toolStripLabel2.Visible = true;
+                //toolStripLabel3.Visible = true;
+                toolStripLabel5.Visible = true;
+                toolStripLabel6.Visible = true;
+                toolStripLabel7.Visible = true;
+                toolStripLabel8.Visible = true;
+                toolStripLabel10.Visible = true;
+                //toolStripSeparator1.Visible = true;
+                toolStripSeparator2.Visible = true;
+                rtbInf.Visible = true;
             }
+
+
 
         }
 
@@ -124,7 +165,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("是否关闭本系统？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Stop))
+            if (DialogResult.Yes == MessageBox.Show("是否关闭本系统？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 System.Environment.Exit(0);
             }
@@ -182,12 +223,50 @@ namespace 天然气供应方案分析与决策软件
         private void Form1_Load(object sender, EventArgs e)
         {
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开软件");
+            Reset();
 
+            try
+            {
+
+                this.BackgroundImage = Image.FromFile(@"bg\BackgroundImage.jpg");
+
+            }
+            catch (Exception)
+            {
+            }
             this.timer1.Interval = 1000;
 
             this.timer1.Start();
         }
+        private void Reset()
+        {
+            bianjiToolStripMenuItem.Visible = false;
 
+            gunadaofenxiToolStripMenuItem.Visible = false;
+            CNGfenxiToolStripMenuItem.Visible = false;
+            CNGfenxiToolStripMenuItem.Visible = false;
+            LNGFENXIToolStripMenuItem.Visible = false;
+            PILAINGFENXIToolStripMenuItem.Visible = false;
+            ZOHEFENXIToolStripMenuItem.Visible = false;
+            TONGJUToolStripMenuItem.Visible = false;
+            CHANGKOUToolStripMenuItem.Visible = false;
+            GAUNBIToolStripMenuItem.Visible = false;
+            GUANBISUOYOUToolStripMenuItem.Visible = false;
+            BAOCUNToolStripMenuItem.Visible = false;
+            LINGCUNWEIToolStripMenuItem.Visible = false;
+            //toolStripLabel1.Visible = false;
+            //toolStripLabel2.Visible = false;
+            //toolStripLabel3.Visible = false;
+            toolStripLabel5.Visible = false;
+            toolStripLabel6.Visible = false;
+            toolStripLabel7.Visible = false;
+            toolStripLabel8.Visible = false;
+            //toolStripLabel10.Visible = false;
+            //toolStripSeparator1.Visible = false;
+            toolStripSeparator2.Visible = false;
+            rtbInf.Visible = false;
+        }
         private void 工具栏ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem31.Checked = !ToolStripMenuItem31.Checked;
@@ -290,6 +369,30 @@ namespace 天然气供应方案分析与决策软件
             CriticalCurveMethod = new ComprehensiveAnalysCriticalCurveMethod();
             CriticalCurveMethod.MdiParent = this;
             CriticalCurveMethod.Show();
+        }
+
+        private void 工程量匡算ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            LngProjectAndInvestment = new LNGProjectAndInvestment();
+            LngProjectAndInvestment.MdiParent = this;
+            LngProjectAndInvestment.Show();
+        }
+
+        public void AddInf(string v)
+        {
+            rtbInf.AppendText(v +"\r\n");
+        }
+
+        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+   
+
+        private void 有月量测算不平均系数ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -164,7 +164,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "万方/天";
+            this.label2.Text = "万方/日";
             // 
             // label1
             // 
@@ -351,7 +351,7 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(47, 12);
             this.label33.TabIndex = 2;
-            this.label33.Text = "万方/天";
+            this.label33.Text = "万方/日";
             // 
             // textBox14
             // 
@@ -447,8 +447,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CancelButton = this.button4;
-            this.ClientSize = new System.Drawing.Size(498, 290);
+            this.ClientSize = new System.Drawing.Size(498, 292);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
@@ -459,6 +460,8 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CNGStanardStationProjectAndInvestment";
             this.Text = " CNG分析--标准站工程量与投资匡算";
             this.Load += new System.EventHandler(this.CNGStanardStationProjectAndInvestment_Load);

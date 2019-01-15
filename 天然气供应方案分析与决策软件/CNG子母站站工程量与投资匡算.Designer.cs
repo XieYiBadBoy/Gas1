@@ -192,7 +192,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "万方/天";
+            this.label2.Text = "万方/日";
             // 
             // label1
             // 
@@ -548,7 +548,8 @@
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(47, 12);
             this.label35.TabIndex = 5;
-            this.label35.Text = "万方/天";
+            this.label35.Text = "万方/日";
+            this.label35.Click += new System.EventHandler(this.label35_Click);
             // 
             // textBox15
             // 
@@ -575,7 +576,7 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(47, 12);
             this.label33.TabIndex = 2;
-            this.label33.Text = "万方/天";
+            this.label33.Text = "万方/日";
             // 
             // textBox14
             // 
@@ -812,7 +813,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(47, 12);
             this.label18.TabIndex = 17;
-            this.label18.Text = "万方/天";
+            this.label18.Text = "万方/日";
             // 
             // label17
             // 
@@ -821,7 +822,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(47, 12);
             this.label17.TabIndex = 16;
-            this.label17.Text = "万方/天";
+            this.label17.Text = "万方/日";
             // 
             // label16
             // 
@@ -830,7 +831,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(47, 12);
             this.label16.TabIndex = 15;
-            this.label16.Text = "万方/天";
+            this.label16.Text = "万方/日";
             // 
             // label15
             // 
@@ -839,7 +840,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(47, 12);
             this.label15.TabIndex = 14;
-            this.label15.Text = "万方/天";
+            this.label15.Text = "万方/日";
             // 
             // label14
             // 
@@ -848,7 +849,8 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 12);
             this.label14.TabIndex = 13;
-            this.label14.Text = "万方/天";
+            this.label14.Text = "万方/日";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label13
             // 
@@ -857,7 +859,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 12);
             this.label13.TabIndex = 12;
-            this.label13.Text = "万方/天";
+            this.label13.Text = "万方/日";
             // 
             // textBox7
             // 
@@ -980,6 +982,7 @@
             // 
             // button3
             // 
+            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button3.Location = new System.Drawing.Point(330, 445);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);

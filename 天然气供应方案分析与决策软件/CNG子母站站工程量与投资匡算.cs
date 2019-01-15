@@ -173,7 +173,7 @@ namespace 天然气供应方案分析与决策软件
         }
         private void Calculate()
         {
-          
+            try { 
                 double targetValue1 = Convert.ToDouble(txtInput1.Text);
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load("XMLFile1.xml"); //加载xml文件
@@ -311,12 +311,12 @@ namespace 天然气供应方案分析与决策软件
                 txtOuput13.Text = "0.000";//临时占地
                 txtOuput14.Text = Investment.ToString(); //总投资
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
         }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
         private void button2_Click(object sender, EventArgs e)
         {
             Calculate();
@@ -331,65 +331,67 @@ namespace 天然气供应方案分析与决策软件
             if (loadFile.ShowDialog() == DialogResult.OK)
             {
                 path = loadFile.FileName;
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(path); //加载xml文件
+
+                txtInput1.Text = ReadXml(xmlDoc, "Supply");
+                textBox2.Text = ReadXml(xmlDoc, "PrimaryStationScale1");
+                textBox3.Text = ReadXml(xmlDoc, "PrimaryStationScale2");
+                textBox4.Text = ReadXml(xmlDoc, "PrimaryStationScale3");
+                textBox5.Text = ReadXml(xmlDoc, "PrimaryStationScale4");
+                textBox6.Text = ReadXml(xmlDoc, "PrimaryStationScale5");
+                textBox7.Text = ReadXml(xmlDoc, "PrimaryStationScale6");
+
+                XmlNode xn7 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount1");
+                txtOuput1.Text = xn7.InnerText;
+
+                XmlNode xn8 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount2");
+                txtOuput2.Text = xn8.InnerText;
+
+                XmlNode xn9 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount3");
+                txtOuput3.Text = xn9.InnerText;
+
+                XmlNode xn10 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount4");
+                txtOuput4.Text = xn10.InnerText;
+
+                XmlNode xn11 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount5");
+                txtOuput5.Text = xn11.InnerText;
+
+                XmlNode xn12 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount6");
+                txtOuput6.Text = xn12.InnerText;
+
+                XmlNode xn13 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationScale1");
+                textBox14.Text = xn13.InnerText;
+
+                XmlNode xn14 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationScale2");
+                textBox15.Text = xn14.InnerText;
+
+                XmlNode xn15 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationCount1");
+                txtOuput7.Text = xn15.InnerText;
+
+                XmlNode xn16 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationCount2");
+                txtOuput8.Text = xn16.InnerText;
+
+                XmlNode xn17 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/BundleCount");
+                txtOuput9.Text = xn17.InnerText;
+
+                XmlNode xn18 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/TractorCount");
+                txtOuput12.Text = xn18.InnerText;
+
+                XmlNode xn19 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PermanentFloorArea");
+                txtOuput10.Text = xn19.InnerText;
+
+                XmlNode xn20 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/TemporaryFloorArea");
+                txtOuput13.Text = xn20.InnerText;
+
+                XmlNode xn21 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/ProjectTime");
+                txtOuput11.Text = xn21.InnerText;
+
+                XmlNode xn22 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/Investment");
+                txtOuput14.Text = xn22.InnerText;
             }
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(path); //加载xml文件
 
-            txtInput1.Text = ReadXml(xmlDoc, "Supply");            
-            textBox2.Text = ReadXml(xmlDoc, "PrimaryStationScale1");
-            textBox3.Text = ReadXml(xmlDoc, "PrimaryStationScale2");
-            textBox4.Text = ReadXml(xmlDoc, "PrimaryStationScale3");
-            textBox5.Text = ReadXml(xmlDoc, "PrimaryStationScale4");       
-            textBox6.Text = ReadXml(xmlDoc, "PrimaryStationScale5");   
-            textBox7.Text = ReadXml(xmlDoc, "PrimaryStationScale6");
-
-            XmlNode xn7 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount1");
-            txtOuput1.Text = xn7.InnerText;
-
-            XmlNode xn8 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount2");
-            txtOuput2.Text = xn8.InnerText;
-
-            XmlNode xn9 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount3");
-            txtOuput3.Text = xn9.InnerText;
-
-            XmlNode xn10 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount4");
-            txtOuput4.Text = xn10.InnerText;
-
-            XmlNode xn11 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount5");
-            txtOuput5.Text = xn11.InnerText;
-
-            XmlNode xn12 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount6");
-            txtOuput6.Text = xn12.InnerText;
-
-            XmlNode xn13 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationScale1");
-            textBox14.Text = xn13.InnerText;
-
-            XmlNode xn14 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationScale2");
-            textBox15.Text = xn14.InnerText;
-
-            XmlNode xn15 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationCount1");
-            txtOuput7.Text = xn15.InnerText;
-
-            XmlNode xn16 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationCount2");
-            txtOuput8.Text = xn16.InnerText;
-
-            XmlNode xn17 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/BundleCount");
-            txtOuput9.Text = xn17.InnerText;
-
-            XmlNode xn18 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/TractorCount");
-            txtOuput12.Text = xn18.InnerText;
-
-            XmlNode xn19 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PermanentFloorArea");
-            txtOuput10.Text = xn19.InnerText;
-
-            XmlNode xn20 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/TemporaryFloorArea");
-            txtOuput13.Text = xn20.InnerText;
-
-            XmlNode xn21 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/ProjectTime");
-            txtOuput11.Text = xn21.InnerText;
-
-            XmlNode xn22 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/Investment");
-            txtOuput14.Text = xn22.InnerText;
         }
         private string ReadXml(XmlDocument xmlDoc, string s)
         {
@@ -407,80 +409,81 @@ namespace 天然气供应方案分析与决策软件
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 path = saveFile.FileName;
-            }
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("template.gsa"); //加载xml文件
 
-            XmlNode xn0 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/Supply");
-            xn0.InnerText= txtInput1.Text ;
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load("template.gsa"); //加载xml文件
 
-            XmlNode xn1 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale1");
-            xn1.InnerText = textBox2.Text ;
+                XmlNode xn0 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/Supply");
+                xn0.InnerText = txtInput1.Text;
 
-            XmlNode xn2 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale2");
-            xn2.InnerText= textBox3.Text  ;
+                XmlNode xn1 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale1");
+                xn1.InnerText = textBox2.Text;
 
-            XmlNode xn3 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale3");
-            xn3.InnerText = textBox4.Text ;
+                XmlNode xn2 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale2");
+                xn2.InnerText = textBox3.Text;
 
-            XmlNode xn4 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale4");
-            xn4.InnerText= textBox5.Text ;
+                XmlNode xn3 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale3");
+                xn3.InnerText = textBox4.Text;
 
-            XmlNode xn5 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale5");
-            xn5.InnerText= textBox6.Text ;
+                XmlNode xn4 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale4");
+                xn4.InnerText = textBox5.Text;
 
-            XmlNode xn6 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale6");
-            xn6.InnerText= textBox7.Text ;
+                XmlNode xn5 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale5");
+                xn5.InnerText = textBox6.Text;
 
-            XmlNode xn7 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount1");
-            txtOuput1.Text = xn7.InnerText;
+                XmlNode xn6 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationScale6");
+                xn6.InnerText = textBox7.Text;
 
-            XmlNode xn8 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount2");
-            xn8.InnerText = txtOuput2.Text ;
+                XmlNode xn7 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount1");
+                txtOuput1.Text = xn7.InnerText;
 
-            XmlNode xn9 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount3");
-            xn9.InnerText= txtOuput3.Text ;
+                XmlNode xn8 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount2");
+                xn8.InnerText = txtOuput2.Text;
 
-            XmlNode xn10 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount4");
-            xn10.InnerText= txtOuput4.Text ;
+                XmlNode xn9 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount3");
+                xn9.InnerText = txtOuput3.Text;
 
-            XmlNode xn11 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount5");
-            xn11.InnerText= txtOuput5.Text ;
+                XmlNode xn10 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount4");
+                xn10.InnerText = txtOuput4.Text;
 
-            XmlNode xn12 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount6");
-            xn12.InnerText= txtOuput6.Text ;
+                XmlNode xn11 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount5");
+                xn11.InnerText = txtOuput5.Text;
 
-            XmlNode xn13 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationScale1");
-            xn13.InnerText = textBox14.Text ;
+                XmlNode xn12 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PrimaryStationCount6");
+                xn12.InnerText = txtOuput6.Text;
 
-            XmlNode xn14 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationScale2");
-            xn14.InnerText = textBox15.Text;
+                XmlNode xn13 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationScale1");
+                xn13.InnerText = textBox14.Text;
 
-            XmlNode xn15 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationCount1");
-            xn15.InnerText= txtOuput7.Text ;
+                XmlNode xn14 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationScale2");
+                xn14.InnerText = textBox15.Text;
 
-            XmlNode xn16 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationCount2");
-            xn16.InnerText= txtOuput8.Text ;
+                XmlNode xn15 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationCount1");
+                xn15.InnerText = txtOuput7.Text;
 
-            XmlNode xn17 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/BundleCount");
-            xn17.InnerText= txtOuput9.Text ;
+                XmlNode xn16 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/SubstationCount2");
+                xn16.InnerText = txtOuput8.Text;
 
-            XmlNode xn18 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/TractorCount");
-            xn18.InnerText= txtOuput12.Text ;
+                XmlNode xn17 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/BundleCount");
+                xn17.InnerText = txtOuput9.Text;
 
-            XmlNode xn19 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PermanentFloorArea");
-            xn19.InnerText= txtOuput10.Text ;
+                XmlNode xn18 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/TractorCount");
+                xn18.InnerText = txtOuput12.Text;
 
-            XmlNode xn20 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/TemporaryFloorArea");
-            xn20.InnerText = txtOuput13.Text ;
+                XmlNode xn19 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/PermanentFloorArea");
+                xn19.InnerText = txtOuput10.Text;
 
-            XmlNode xn21 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/ProjectTime");
-            xn21.InnerText = txtOuput11.Text  ;
+                XmlNode xn20 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/TemporaryFloorArea");
+                xn20.InnerText = txtOuput13.Text;
 
-            XmlNode xn22 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/Investment");
-            xn22.InnerText = txtOuput14.Text  ;
+                XmlNode xn21 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/ProjectTime");
+                xn21.InnerText = txtOuput11.Text;
 
-            xmlDoc.Save(path);
+                XmlNode xn22 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/Investment");
+                xn22.InnerText = txtOuput14.Text;
+
+                xmlDoc.Save(path);
+            }     
         }
 
         private void groupBox1_MouseHover(object sender, EventArgs e)
@@ -504,6 +507,16 @@ namespace 天然气供应方案分析与决策软件
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label35_Click(object sender, EventArgs e)
         {
 
         }

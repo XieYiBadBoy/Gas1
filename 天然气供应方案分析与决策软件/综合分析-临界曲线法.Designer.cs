@@ -412,6 +412,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(487, 447);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -423,8 +424,9 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ComprehensiveAnalysCriticalCurveMethod";
-            this.Text = "V";
             this.Load += new System.EventHandler(this.综合分析_临界曲线法_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

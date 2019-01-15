@@ -664,6 +664,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(614, 481);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
@@ -672,6 +673,8 @@
             this.Controls.Add(this.Clebutton2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Windows5";
             this.Text = "CNG分析--标准站计算";
             this.groupBox3.ResumeLayout(false);

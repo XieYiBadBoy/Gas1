@@ -99,6 +99,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -107,7 +108,6 @@
             this.tabPage1.Size = new System.Drawing.Size(474, 252);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "参数（P）";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -417,6 +417,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage2.Controls.Add(this.checkBox7);
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox4);
@@ -427,7 +428,6 @@
             this.tabPage2.Size = new System.Drawing.Size(474, 252);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "计算（C）";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // checkBox7
             // 
@@ -572,12 +572,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(498, 336);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CompressorStation";
             this.Text = "压气站设置";
             this.tabControl1.ResumeLayout(false);

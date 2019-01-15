@@ -32,16 +32,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.关闭ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.关闭所有ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GAUNBIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GUANBISUOYOUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.另存为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BAOCUNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LINGCUNWEIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.最近文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bianjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.剪切ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.复制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.粘贴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,12 +50,12 @@
             this.清空当前文本ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.查找ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.视图ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shituToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem31 = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem32 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.选项ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.管道分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gunadaofenxiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.工艺计算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.耗钢量计算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.压气站布置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +64,7 @@
             this.投资量匡算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
             this.方案匡算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cNG分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CNGfenxiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.子母站设计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.母站ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.子站ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +76,7 @@
             this.标准站匡算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             this.方案匡算ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lNG分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LNGFENXIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lNG液化工厂分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
@@ -84,14 +84,16 @@
             this.投资匡算ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripSeparator();
             this.方案匡算ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.批量分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PILAINGFENXIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.管道适应性分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.方案分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ZOHEFENXIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.临界曲线法ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TONGJUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.有月量测算不平均系数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.归一化月不平均系数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.由年量测算月量ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CHANGKOUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.层叠窗口ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
             this.水平平铺ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,17 +114,16 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel11 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel8 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel10 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.综合分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.临界曲线法ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rtbInf = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -132,15 +133,15 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件ToolStripMenuItem,
-            this.编辑ToolStripMenuItem,
-            this.视图ToolStripMenuItem,
-            this.管道分析ToolStripMenuItem,
-            this.cNG分析ToolStripMenuItem,
-            this.lNG分析ToolStripMenuItem,
-            this.批量分析ToolStripMenuItem,
-            this.综合分析ToolStripMenuItem,
-            this.工具ToolStripMenuItem,
-            this.窗口ToolStripMenuItem,
+            this.bianjiToolStripMenuItem,
+            this.shituToolStripMenuItem,
+            this.gunadaofenxiToolStripMenuItem,
+            this.CNGfenxiToolStripMenuItem,
+            this.LNGFENXIToolStripMenuItem,
+            this.PILAINGFENXIToolStripMenuItem,
+            this.ZOHEFENXIToolStripMenuItem,
+            this.TONGJUToolStripMenuItem,
+            this.CHANGKOUToolStripMenuItem,
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -152,11 +153,11 @@
             // 
             this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.打开ToolStripMenuItem,
-            this.关闭ToolStripMenuItem,
-            this.关闭所有ToolStripMenuItem,
+            this.GAUNBIToolStripMenuItem,
+            this.GUANBISUOYOUToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.保存ToolStripMenuItem,
-            this.另存为ToolStripMenuItem,
+            this.BAOCUNToolStripMenuItem,
+            this.LINGCUNWEIToolStripMenuItem,
             this.toolStripMenuItem2,
             this.最近文件ToolStripMenuItem,
             this.toolStripMenuItem3,
@@ -172,37 +173,37 @@
             this.打开ToolStripMenuItem.Text = "打开";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
-            // 关闭ToolStripMenuItem
+            // GAUNBIToolStripMenuItem
             // 
-            this.关闭ToolStripMenuItem.Name = "关闭ToolStripMenuItem";
-            this.关闭ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.关闭ToolStripMenuItem.Text = "关闭";
-            this.关闭ToolStripMenuItem.Click += new System.EventHandler(this.关闭ToolStripMenuItem_Click);
+            this.GAUNBIToolStripMenuItem.Name = "GAUNBIToolStripMenuItem";
+            this.GAUNBIToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.GAUNBIToolStripMenuItem.Text = "关闭";
+            this.GAUNBIToolStripMenuItem.Click += new System.EventHandler(this.关闭ToolStripMenuItem_Click);
             // 
-            // 关闭所有ToolStripMenuItem
+            // GUANBISUOYOUToolStripMenuItem
             // 
-            this.关闭所有ToolStripMenuItem.Name = "关闭所有ToolStripMenuItem";
-            this.关闭所有ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.关闭所有ToolStripMenuItem.Text = "关闭所有";
-            this.关闭所有ToolStripMenuItem.Click += new System.EventHandler(this.关闭所有ToolStripMenuItem_Click);
+            this.GUANBISUOYOUToolStripMenuItem.Name = "GUANBISUOYOUToolStripMenuItem";
+            this.GUANBISUOYOUToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.GUANBISUOYOUToolStripMenuItem.Text = "关闭所有";
+            this.GUANBISUOYOUToolStripMenuItem.Click += new System.EventHandler(this.关闭所有ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
             // 
-            // 保存ToolStripMenuItem
+            // BAOCUNToolStripMenuItem
             // 
-            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.保存ToolStripMenuItem.Text = "保存";
-            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            this.BAOCUNToolStripMenuItem.Name = "BAOCUNToolStripMenuItem";
+            this.BAOCUNToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.BAOCUNToolStripMenuItem.Text = "保存";
+            this.BAOCUNToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
             // 
-            // 另存为ToolStripMenuItem
+            // LINGCUNWEIToolStripMenuItem
             // 
-            this.另存为ToolStripMenuItem.Name = "另存为ToolStripMenuItem";
-            this.另存为ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.另存为ToolStripMenuItem.Text = "另存为";
+            this.LINGCUNWEIToolStripMenuItem.Name = "LINGCUNWEIToolStripMenuItem";
+            this.LINGCUNWEIToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.LINGCUNWEIToolStripMenuItem.Text = "另存为";
             // 
             // toolStripMenuItem2
             // 
@@ -227,9 +228,9 @@
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
-            // 编辑ToolStripMenuItem
+            // bianjiToolStripMenuItem
             // 
-            this.编辑ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bianjiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.剪切ToolStripMenuItem,
             this.复制ToolStripMenuItem,
             this.粘贴ToolStripMenuItem,
@@ -238,9 +239,9 @@
             this.清空当前文本ToolStripMenuItem,
             this.toolStripMenuItem5,
             this.查找ToolStripMenuItem});
-            this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
-            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.编辑ToolStripMenuItem.Text = "编辑";
+            this.bianjiToolStripMenuItem.Name = "bianjiToolStripMenuItem";
+            this.bianjiToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.bianjiToolStripMenuItem.Text = "编辑";
             // 
             // 剪切ToolStripMenuItem
             // 
@@ -293,18 +294,18 @@
             this.查找ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.查找ToolStripMenuItem.Text = "查找";
             // 
-            // 视图ToolStripMenuItem
+            // shituToolStripMenuItem
             // 
-            this.视图ToolStripMenuItem.Checked = true;
-            this.视图ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.视图ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shituToolStripMenuItem.Checked = true;
+            this.shituToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.shituToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem31,
             this.ToolStripMenuItem32,
             this.toolStripMenuItem6,
             this.选项ToolStripMenuItem});
-            this.视图ToolStripMenuItem.Name = "视图ToolStripMenuItem";
-            this.视图ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.视图ToolStripMenuItem.Text = "视图";
+            this.shituToolStripMenuItem.Name = "shituToolStripMenuItem";
+            this.shituToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.shituToolStripMenuItem.Text = "视图";
             // 
             // ToolStripMenuItem31
             // 
@@ -336,9 +337,9 @@
             this.选项ToolStripMenuItem.Text = "选项";
             this.选项ToolStripMenuItem.Click += new System.EventHandler(this.选项ToolStripMenuItem_Click);
             // 
-            // 管道分析ToolStripMenuItem
+            // gunadaofenxiToolStripMenuItem
             // 
-            this.管道分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gunadaofenxiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.工艺计算ToolStripMenuItem,
             this.耗钢量计算ToolStripMenuItem,
             this.压气站布置ToolStripMenuItem,
@@ -347,9 +348,9 @@
             this.投资量匡算ToolStripMenuItem,
             this.toolStripMenuItem8,
             this.方案匡算ToolStripMenuItem});
-            this.管道分析ToolStripMenuItem.Name = "管道分析ToolStripMenuItem";
-            this.管道分析ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.管道分析ToolStripMenuItem.Text = "管道分析";
+            this.gunadaofenxiToolStripMenuItem.Name = "gunadaofenxiToolStripMenuItem";
+            this.gunadaofenxiToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.gunadaofenxiToolStripMenuItem.Text = "管道分析";
             // 
             // 工艺计算ToolStripMenuItem
             // 
@@ -401,18 +402,18 @@
             this.方案匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.方案匡算ToolStripMenuItem.Text = "方案匡算";
             // 
-            // cNG分析ToolStripMenuItem
+            // CNGfenxiToolStripMenuItem
             // 
-            this.cNG分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CNGfenxiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.子母站设计ToolStripMenuItem,
             this.标准站计算ToolStripMenuItem,
             this.toolStripMenuItem9,
             this.工程量匡算ToolStripMenuItem1,
             this.toolStripMenuItem10,
             this.方案匡算ToolStripMenuItem1});
-            this.cNG分析ToolStripMenuItem.Name = "cNG分析ToolStripMenuItem";
-            this.cNG分析ToolStripMenuItem.Size = new System.Drawing.Size(71, 21);
-            this.cNG分析ToolStripMenuItem.Text = "CNG分析";
+            this.CNGfenxiToolStripMenuItem.Name = "CNGfenxiToolStripMenuItem";
+            this.CNGfenxiToolStripMenuItem.Size = new System.Drawing.Size(71, 21);
+            this.CNGfenxiToolStripMenuItem.Text = "CNG分析";
             // 
             // 子母站设计ToolStripMenuItem
             // 
@@ -491,9 +492,9 @@
             this.方案匡算ToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.方案匡算ToolStripMenuItem1.Text = "方案匡算";
             // 
-            // lNG分析ToolStripMenuItem
+            // LNGFENXIToolStripMenuItem
             // 
-            this.lNG分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LNGFENXIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lNG液化工厂分析ToolStripMenuItem,
             this.lNGToolStripMenuItem,
             this.toolStripMenuItem11,
@@ -501,9 +502,9 @@
             this.投资匡算ToolStripMenuItem1,
             this.toolStripMenuItem12,
             this.方案匡算ToolStripMenuItem2});
-            this.lNG分析ToolStripMenuItem.Name = "lNG分析ToolStripMenuItem";
-            this.lNG分析ToolStripMenuItem.Size = new System.Drawing.Size(69, 21);
-            this.lNG分析ToolStripMenuItem.Text = "LNG分析";
+            this.LNGFENXIToolStripMenuItem.Name = "LNGFENXIToolStripMenuItem";
+            this.LNGFENXIToolStripMenuItem.Size = new System.Drawing.Size(69, 21);
+            this.LNGFENXIToolStripMenuItem.Text = "LNG分析";
             // 
             // lNG液化工厂分析ToolStripMenuItem
             // 
@@ -528,7 +529,8 @@
             // 
             this.工程量匡算ToolStripMenuItem2.Name = "工程量匡算ToolStripMenuItem2";
             this.工程量匡算ToolStripMenuItem2.Size = new System.Drawing.Size(173, 22);
-            this.工程量匡算ToolStripMenuItem2.Text = "工程量匡算";
+            this.工程量匡算ToolStripMenuItem2.Text = "工程量与投资匡算";
+            this.工程量匡算ToolStripMenuItem2.Click += new System.EventHandler(this.工程量匡算ToolStripMenuItem2_Click);
             // 
             // 投资匡算ToolStripMenuItem1
             // 
@@ -547,14 +549,14 @@
             this.方案匡算ToolStripMenuItem2.Size = new System.Drawing.Size(173, 22);
             this.方案匡算ToolStripMenuItem2.Text = "方案匡算";
             // 
-            // 批量分析ToolStripMenuItem
+            // PILAINGFENXIToolStripMenuItem
             // 
-            this.批量分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.PILAINGFENXIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.管道适应性分析ToolStripMenuItem,
             this.方案分析ToolStripMenuItem});
-            this.批量分析ToolStripMenuItem.Name = "批量分析ToolStripMenuItem";
-            this.批量分析ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.批量分析ToolStripMenuItem.Text = "批量分析";
+            this.PILAINGFENXIToolStripMenuItem.Name = "PILAINGFENXIToolStripMenuItem";
+            this.PILAINGFENXIToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.PILAINGFENXIToolStripMenuItem.Text = "批量分析";
             // 
             // 管道适应性分析ToolStripMenuItem
             // 
@@ -568,22 +570,38 @@
             this.方案分析ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.方案分析ToolStripMenuItem.Text = "方案分析";
             // 
-            // 工具ToolStripMenuItem
+            // ZOHEFENXIToolStripMenuItem
             // 
-            this.工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ZOHEFENXIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.临界曲线法ToolStripMenuItem});
+            this.ZOHEFENXIToolStripMenuItem.Name = "ZOHEFENXIToolStripMenuItem";
+            this.ZOHEFENXIToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.ZOHEFENXIToolStripMenuItem.Text = "综合分析";
+            // 
+            // 临界曲线法ToolStripMenuItem
+            // 
+            this.临界曲线法ToolStripMenuItem.Name = "临界曲线法ToolStripMenuItem";
+            this.临界曲线法ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.临界曲线法ToolStripMenuItem.Text = "临界曲线法";
+            this.临界曲线法ToolStripMenuItem.Click += new System.EventHandler(this.临界曲线法ToolStripMenuItem_Click);
+            // 
+            // TONGJUToolStripMenuItem
+            // 
+            this.TONGJUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.有月量测算不平均系数ToolStripMenuItem,
             this.归一化月不平均系数ToolStripMenuItem,
             this.由年量测算月量ToolStripMenuItem});
-            this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
-            this.工具ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.工具ToolStripMenuItem.Text = "工具";
-            this.工具ToolStripMenuItem.Click += new System.EventHandler(this.工具ToolStripMenuItem_Click);
+            this.TONGJUToolStripMenuItem.Name = "TONGJUToolStripMenuItem";
+            this.TONGJUToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.TONGJUToolStripMenuItem.Text = "工具";
+            this.TONGJUToolStripMenuItem.Click += new System.EventHandler(this.工具ToolStripMenuItem_Click);
             // 
             // 有月量测算不平均系数ToolStripMenuItem
             // 
             this.有月量测算不平均系数ToolStripMenuItem.Name = "有月量测算不平均系数ToolStripMenuItem";
             this.有月量测算不平均系数ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.有月量测算不平均系数ToolStripMenuItem.Text = "由月量测算月不平均系数";
+            this.有月量测算不平均系数ToolStripMenuItem.Click += new System.EventHandler(this.有月量测算不平均系数ToolStripMenuItem_Click);
             // 
             // 归一化月不平均系数ToolStripMenuItem
             // 
@@ -597,18 +615,18 @@
             this.由年量测算月量ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.由年量测算月量ToolStripMenuItem.Text = "由年量测算月量";
             // 
-            // 窗口ToolStripMenuItem
+            // CHANGKOUToolStripMenuItem
             // 
-            this.窗口ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CHANGKOUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.层叠窗口ToolStripMenuItem,
             this.toolStripMenuItem13,
             this.水平平铺ToolStripMenuItem,
             this.垂直平铺ToolStripMenuItem,
             this.toolStripMenuItem14,
             this.按图标排列ToolStripMenuItem});
-            this.窗口ToolStripMenuItem.Name = "窗口ToolStripMenuItem";
-            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.窗口ToolStripMenuItem.Text = "窗口";
+            this.CHANGKOUToolStripMenuItem.Name = "CHANGKOUToolStripMenuItem";
+            this.CHANGKOUToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.CHANGKOUToolStripMenuItem.Text = "窗口";
             // 
             // 层叠窗口ToolStripMenuItem
             // 
@@ -717,13 +735,13 @@
             this.toolStripLabel1,
             this.toolStripLabel2,
             this.toolStripLabel3,
-            this.toolStripLabel11,
+            this.toolStripSeparator1,
             this.toolStripLabel4,
             this.toolStripLabel5,
             this.toolStripLabel6,
             this.toolStripLabel7,
             this.toolStripLabel8,
-            this.toolStripLabel9,
+            this.toolStripSeparator2,
             this.toolStripLabel10});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
@@ -749,11 +767,10 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel3.Text = "保存";
             // 
-            // toolStripLabel11
+            // toolStripSeparator1
             // 
-            this.toolStripLabel11.Name = "toolStripLabel11";
-            this.toolStripLabel11.Size = new System.Drawing.Size(103, 22);
-            this.toolStripLabel11.Text = "toolStripLabel11";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel4
             // 
@@ -784,11 +801,10 @@
             this.toolStripLabel8.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel8.Text = "查找";
             // 
-            // toolStripLabel9
+            // toolStripSeparator2
             // 
-            this.toolStripLabel9.Name = "toolStripLabel9";
-            this.toolStripLabel9.Size = new System.Drawing.Size(96, 22);
-            this.toolStripLabel9.Text = "toolStripLabel9";
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel10
             // 
@@ -800,29 +816,25 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // 综合分析ToolStripMenuItem
+            // rtbInf
             // 
-            this.综合分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.临界曲线法ToolStripMenuItem});
-            this.综合分析ToolStripMenuItem.Name = "综合分析ToolStripMenuItem";
-            this.综合分析ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.综合分析ToolStripMenuItem.Text = "综合分析";
-            // 
-            // 临界曲线法ToolStripMenuItem
-            // 
-            this.临界曲线法ToolStripMenuItem.Name = "临界曲线法ToolStripMenuItem";
-            this.临界曲线法ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.临界曲线法ToolStripMenuItem.Text = "临界曲线法";
-            this.临界曲线法ToolStripMenuItem.Click += new System.EventHandler(this.临界曲线法ToolStripMenuItem_Click);
+            this.rtbInf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbInf.Enabled = false;
+            this.rtbInf.Location = new System.Drawing.Point(911, 53);
+            this.rtbInf.Name = "rtbInf";
+            this.rtbInf.Size = new System.Drawing.Size(249, 603);
+            this.rtbInf.TabIndex = 3;
+            this.rtbInf.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackgroundImage = global::天然气供应方案分析与决策软件.Properties.Resources.BackgroundImage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1149, 681);
+            this.Controls.Add(this.rtbInf);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -846,16 +858,16 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 文件ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 打开ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 关闭ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 关闭所有ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GAUNBIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GUANBISUOYOUToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 另存为ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BAOCUNToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LINGCUNWEIToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 最近文件ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bianjiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 剪切ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 复制ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 粘贴ToolStripMenuItem;
@@ -864,12 +876,12 @@
         private System.Windows.Forms.ToolStripMenuItem 清空当前文本ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem 查找ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 视图ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shituToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem31;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem32;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem 选项ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 管道分析ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gunadaofenxiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 工艺计算ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 耗钢量计算ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 压气站布置ToolStripMenuItem;
@@ -878,14 +890,14 @@
         private System.Windows.Forms.ToolStripMenuItem 投资量匡算ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem 方案匡算ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cNG分析ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CNGfenxiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 子母站设计ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 标准站计算ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem 工程量匡算ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem 方案匡算ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem lNG分析ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LNGFENXIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lNG液化工厂分析ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lNGToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
@@ -893,14 +905,14 @@
         private System.Windows.Forms.ToolStripMenuItem 投资匡算ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem12;
         private System.Windows.Forms.ToolStripMenuItem 方案匡算ToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem 批量分析ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PILAINGFENXIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 管道适应性分析ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 方案分析ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 工具ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TONGJUToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 有月量测算不平均系数ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 归一化月不平均系数ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 由年量测算月量ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 窗口ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CHANGKOUToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 层叠窗口ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem13;
         private System.Windows.Forms.ToolStripMenuItem 水平平铺ToolStripMenuItem;
@@ -927,16 +939,17 @@
         private System.Windows.Forms.ToolStripMenuItem 标准站匡算ToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel11;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.ToolStripLabel toolStripLabel8;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel9;
         private System.Windows.Forms.ToolStripLabel toolStripLabel10;
-        private System.Windows.Forms.ToolStripMenuItem 综合分析ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ZOHEFENXIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 临界曲线法ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.RichTextBox rtbInf;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

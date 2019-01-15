@@ -79,6 +79,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -86,7 +87,6 @@
             this.tabPage1.Size = new System.Drawing.Size(388, 241);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "参数（P）";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -226,6 +226,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage2.Controls.Add(this.checkBox7);
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox4);
@@ -233,10 +234,9 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(440, 241);
+            this.tabPage2.Size = new System.Drawing.Size(388, 241);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "计算（C）";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // checkBox7
             // 
@@ -381,6 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(404, 319);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -388,6 +389,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SecStatSetup";
             this.Text = "加气子站_设置";
             this.tabControl1.ResumeLayout(false);
