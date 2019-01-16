@@ -18,6 +18,9 @@ namespace 天然气供应方案分析与决策软件
             InitializeComponent();
         }
 
+
+
+        public CriticalCurveMethodSetting CriticalCurveMethodSet;
         private void 综合分析_临界曲线法_Load(object sender, EventArgs e)
         {
             InitChart();
@@ -145,6 +148,12 @@ namespace 天然气供应方案分析与决策软件
         private void chart1_GetToolTipText(object sender, ToolTipEventArgs e)
         {
           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CriticalCurveMethodSet = new CriticalCurveMethodSetting();
+            CriticalCurveMethodSet.ShowDialog();
         }
     }
 }

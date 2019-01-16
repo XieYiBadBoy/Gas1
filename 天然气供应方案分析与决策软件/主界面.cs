@@ -35,6 +35,7 @@ namespace 天然气供应方案分析与决策软件
         public CNGStanardStationProjectAndInvestment CngStandardStationProjectAndInvestment;
         public ComprehensiveAnalysCriticalCurveMethod CriticalCurveMethod;
         public LNGProjectAndInvestment LngProjectAndInvestment;
+        public OptionSet Optionset;
 
         private void 工艺计算ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -84,7 +85,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void 关闭所有ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("是否关闭所有窗口？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            if (DialogResult.Yes == MessageBox.Show("是否关闭当前所有窗口？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
                 foreach (Form frm in this.MdiChildren)
                 {
@@ -138,6 +139,7 @@ namespace 天然气供应方案分析与决策软件
                 //toolStripSeparator1.Visible = true;
                 toolStripSeparator2.Visible = true;
                 rtbInf.Visible = true;
+                toolStripMenuItem1.Visible = true;
             }
 
 
@@ -266,6 +268,7 @@ namespace 天然气供应方案分析与决策软件
             //toolStripSeparator1.Visible = false;
             toolStripSeparator2.Visible = false;
             rtbInf.Visible = false;
+            toolStripMenuItem1.Visible = false;
         }
         private void 工具栏ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -347,6 +350,10 @@ namespace 天然气供应方案分析与决策软件
 
         private void 选项ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            Optionset = new OptionSet();
+            //Optionset.MdiParent = this;
+            Optionset.ShowDialog();
             SendKeys.Send("^{F}");
         }
 
@@ -392,7 +399,47 @@ namespace 天然气供应方案分析与决策软件
 
         private void 有月量测算不平均系数ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string path = @"C:\Users\Administrator\Desktop\EXCEL工具\01测算月不均匀系数.xlsx"; //由月均测算不平均系数
+            System.Diagnostics.Process.Start(path); //打开此文件。
+        }
 
+        private void 中间过程ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem42.Checked = !ToolStripMenuItem42.Checked;
+            rtbInf.Visible = !rtbInf.Visible;
+        }
+
+        private void 工子母站程量与投资匡算ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CNGProjectRoughEstimate = new CNGWindowsProject();
+            CNGProjectRoughEstimate.MdiParent = this;
+            CNGProjectRoughEstimate.Show();
+        }
+
+        private void 工标准站程量与投资匡算ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CngStandardStationProjectAndInvestment = new CNGStanardStationProjectAndInvestment();
+            CngStandardStationProjectAndInvestment.MdiParent = this;
+            CngStandardStationProjectAndInvestment.Show();
+        }
+
+        private void 内容ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = @"EXCEL工具\Help.docx"; //打开帮助文档
+            System.Diagnostics.Process.Start(path); //打开此文件
+        }
+            
+
+        private void 归一化月不平均系数ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = @"C:\Users\Administrator\Desktop\EXCEL工具\02归一化月不均匀系数.xlsx"; //打开归一化月不均匀系数表
+            System.Diagnostics.Process.Start(path); //打开此文件
+        }
+
+        private void 由年量测算月量ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = @"EXCEL工具\03由年量测算月量.xlsx"; //打开由年量测算月量表
+            System.Diagnostics.Process.Start(path); //打开此文件
         }
     }
 }

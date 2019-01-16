@@ -673,6 +673,7 @@
             this.Controls.Add(this.Clebutton2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Windows5";

@@ -217,6 +217,12 @@
     <Compile Include="母站计算.Designer.cs">
       <DependentUpon>母站计算.cs</DependentUpon>
     </Compile>
+    <Compile Include="选项.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="选项.Designer.cs">
+      <DependentUpon>选项.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="母站计算.resx">
       <DependentUpon>母站计算.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="选项.resx">
+      <DependentUpon>选项.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

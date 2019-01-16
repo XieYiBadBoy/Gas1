@@ -407,6 +407,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "设置（S）";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ComprehensiveAnalysCriticalCurveMethod
             // 
@@ -424,6 +425,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ComprehensiveAnalysCriticalCurveMethod";

@@ -81,5 +81,10 @@ namespace 天然气供应方案分析与决策软件
             LngSetup2 = new LNGSetup2();
             LngSetup2.Show();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -257,6 +257,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LNGProjectAndInvestmentSet";
             this.Text = "LNG点供站和卫星站设置";
             this.Load += new System.EventHandler(this.LNG点供站和卫星站设置_Load);

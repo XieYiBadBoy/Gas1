@@ -75,5 +75,10 @@ namespace 天然气供应方案分析与决策软件
         {
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -101,5 +101,10 @@ namespace 天然气供应方案分析与决策软件
         {
             ClearText();
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

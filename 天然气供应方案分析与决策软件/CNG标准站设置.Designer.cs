@@ -164,6 +164,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CNGStandardStationSet";
