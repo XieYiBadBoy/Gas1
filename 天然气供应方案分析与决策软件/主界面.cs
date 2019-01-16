@@ -102,6 +102,11 @@ namespace 天然气供应方案分析与决策软件
             }
         }
 
+        private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //TODO:新建文件代码
+        }
+
         private void 打开ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //1.创建一个文件打开对话框
@@ -115,14 +120,16 @@ namespace 天然气供应方案分析与决策软件
                 //3.成功选择，获取被选择的文件名
                 string selectedFile = ofd.FileName;        //Multiselect 为 false时;
                 //string[] selectedFiles = ofd.FileNames;  //Multiselect 为 true时;
-
+                
                 OpenProject(selectedFile);
             }
         }
 
         private void OpenProject(string selectedFile)
         {
+            Common.path = selectedFile;
             WriteRecentDocumentsToIniFile(selectedFile);    //将打开的文件存入历史文件
+
             AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开文件：" + selectedFile);
             bianjiToolStripMenuItem.Visible = true;
 
@@ -154,10 +161,19 @@ namespace 天然气供应方案分析与决策软件
 
         private void WriteRecentDocumentsToIniFile(string v)
         {
-            StreamWriter s = new StreamWriter("RecentDocuments.ini",true);
-            s.WriteLine(v);
-            s.Flush();
-            s.Close();
+            FileStream fs1 = new FileStream("RecentDocuments.ini", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            StreamReader sr = new StreamReader(fs1, Encoding.Default);
+            string txt = sr.ReadToEnd();
+            sr.Close();
+            fs1.Close();
+
+            FileStream fs2 = new FileStream("RecentDocuments.ini", FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs2,Encoding.Default);
+            sw.WriteLine(v);
+            sw.Write(txt);
+            sw.Flush();
+            sw.Close();
+            fs2.Close();
         }
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -167,7 +183,7 @@ namespace 天然气供应方案分析与决策软件
             save.Filter = "所有文件|*";
             if (save.ShowDialog() == DialogResult.OK)
             {
-                //保存文件代码
+                //TODO:保存文件代码
             }
 
         }
@@ -258,26 +274,32 @@ namespace 天然气供应方案分析与决策软件
 
         private void ReadRecentDocumentsInIniFile()
         {
-            StreamReader sr = new StreamReader("RecentDocuments.ini");
-            int count = 文件ToolStripMenuItem.DropDownItems.Count;
-            int i = count - 2;
-            while(sr.Peek() >= 0)
+            if (File.Exists("RecentDocuments.ini"))
             {
-                string file = sr.ReadLine();
-                ToolStripMenuItem item = new ToolStripMenuItem(file);
-                this.文件ToolStripMenuItem.DropDownItems.Insert(i,item);
-                i++;
-                if (i >= count + 3)  //3+2，共5个历史文件
+                FileStream fs = new FileStream("RecentDocuments.ini", FileMode.Open, FileAccess.Read);
+                StreamReader sr = new StreamReader(fs);
+                int count = 文件ToolStripMenuItem.DropDownItems.Count;
+                int i = count - 2;
+                while (sr.Peek() >= 0)
                 {
-                    break;
-                }
-                if (File.Exists(file))
-                {
-                    item.Click += new EventHandler(MenuItem_Click);
-                }
-                else
-                {
-                    item.Enabled = false;
+                    string file = sr.ReadLine();
+                    ToolStripMenuItem item = new ToolStripMenuItem(file);
+                    this.文件ToolStripMenuItem.DropDownItems.Insert(i, item);
+                    if (File.Exists(file))
+                    {
+                        item.Click += new EventHandler(MenuItem_Click);
+                    }
+                    else
+                    {
+                        item.Enabled = false;
+                    }
+                    i++;
+                    if (i >= count + 3)  //3+2，许多读取5个历史文件
+                    {
+                        sr.Close();
+                        fs.Close();
+                        return;
+                    }
                 }
             }
         }
@@ -520,6 +542,21 @@ namespace 天然气供应方案分析与决策软件
         {
             string path = @"EXCEL工具\03由年量测算月量.xlsx"; //打开由年量测算月量表
             System.Diagnostics.Process.Start(path); //打开此文件
+        }
+        
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            新建ToolStripMenuItem.PerformClick();
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            打开ToolStripMenuItem.PerformClick();
+        }
+
+        private void toolStripLabel3_Click(object sender, EventArgs e)
+        {
+            BAOCUNToolStripMenuItem.PerformClick();
         }
     }
 }
