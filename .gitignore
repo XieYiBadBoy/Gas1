@@ -14,14 +14,17 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
+# canhetingsky
+**/bin/Debug/天然气供应方案分析与决策软件.*
+**/bin/Release/天然气供应方案分析与决策软件.*
+#[Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
+#[Rr]elease/
 [Rr]eleases/
 x64/
 x86/
 bld/
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 [Ll]og/
 

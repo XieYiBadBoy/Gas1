@@ -36,6 +36,8 @@ namespace 天然气供应方案分析与决策软件
         public ComprehensiveAnalysCriticalCurveMethod CriticalCurveMethod;
         public LNGProjectAndInvestment LngProjectAndInvestment;
 
+        private  string skinPath = @"Resources\";
+
         private void 工艺计算ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             w1 = new Windows1();
@@ -222,15 +224,14 @@ namespace 天然气供应方案分析与决策软件
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SetImg();
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开软件");
             Reset();
 
             try
             {
-
-                this.BackgroundImage = Image.FromFile(@"bg\BackgroundImage.jpg");
-
+                this.BackgroundImage = Image.FromFile( skinPath + "BackgroundImage.jpg");
             }
             catch (Exception)
             {
@@ -239,6 +240,40 @@ namespace 天然气供应方案分析与决策软件
 
             this.timer1.Start();
         }
+
+        private void SetImg()
+        {
+            //文件菜单的图标设置
+            新建ToolStripMenuItem.Image = Image.FromFile(skinPath + "New.png");
+            打开ToolStripMenuItem.Image = Image.FromFile(skinPath + "Open.png");
+            GAUNBIToolStripMenuItem.Image = Image.FromFile(skinPath + "Close.png");
+            GUANBISUOYOUToolStripMenuItem.Image = Image.FromFile(skinPath + "CloseAll.png");
+            BAOCUNToolStripMenuItem.Image = Image.FromFile(skinPath + "Save.png");
+            LINGCUNWEIToolStripMenuItem.Image = Image.FromFile(skinPath + "SaveAs.png");
+            最近文件ToolStripMenuItem.Image = Image.FromFile(skinPath + "RecentDocuments.png");
+            退出ToolStripMenuItem.Image = Image.FromFile(skinPath + "Exit.png");
+
+            toolStripLabel1.Image = Image.FromFile(skinPath + "New.png");
+            toolStripLabel2.Image = Image.FromFile(skinPath + "Open.png");
+            toolStripLabel3.Image = Image.FromFile(skinPath + "Save.png");
+            toolStripLabel5.Image = Image.FromFile(skinPath + "Cut.png");
+            toolStripLabel6.Image = Image.FromFile(skinPath + "Copy.png");
+            toolStripLabel7.Image = Image.FromFile(skinPath + "Paste.png");
+            toolStripLabel8.Image = Image.FromFile(skinPath + "Search.png");
+            toolStripLabel10.Image = Image.FromFile(skinPath + "Help.png");
+
+            foreach (ToolStripItem vItem in toolStrip1.Items)
+            {
+                if (vItem is ToolStripLabel)
+                {
+                    vItem.Text = "";
+                    vItem.AutoSize = false;
+                    vItem.Width = 40;
+                }
+            }
+            
+        }
+
         private void Reset()
         {
             bianjiToolStripMenuItem.Visible = false;
