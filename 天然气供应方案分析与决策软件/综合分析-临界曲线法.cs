@@ -18,7 +18,7 @@ namespace 天然气供应方案分析与决策软件
             InitializeComponent();
         }
 
-
+          
 
         public CriticalCurveMethodSetting CriticalCurveMethodSet;
         private void 综合分析_临界曲线法_Load(object sender, EventArgs e)
@@ -37,6 +37,12 @@ namespace 天然气供应方案分析与决策软件
             //改变X轴刻度间隔
             chart.ChartAreas[0].AxisX.Interval = 1;
         }
+
+        private void Calculate()
+        {
+
+        }
+
         private void InitChart()
         {
             Series serie1 = chart1.Series[0];

@@ -122,5 +122,8 @@
     <PrimaryStationScale6GasificattionCapacity>0.45</PrimaryStationScale6GasificattionCapacity>   
     <PrimaryStationGasificattionRate>600</PrimaryStationGasificattionRate>
     <PrimaryStationColdInsulation>0.1</PrimaryStationColdInsulation>
-</LNGGasificattionStationRoughEstimate> 
+ </LNGGasificattionStationRoughEstimate>
+  <ComprehensiveAnalysis>
+    <BundleScale>0.4</BundleScale>
+  </ComprehensiveAnalysis>
 </configuration>

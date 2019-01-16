@@ -339,7 +339,7 @@
             this.groupBox3.Size = new System.Drawing.Size(425, 120);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "PNG与LNG经济运输临界曲线";
+            this.groupBox3.Text = "CNG与LNG经济运输临界曲线";
             // 
             // textBox13
             // 
