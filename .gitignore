@@ -15,7 +15,9 @@
 
 # Build results
 # canhetingsky
+**/bin/Debug/*.ini
 **/bin/Debug/天然气供应方案分析与决策软件.*
+**/bin/Release/*.ini
 **/bin/Release/天然气供应方案分析与决策软件.*
 #[Dd]ebug/
 [Dd]ebugPublic/

@@ -88,6 +88,7 @@
     <Compile Include="CNG标准站设置.Designer.cs">
       <DependentUpon>CNG标准站设置.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common.cs" />
     <Compile Include="LNG分析-气化站计算-设置.cs">
       <SubType>Form</SubType>
     </Compile>
