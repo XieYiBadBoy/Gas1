@@ -311,12 +311,12 @@ namespace 天然气供应方案分析与决策软件
                 txtOuput13.Text = "0.000";//临时占地
                 txtOuput14.Text = Investment.ToString(); //总投资
 
-        }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-}
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             Calculate();

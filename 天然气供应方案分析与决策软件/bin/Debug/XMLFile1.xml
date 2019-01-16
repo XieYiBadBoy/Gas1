@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <CNGPrimaryStationRoughEstimate>
     <!--CNG子母站工程量与投资匡算-->
     <Supply>86</Supply>
-    <PrimaryStationScale1>50</PrimaryStationScale1>
+    <PrimaryStationScale1>50</PrimaryStationScale1>  
     <PrimaryStationScale2>30</PrimaryStationScale2>
     <PrimaryStationScale3>25</PrimaryStationScale3>
     <PrimaryStationScale4>20</PrimaryStationScale4>
     <PrimaryStationScale5>15</PrimaryStationScale5>
-    <PrimaryStationScale6>8</PrimaryStationScale6>
+    <PrimaryStationScale6>10</PrimaryStationScale6>
     <PrimaryStationCount1>1</PrimaryStationCount1>
     <PrimaryStationCount2>1</PrimaryStationCount2>
     <PrimaryStationCount3>1</PrimaryStationCount3>
@@ -51,7 +51,7 @@
     <SubstationScale2ProjectTime>4</SubstationScale2ProjectTime>
     <BundleInvestment>120</BundleInvestment>
     <TractorInvestment>30</TractorInvestment>
-    <BundleScale>0.6</BundleScale>
+    <BundleScale>0.4</BundleScale>
   </CNGPrimaryStationRoughEstimate>
   <!--CNG标准站站工程量与投资匡算-->
   <CNGStandardStationRoughEstimate>
@@ -72,7 +72,7 @@
     <PrimaryStationScale2>300</PrimaryStationScale2>
     <PrimaryStationScale3>150</PrimaryStationScale3>
     <PrimaryStationScale4>100</PrimaryStationScale4>
-    <PrimaryStationScale5>54</PrimaryStationScale5>
+    <PrimaryStationScale5>50</PrimaryStationScale5>
     <PrimaryStationScale6>25</PrimaryStationScale6>
     <PrimaryStationCount1>15</PrimaryStationCount1>
     <PrimaryStationCount2>1</PrimaryStationCount2>
@@ -119,8 +119,22 @@
     <PrimaryStationScale3GasificattionCapacity>2.7</PrimaryStationScale3GasificattionCapacity>
     <PrimaryStationScale4GasificattionCapacity>1.8</PrimaryStationScale4GasificattionCapacity>
     <PrimaryStationScale5GasificattionCapacity>0.9</PrimaryStationScale5GasificattionCapacity>
-    <PrimaryStationScale6GasificattionCapacity>0.45</PrimaryStationScale6GasificattionCapacity>
+    <PrimaryStationScale6GasificattionCapacity>0.45</PrimaryStationScale6GasificattionCapacity>   
     <PrimaryStationGasificattionRate>600</PrimaryStationGasificattionRate>
     <PrimaryStationColdInsulation>0.1</PrimaryStationColdInsulation>
-  </LNGGasificattionStationRoughEstimate>
+ </LNGGasificattionStationRoughEstimate>
+  <ComprehensiveAnalysis>
+    <PNGCoefficientA>0.0374</PNGCoefficientA>
+    <PNGCoefficientB>-0.604</PNGCoefficientB>
+    <PNGCoefficientC>0.00293</PNGCoefficientC>
+    <PNGCoefficientD>0.361</PNGCoefficientD>
+    <LNGCoefficientA>0.0734</LNGCoefficientA>
+    <LNGCoefficientB>-0.888</LNGCoefficientB>
+    <LNGCoefficientC>0.000389</LNGCoefficientC>
+    <LNGCoefficientD>0.927</LNGCoefficientD>
+    <CNGCoefficientA>0</CNGCoefficientA>
+    <CNGCoefficientB>0.284</CNGCoefficientB>
+    <CNGCoefficientC>0.00248</CNGCoefficientC>
+    <CNGCoefficientD>-0.566</CNGCoefficientD>
+  </ComprehensiveAnalysis>
 </configuration>

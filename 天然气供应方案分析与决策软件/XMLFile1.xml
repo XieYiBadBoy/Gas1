@@ -123,18 +123,19 @@
     <PrimaryStationGasificattionRate>600</PrimaryStationGasificattionRate>
     <PrimaryStationColdInsulation>0.1</PrimaryStationColdInsulation>
  </LNGGasificattionStationRoughEstimate>
+  <!--综合分析参数设置-->
   <ComprehensiveAnalysis>
-    <PNGCoefficientA>0.4</PNGCoefficientA>
-    <PNGCoefficientB>0.4</PNGCoefficientB>
-    <PNGCoefficientC>0.4</PNGCoefficientC>
-    <PNGCoefficientD>0.4</PNGCoefficientD>
-    <LNGCoefficientA>0.4</LNGCoefficientA>
-    <LNGCoefficientB>0.4</LNGCoefficientB>
-    <LNGCoefficientC>0.4</LNGCoefficientC>
-    <LNGCoefficientD>0.4</LNGCoefficientD>
-    <CNGCoefficientA>0.4</CNGCoefficientA>
-    <CNGCoefficientB>0.4</CNGCoefficientB>
-    <CNGCoefficientC>0.4</CNGCoefficientC>
-    <CNGCoefficientD>0.4</CNGCoefficientD>
+    <PNGCoefficientA>0.0374</PNGCoefficientA>
+    <PNGCoefficientB>-0.604</PNGCoefficientB>
+    <PNGCoefficientC>0.00293</PNGCoefficientC>
+    <PNGCoefficientD>0.361</PNGCoefficientD>
+    <LNGCoefficientA>0.0734</LNGCoefficientA>
+    <LNGCoefficientB>-0.888</LNGCoefficientB>
+    <LNGCoefficientC>0.000389</LNGCoefficientC>
+    <LNGCoefficientD>0.927</LNGCoefficientD>
+    <CNGCoefficientA>0</CNGCoefficientA>
+    <CNGCoefficientB>0.284</CNGCoefficientB>
+    <CNGCoefficientC>0.00248</CNGCoefficientC>
+    <CNGCoefficientD>-0.566</CNGCoefficientD>
   </ComprehensiveAnalysis>
 </configuration>

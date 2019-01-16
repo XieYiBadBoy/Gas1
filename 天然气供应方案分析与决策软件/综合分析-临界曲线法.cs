@@ -41,19 +41,22 @@ namespace 天然气供应方案分析与决策软件
         private void Calculate()
         {
 
+
+
+
         }
 
         private void InitChart()
         {
          try
          {
+                double InputValue1 = Convert.ToDouble(txtInput1.Text);
+                double InputValue2 = Convert.ToDouble(txtInput2.Text);
+                if (txtInput1.Text==""||txtInput2.Text=="")
+                {
+                    throw new InvalidOperationException("您的输入为空，管子尺寸初步计算(经济及可行性)计算对象无效!");
+                }
 
-         if (txtInput1.Text==""||txtInput2.Text=="")
-           {
-              throw new InvalidOperationException("您的输入为空，管子尺寸初步计算(经济及可行性)计算对象无效!");
-           }
-            double InputValue1 = Convert.ToDouble(txtInput1.Text);
-            double InputValue2 = Convert.ToDouble(txtInput2.Text);
                 if (InputValue1<0||InputValue2<0)
                 {
                     throw new InvalidOperationException("您的输入为负，管子尺寸初步计算(经济及可行性)计算对象无效!");
@@ -128,10 +131,10 @@ namespace 天然气供应方案分析与决策软件
                 serie3.Points.AddXY(i, q1);
             }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
 
-          
             }
         }
 
@@ -169,6 +172,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             //chart1.ChartAreas.Clear();
             InitChart();
         }
