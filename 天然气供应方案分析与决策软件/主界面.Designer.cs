@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,7 +113,6 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
@@ -122,9 +122,11 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.rtbInf = new System.Windows.Forms.RichTextBox();
             this.新建ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.ToolStripMenuItem42 = new System.Windows.Forms.ToolStripMenuItem();
             this.工子母站程量与投资匡算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.工标准站程量与投资匡算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -562,7 +564,7 @@
             // 临界曲线法ToolStripMenuItem
             // 
             this.临界曲线法ToolStripMenuItem.Name = "临界曲线法ToolStripMenuItem";
-            this.临界曲线法ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.临界曲线法ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.临界曲线法ToolStripMenuItem.Text = "临界曲线法";
             this.临界曲线法ToolStripMenuItem.Click += new System.EventHandler(this.临界曲线法ToolStripMenuItem_Click);
             // 
@@ -720,7 +722,6 @@
             this.toolStripLabel2,
             this.toolStripLabel3,
             this.toolStripSeparator1,
-            this.toolStripLabel4,
             this.toolStripLabel5,
             this.toolStripLabel6,
             this.toolStripLabel7,
@@ -738,52 +739,54 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel1.Text = "新建";
+            this.toolStripLabel1.ToolTipText = "新建";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel2.Text = "打开";
+            this.toolStripLabel2.ToolTipText = "打开";
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
             this.toolStripLabel3.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel3.Text = "保存";
+            this.toolStripLabel3.ToolTipText = "保存";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(0, 22);
-            // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
             this.toolStripLabel5.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel5.Text = "剪切";
+            this.toolStripLabel5.ToolTipText = "剪切";
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
             this.toolStripLabel6.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel6.Text = "复制";
+            this.toolStripLabel6.ToolTipText = "复制";
             // 
             // toolStripLabel7
             // 
             this.toolStripLabel7.Name = "toolStripLabel7";
             this.toolStripLabel7.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel7.Text = "粘贴";
+            this.toolStripLabel7.ToolTipText = "粘贴";
             // 
             // toolStripLabel8
             // 
             this.toolStripLabel8.Name = "toolStripLabel8";
             this.toolStripLabel8.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel8.Text = "查找";
+            this.toolStripLabel8.ToolTipText = "查找";
             // 
             // toolStripSeparator2
             // 
@@ -795,6 +798,7 @@
             this.toolStripLabel10.Name = "toolStripLabel10";
             this.toolStripLabel10.Size = new System.Drawing.Size(32, 22);
             this.toolStripLabel10.Text = "帮助";
+            this.toolStripLabel10.ToolTipText = "帮助";
             // 
             // timer1
             // 
@@ -817,6 +821,7 @@
             this.新建ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.新建ToolStripMenuItem.Text = "新建";
             // 
+
             // ToolStripMenuItem42
             // 
             this.ToolStripMenuItem42.Checked = true;
@@ -840,6 +845,7 @@
             this.工标准站程量与投资匡算ToolStripMenuItem.Text = "标准站工程量与投资匡算";
             this.工标准站程量与投资匡算ToolStripMenuItem.Click += new System.EventHandler(this.工标准站程量与投资匡算ToolStripMenuItem_Click);
             // 
+
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -851,8 +857,10 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "中国石油规划总院";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -949,7 +957,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
@@ -961,9 +968,11 @@
         private System.Windows.Forms.RichTextBox rtbInf;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem 新建ToolStripMenuItem;
+
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem42;
         private System.Windows.Forms.ToolStripMenuItem 工子母站程量与投资匡算ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 工标准站程量与投资匡算ToolStripMenuItem;
+
     }
 }
 
