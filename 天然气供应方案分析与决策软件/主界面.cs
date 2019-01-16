@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -106,46 +107,57 @@ namespace 天然气供应方案分析与决策软件
             //1.创建一个文件打开对话框
             OpenFileDialog ofd = new OpenFileDialog();
             //设置对话框属性:允许选择多个文件
-            ofd.Multiselect = true;
+            ofd.Multiselect = false;
             ofd.Filter = "gsa(*.gsa)|*.gsa";
             //2.打开对话框
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 //3.成功选择，获取被选择的文件名
                 string selectedFile = ofd.FileName;        //Multiselect 为 false时;
-                string[] selectedFiles = ofd.FileNames;  //Multiselect 为 true时;
+                //string[] selectedFiles = ofd.FileNames;  //Multiselect 为 true时;
 
-                AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开文件："+ selectedFile);
-                bianjiToolStripMenuItem.Visible = true;
-  
-                gunadaofenxiToolStripMenuItem.Visible = true;
-                CNGfenxiToolStripMenuItem.Visible = true;
-                CNGfenxiToolStripMenuItem.Visible = true;
-                LNGFENXIToolStripMenuItem.Visible = true;
-                PILAINGFENXIToolStripMenuItem.Visible = true;
-                ZOHEFENXIToolStripMenuItem.Visible = true;
-                TONGJUToolStripMenuItem.Visible = true;
-                CHANGKOUToolStripMenuItem.Visible = true;
-                GAUNBIToolStripMenuItem.Visible = true;
-                GUANBISUOYOUToolStripMenuItem.Visible = true;
-                BAOCUNToolStripMenuItem.Visible = true;
-                LINGCUNWEIToolStripMenuItem.Visible = true;
-                //toolStripLabel1.Visible = true;
-                //toolStripLabel2.Visible = true;
-                //toolStripLabel3.Visible = true;
-                toolStripLabel5.Visible = true;
-                toolStripLabel6.Visible = true;
-                toolStripLabel7.Visible = true;
-                toolStripLabel8.Visible = true;
-                toolStripLabel10.Visible = true;
-                //toolStripSeparator1.Visible = true;
-                toolStripSeparator2.Visible = true;
-                rtbInf.Visible = true;
-                toolStripMenuItem1.Visible = true;
+                OpenProject(selectedFile);
             }
+        }
 
+        private void OpenProject(string selectedFile)
+        {
+            WriteRecentDocumentsToIniFile(selectedFile);    //将打开的文件存入历史文件
+            AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开文件：" + selectedFile);
+            bianjiToolStripMenuItem.Visible = true;
 
+            gunadaofenxiToolStripMenuItem.Visible = true;
+            CNGfenxiToolStripMenuItem.Visible = true;
+            CNGfenxiToolStripMenuItem.Visible = true;
+            LNGFENXIToolStripMenuItem.Visible = true;
+            PILAINGFENXIToolStripMenuItem.Visible = true;
+            ZOHEFENXIToolStripMenuItem.Visible = true;
+            TONGJUToolStripMenuItem.Visible = true;
+            CHANGKOUToolStripMenuItem.Visible = true;
+            GAUNBIToolStripMenuItem.Visible = true;
+            GUANBISUOYOUToolStripMenuItem.Visible = true;
+            BAOCUNToolStripMenuItem.Visible = true;
+            LINGCUNWEIToolStripMenuItem.Visible = true;
+            //toolStripLabel1.Visible = true;
+            //toolStripLabel2.Visible = true;
+            //toolStripLabel3.Visible = true;
+            toolStripLabel5.Visible = true;
+            toolStripLabel6.Visible = true;
+            toolStripLabel7.Visible = true;
+            toolStripLabel8.Visible = true;
+            toolStripLabel10.Visible = true;
+            //toolStripSeparator1.Visible = true;
+            toolStripSeparator2.Visible = true;
+            rtbInf.Visible = true;
+            toolStripMenuItem1.Visible = true;
+        }
 
+        private void WriteRecentDocumentsToIniFile(string v)
+        {
+            StreamWriter s = new StreamWriter("RecentDocuments.ini",true);
+            s.WriteLine(v);
+            s.Flush();
+            s.Close();
         }
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -226,7 +238,8 @@ namespace 天然气供应方案分析与决策软件
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SetImg();
+            SetImg();   //为菜单子选项设置图标
+            ReadRecentDocumentsInIniFile();    //读取历史文件
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开软件");
             Reset();
@@ -241,6 +254,38 @@ namespace 天然气供应方案分析与决策软件
             this.timer1.Interval = 1000;
 
             this.timer1.Start();
+        }
+
+        private void ReadRecentDocumentsInIniFile()
+        {
+            StreamReader sr = new StreamReader("RecentDocuments.ini");
+            int count = 文件ToolStripMenuItem.DropDownItems.Count;
+            int i = count - 2;
+            while(sr.Peek() >= 0)
+            {
+                string file = sr.ReadLine();
+                ToolStripMenuItem item = new ToolStripMenuItem(file);
+                this.文件ToolStripMenuItem.DropDownItems.Insert(i,item);
+                i++;
+                if (i >= count + 3)  //3+2，共5个历史文件
+                {
+                    break;
+                }
+                if (File.Exists(file))
+                {
+                    item.Click += new EventHandler(MenuItem_Click);
+                }
+                else
+                {
+                    item.Enabled = false;
+                }
+            }
+        }
+
+        private void MenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem menu = sender as ToolStripMenuItem;
+            OpenProject(menu.Text);
         }
 
         private void SetImg()
