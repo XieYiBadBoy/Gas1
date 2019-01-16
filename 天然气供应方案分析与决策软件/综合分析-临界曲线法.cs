@@ -45,6 +45,24 @@ namespace 天然气供应方案分析与决策软件
 
         private void InitChart()
         {
+         try
+         {
+
+         if (txtInput1.Text==""||txtInput2.Text=="")
+           {
+              throw new InvalidOperationException("您的输入为空，管子尺寸初步计算(经济及可行性)计算对象无效!");
+           }
+            double InputValue1 = Convert.ToDouble(txtInput1.Text);
+            double InputValue2 = Convert.ToDouble(txtInput2.Text);
+                if (InputValue1<0||InputValue2<0)
+                {
+                    throw new InvalidOperationException("您的输入为负，管子尺寸初步计算(经济及可行性)计算对象无效!");
+                }
+                if (InputValue1 == 0 || InputValue2 == 0)
+                {
+                    throw new InvalidOperationException("您的输入为零，管子尺寸初步计算(经济及可行性)计算对象无效!");
+                }
+
             Series serie1 = chart1.Series[0];
             Series serie2 = chart1.Series[1];
             Series serie3 = chart1.Series[2];
@@ -55,9 +73,7 @@ namespace 天然气供应方案分析与决策软件
             serie4.Points.Clear();
             serie1.Name = "1";
             serie3.Name = "2";
-            double y = Convert.ToDouble(txtInput1.Text);
-            double x= Convert.ToDouble(txtInput2.Text);
-            serie4.Points.AddXY(x, y);
+            serie4.Points.AddXY(InputValue2, InputValue1);
 
             //设置是否显示坐标标注
             chart1.Series[0].IsValueShownAsLabel = false;
@@ -110,6 +126,12 @@ namespace 天然气供应方案分析与决策软件
                 serie2.Points.AddXY(i, q2);
                 q1 = (0.0734 * i - 0.604) / (2.93 * Math.Pow(10, -3) * i + 0.361);
                 serie3.Points.AddXY(i, q1);
+            }
+            }
+            catch (Exception)
+            {
+
+          
             }
         }
 

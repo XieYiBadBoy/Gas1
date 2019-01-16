@@ -124,6 +124,17 @@
     <PrimaryStationColdInsulation>0.1</PrimaryStationColdInsulation>
  </LNGGasificattionStationRoughEstimate>
   <ComprehensiveAnalysis>
-    <BundleScale>0.4</BundleScale>
+    <PNGCoefficientA>0.4</PNGCoefficientA>
+    <PNGCoefficientB>0.4</PNGCoefficientB>
+    <PNGCoefficientC>0.4</PNGCoefficientC>
+    <PNGCoefficientD>0.4</PNGCoefficientD>
+    <LNGCoefficientA>0.4</LNGCoefficientA>
+    <LNGCoefficientB>0.4</LNGCoefficientB>
+    <LNGCoefficientC>0.4</LNGCoefficientC>
+    <LNGCoefficientD>0.4</LNGCoefficientD>
+    <CNGCoefficientA>0.4</CNGCoefficientA>
+    <CNGCoefficientB>0.4</CNGCoefficientB>
+    <CNGCoefficientC>0.4</CNGCoefficientC>
+    <CNGCoefficientD>0.4</CNGCoefficientD>
   </ComprehensiveAnalysis>
 </configuration>
