@@ -14,5 +14,8 @@
     <Setting Name="Setting" Type="System.String" Scope="User">
       <Value Profile="(Default)">89</Value>
     </Setting>
+    <Setting Name="historMaxFiles" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

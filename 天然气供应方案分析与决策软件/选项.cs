@@ -24,7 +24,22 @@ namespace 天然气供应方案分析与决策软件
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int count = Convert.ToInt32(numericUpDown1.Value);
+            Properties.Settings.Default.historMaxFiles = count;
+            Properties.Settings.Default.Save();
+            this.Close();
+        }
 
+        private void OptionSet_Load(object sender, EventArgs e)
+        {
+            int count = Properties.Settings.Default.historMaxFiles;
+            numericUpDown1.Value = count;
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int count = Convert.ToInt32(numericUpDown1.Value);
+            Properties.Settings.Default.historMaxFiles = count;
+            Properties.Settings.Default.Save();
         }
     }
 }

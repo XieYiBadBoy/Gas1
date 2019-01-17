@@ -125,7 +125,7 @@
  </LNGGasificattionStationRoughEstimate>
   <!--综合分析参数设置-->
   <ComprehensiveAnalysis>
-    <PNGCoefficientA>0.0374</PNGCoefficientA>
+    <PNGCoefficientA>0.0734</PNGCoefficientA>
     <PNGCoefficientB>-0.604</PNGCoefficientB>
     <PNGCoefficientC>0.00293</PNGCoefficientC>
     <PNGCoefficientD>0.361</PNGCoefficientD>

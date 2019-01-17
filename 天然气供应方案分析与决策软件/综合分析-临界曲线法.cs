@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Xml;
 
 namespace 天然气供应方案分析与决策软件
 {
@@ -40,10 +41,170 @@ namespace 天然气供应方案分析与决策软件
 
         private void Calculate()
         {
+            try
+            {
+            double InputValue1 = Convert.ToDouble(txtInput1.Text);
+            double InputValue2 = Convert.ToDouble(txtInput2.Text);
+            if (txtInput1.Text == "" || txtInput2.Text == "")
+            {
+                throw new InvalidOperationException("您的输入为空，管子尺寸初步计算(经济及可行性)计算对象无效!");
+            }
+
+            if (InputValue1 < 0 || InputValue2 < 0)
+            {
+                throw new InvalidOperationException("您的输入为负，管子尺寸初步计算(经济及可行性)计算对象无效!");
+            }
+            if (InputValue1 == 0 || InputValue2 == 0)
+            {
+                throw new InvalidOperationException("您的输入为零，管子尺寸初步计算(经济及可行性)计算对象无效!");
+            }
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
+                Double PngAndCngCriticalFlow = (Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientA" )) * InputValue2 + Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientB")))/ (Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientC")) * InputValue2 + Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientD")));
+                Double PngAndLngCriticalFlow = (Convert.ToDouble(ReadXml(xmlDoc, "LNGCoefficientA")) * InputValue2 + Convert.ToDouble(ReadXml(xmlDoc, "LNGCoefficientB"))) / (Convert.ToDouble(ReadXml(xmlDoc, "LNGCoefficientC")) * InputValue2 + Convert.ToDouble(ReadXml(xmlDoc, "LNGCoefficientD")));
+                Double CngAndLngCriticalFlow = (Convert.ToDouble(ReadXml(xmlDoc, "CNGCoefficientA")) * InputValue2 + Convert.ToDouble(ReadXml(xmlDoc, "CNGCoefficientB"))) / (Convert.ToDouble(ReadXml(xmlDoc, "CNGCoefficientC")) * InputValue2 + Convert.ToDouble(ReadXml(xmlDoc, "CNGCoefficientD")));
+
+                txtOnput1.Text = PngAndCngCriticalFlow.ToString("0.00");
+                txtOnput2.Text = PngAndLngCriticalFlow.ToString("0.00");
+                txtOnput3.Text = CngAndLngCriticalFlow.ToString("0.00");
+
+                if (PngAndCngCriticalFlow== PngAndLngCriticalFlow)
+                {
+                    if (CngAndLngCriticalFlow<=PngAndCngCriticalFlow)
+                    {
+                        if (InputValue1 < CngAndLngCriticalFlow)
+                        {
+                            txtOnput4.Text = "LNG";
+                        }
+                        else if (PngAndCngCriticalFlow <= InputValue1)
+                        {
+                            txtOnput4.Text = "管道";
+                        }
+                        else if (CngAndLngCriticalFlow <= InputValue1 && InputValue1 < PngAndCngCriticalFlow)
+                        {
+                            txtOnput4.Text = "CNG";
+                        }
+                        else
+                        {
+                            MessageBox.Show("该情况理论上不存在，请检查输入是否正确");
+                        }
+                    }
+                    else
+                    {
+                        if (InputValue1 <= PngAndCngCriticalFlow)
+                        {
+                            txtOnput4.Text = "LNG";
+                        }
+                        else
+                        {
+                            txtOnput4.Text = "管道";
+                        }
+
+                    }
+
+                }
+                else if (PngAndCngCriticalFlow < PngAndLngCriticalFlow)
+                {
+                    if (CngAndLngCriticalFlow < PngAndCngCriticalFlow)
+                    {
+                        if (InputValue1 < CngAndLngCriticalFlow)
+                        {
+                            txtOnput4.Text = "LNG";
+                        }
+                        else if (CngAndLngCriticalFlow <= InputValue1 && InputValue1 < PngAndCngCriticalFlow)
+                        {
+                            txtOnput4.Text = "CNG";
+                        }
+                        else
+                        {
+                            txtOnput4.Text = "管道";
+                        }
+                    }
+                    else if (PngAndCngCriticalFlow <= CngAndLngCriticalFlow && CngAndLngCriticalFlow  < PngAndLngCriticalFlow)
+                    {
+
+                        if (InputValue1< PngAndCngCriticalFlow)
+                        {
+                            txtOnput4.Text = "LNG";
+                        }
+                        else
+                        {
+                            txtOnput4.Text = "管道";
+                        }
+                    }
+                    else
+                    {
+                        if (InputValue1 < PngAndCngCriticalFlow)
+                        {
+                            txtOnput4.Text = "LNG";
+                        }
+                        else
+                        {
+                            txtOnput4.Text = "管道";
+                        }
+
+                    }
+                }
+                else
+                {
+                    if (CngAndLngCriticalFlow< PngAndLngCriticalFlow)
+                    {
+                        if (InputValue1 < CngAndLngCriticalFlow)
+                        {
+                            txtOnput4.Text = "LNG";
+                        }
+                        else if (CngAndLngCriticalFlow <= InputValue1 && InputValue1 < PngAndLngCriticalFlow)
+                        {
+                            txtOnput4.Text = "CNG";
+                        }
+                        else
+                        {
+                            txtOnput4.Text = "管道";
+                        }
+                    }
+                    else if (PngAndLngCriticalFlow <= CngAndLngCriticalFlow && CngAndLngCriticalFlow < PngAndCngCriticalFlow)
+                    {
+                        if (InputValue1 < PngAndLngCriticalFlow)
+                        {
+                            txtOnput4.Text = "LNG";
+                        }
+                        else
+                        {
+                            txtOnput4.Text = "管道";
+                        }
+                    }
+                    else
+                    {
+                        if (InputValue1 < PngAndLngCriticalFlow)
+                        {
+                            txtOnput4.Text = "LNG";
+                        }
+                        else
+                        {
+                            txtOnput4.Text = "管道";
+                        }
+
+                    }
+
+                }
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
 
+            }
 
+        }
+
+        private string ReadXml(XmlDocument xmlDoc, string s)
+        {
+            string Str = "configuration/ComprehensiveAnalysis/" + s;
+            XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
+            return xn0.InnerText;
         }
 
         private void InitChart()
@@ -118,17 +279,29 @@ namespace 天然气供应方案分析与决策软件
             chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
 
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
             double q1;
             double q2;
             double q3;
             for (int i = 100; i < 700; i=i+5)
             {
-                q3 = 0.284 / (2.48 *Math.Pow(10,-3) * i - 0.566);
-                serie1.Points.AddXY(i,q3);
-                q2=(0.0734*i - 0.888)/ (Math.Pow(10, -4)*i + 0.927);
+
+                q1= (Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientA")) * i + Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientB"))) / (Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientC")) * i + Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientD")));
+                serie1.Points.AddXY(i, q1);
+                q2= (Convert.ToDouble(ReadXml(xmlDoc, "LNGCoefficientA")) * i + Convert.ToDouble(ReadXml(xmlDoc, "LNGCoefficientB"))) / (Convert.ToDouble(ReadXml(xmlDoc, "LNGCoefficientC")) * i + Convert.ToDouble(ReadXml(xmlDoc, "LNGCoefficientD")));
                 serie2.Points.AddXY(i, q2);
-                q1 = (0.0734 * i - 0.604) / (2.93 * Math.Pow(10, -3) * i + 0.361);
-                serie3.Points.AddXY(i, q1);
+                q3= (Convert.ToDouble(ReadXml(xmlDoc, "CNGCoefficientA")) * i + Convert.ToDouble(ReadXml(xmlDoc, "CNGCoefficientB"))) / (Convert.ToDouble(ReadXml(xmlDoc, "CNGCoefficientC")) * i + Convert.ToDouble(ReadXml(xmlDoc, "CNGCoefficientD")));
+                serie3.Points.AddXY(i, q3);
+
+
+                //q3 = 0.284 / (2.48 *Math.Pow(10,-3) * i - 0.566);
+                //serie1.Points.AddXY(i,q3);
+                //q2=(0.0734*i - 0.888)/ (Math.Pow(10, -4)*i + 0.927);
+                //serie2.Points.AddXY(i, q2);
+                //q1 = (0.0734 * i - 0.604) / (2.93 * Math.Pow(10, -3) * i + 0.361);
+                //serie3.Points.AddXY(i, q1);
             }
             }
             catch (Exception ex)
@@ -172,7 +345,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Calculate();
             //chart1.ChartAreas.Clear();
             InitChart();
         }
@@ -186,6 +359,25 @@ namespace 天然气供应方案分析与决策软件
         {
             CriticalCurveMethodSet = new CriticalCurveMethodSetting();
             CriticalCurveMethodSet.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void Clear()
+        {
+            txtInput1.Text = "";
+            txtInput2.Text = "";
+            txtOnput1.Text = "";
+            txtOnput2.Text = "";
+            txtOnput3.Text = "";
+            txtOnput4.Text = "";
+
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

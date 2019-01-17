@@ -70,5 +70,17 @@ namespace 天然气供应方案分析与决策软件.Properties {
                 this["Setting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int historMaxFiles {
+            get {
+                return ((int)(this["historMaxFiles"]));
+            }
+            set {
+                this["historMaxFiles"] = value;
+            }
+        }
     }
 }

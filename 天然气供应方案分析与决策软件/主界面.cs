@@ -254,8 +254,9 @@ namespace 天然气供应方案分析与决策软件
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            int count = Properties.Settings.Default.historMaxFiles;
             SetImg();   //为菜单子选项设置图标
-            ReadRecentDocumentsInIniFile();    //读取历史文件
+            ReadRecentDocumentsInIniFile(count);    //读取历史文件
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开软件");
             Reset();
@@ -272,7 +273,7 @@ namespace 天然气供应方案分析与决策软件
             this.timer1.Start();
         }
 
-        private void ReadRecentDocumentsInIniFile()
+        private void ReadRecentDocumentsInIniFile(int c)
         {
             if (File.Exists("RecentDocuments.ini"))
             {
@@ -294,7 +295,7 @@ namespace 天然气供应方案分析与决策软件
                         item.Enabled = false;
                     }
                     i++;
-                    if (i >= count + 3)  //3+2，许多读取5个历史文件
+                    if (i >= count + (c-2)) 
                     {
                         sr.Close();
                         fs.Close();

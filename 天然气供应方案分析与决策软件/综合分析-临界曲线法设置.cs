@@ -20,11 +20,33 @@ namespace 天然气供应方案分析与决策软件
 
         private void CriticalCurveMethodSetting_Load(object sender, EventArgs e)
         {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
+            textBox2.Text = ReadXml(xmlDoc, "PNGCoefficientA");
+            textBox3.Text = ReadXml(xmlDoc, "PNGCoefficientB");
+            textBox4.Text = ReadXml(xmlDoc, "PNGCoefficientC");
+            textBox5.Text = ReadXml(xmlDoc, "PNGCoefficientD");
+
+            textBox8.Text = ReadXml(xmlDoc, "LNGCoefficientA");
+            textBox9.Text = ReadXml(xmlDoc, "LNGCoefficientB");
+            textBox10.Text = ReadXml(xmlDoc,"LNGCoefficientC");
+            textBox11.Text = ReadXml(xmlDoc, "LNGCoefficientD");
+
+            textBox14.Text = ReadXml(xmlDoc, "CNGCoefficientA");
+            textBox15.Text = ReadXml(xmlDoc, "CNGCoefficientB");
+            textBox16.Text = ReadXml(xmlDoc, "CNGCoefficientC");
+            textBox17.Text = ReadXml(xmlDoc, "CNGCoefficientD");
+
 
         }
 
-
-
+        private string ReadXml(XmlDocument xmlDoc, string s)
+        {
+            string Str = "configuration/ComprehensiveAnalysis/" + s;
+            XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
+            return xn0.InnerText;
+        }
         private void Savement()
         {
             try
@@ -69,13 +91,13 @@ namespace 天然气供应方案分析与决策软件
             xn5.InnerText = textBox8.Text;
 
             XmlNode xn6 = xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/LNGCoefficientB");
-            xn6.InnerText = textBox8.Text;
+            xn6.InnerText = textBox9.Text;
 
             XmlNode xn7 = xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/LNGCoefficientC");
-            xn7.InnerText = textBox8.Text;
+            xn7.InnerText = textBox10.Text;
 
             XmlNode xn8 = xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/LNGCoefficientD");
-            xn8.InnerText = textBox8.Text;
+            xn8.InnerText = textBox11.Text;
 
             XmlNode xn9 = xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/CNGCoefficientA");
             xn9.InnerText = textBox14.Text;
@@ -88,6 +110,8 @@ namespace 天然气供应方案分析与决策软件
 
             XmlNode xn12 = xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/CNGCoefficientD");
             xn12.InnerText = textBox17.Text;
+
+          xmlDoc.Save("XMLFile1.xml");
 
                 if (Convert.ToDouble(textBox3.Text) < 0)
                 {
@@ -111,7 +135,6 @@ namespace 天然气供应方案分析与决策软件
                         textBox6.Text = "q=(" + textBox2.Text + "L" + "+" + textBox3.Text + ")/(" + textBox4.Text + "L" + "+" + textBox5.Text + ")";
                     }
                 }
-
 
 
                 if (Convert.ToDouble(textBox9.Text) < 0)
@@ -161,19 +184,6 @@ namespace 天然气供应方案分析与决策软件
                     }
                 }
 
-
-           //     textBox6.Text = "q=("+ textBox2.Text+"L"+ textBox3.Text+")/(" + textBox4.Text + "L"+"+"+ textBox5.Text+")";
-           //textBox7.Text = "q=(" + textBox8.Text + "L" + textBox9.Text + ")/(" + textBox10.Text + "L" + "+" + textBox11.Text + ")";
-           //textBox13.Text = "q=(" + textBox14.Text + "L" + textBox15.Text + ")/(" + textBox16.Text + "L" + "+" + textBox17.Text + ")";
-
-
-
-            XmlNodeList xnl = xmlDoc.SelectNodes("configuration/ComprehensiveAnalysis");
-
-            foreach (XmlNode item in xnl)
-            {
-                MessageBox.Show(item.InnerText);
-            }
 
             }
             catch (Exception ex)

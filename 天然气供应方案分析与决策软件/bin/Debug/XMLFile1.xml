@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <CNGPrimaryStationRoughEstimate>
     <!--CNG子母站工程量与投资匡算-->
     <Supply>86</Supply>
-    <PrimaryStationScale1>50</PrimaryStationScale1>  
+    <PrimaryStationScale1>50</PrimaryStationScale1>
     <PrimaryStationScale2>30</PrimaryStationScale2>
     <PrimaryStationScale3>25</PrimaryStationScale3>
     <PrimaryStationScale4>20</PrimaryStationScale4>
@@ -119,12 +119,13 @@
     <PrimaryStationScale3GasificattionCapacity>2.7</PrimaryStationScale3GasificattionCapacity>
     <PrimaryStationScale4GasificattionCapacity>1.8</PrimaryStationScale4GasificattionCapacity>
     <PrimaryStationScale5GasificattionCapacity>0.9</PrimaryStationScale5GasificattionCapacity>
-    <PrimaryStationScale6GasificattionCapacity>0.45</PrimaryStationScale6GasificattionCapacity>   
+    <PrimaryStationScale6GasificattionCapacity>0.45</PrimaryStationScale6GasificattionCapacity>
     <PrimaryStationGasificattionRate>600</PrimaryStationGasificattionRate>
     <PrimaryStationColdInsulation>0.1</PrimaryStationColdInsulation>
- </LNGGasificattionStationRoughEstimate>
+  </LNGGasificattionStationRoughEstimate>
+  <!--综合分析参数设置-->
   <ComprehensiveAnalysis>
-    <PNGCoefficientA>0.0374</PNGCoefficientA>
+    <PNGCoefficientA>0.088</PNGCoefficientA>
     <PNGCoefficientB>-0.604</PNGCoefficientB>
     <PNGCoefficientC>0.00293</PNGCoefficientC>
     <PNGCoefficientD>0.361</PNGCoefficientD>
