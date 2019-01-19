@@ -33,6 +33,23 @@ namespace 天然气供应方案分析与决策软件
             this.dataGridView2.Rows[0].Cells[1].Value = XMLRead(xmlDoc, "StandardStationInvestment");
             this.dataGridView2.Rows[0].Cells[2].Value = XMLRead(xmlDoc, "StandardStationArea");
             this.dataGridView2.Rows[0].Cells[3].Value = XMLRead(xmlDoc, "SandardStationProjectTime");
+
+            this.dataGridView2.Rows[0].HeaderCell.Value = "1";
+
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.RowTemplate.Height = 40; //改变行的高度;
+                                                   //设置标题高度;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView2.ColumnHeadersHeight = 40;
+            //设置标题内容居中显示;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+            this.dataGridView2.Columns[0].HeaderText = "母站规模\r\n" + "（万方 / 天）";
+            this.dataGridView2.Columns[1].HeaderText = "投资\r\n" + "（万元）";
+            this.dataGridView2.Columns[2].HeaderText = "占地面积\r\n" + "（万平方米）";
+            this.dataGridView2.Columns[3].HeaderText = "工期\r\n" + "（月）";
+
         }
         private void SaveElement()
         {

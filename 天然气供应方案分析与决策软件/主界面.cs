@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace 天然气供应方案分析与决策软件
 {
@@ -21,6 +22,8 @@ namespace 天然气供应方案分析与决策软件
             m.Dock = DockStyle.Fill;
            // m.BackgroundImage = Properties.Resources.BackgroundImage;
         }
+
+
         public Windows1 w1;   // 管道工艺计算 
         public Windows2 w2;   // 母站计算
         public Windows3 w3;   // 子母站计算
@@ -40,6 +43,41 @@ namespace 天然气供应方案分析与决策软件
 
         private  string skinPath = @"Resources\";
 
+
+        [DllImport("user32.dll", EntryPoint = "GetKeyboardState")]
+        public static extern int GetKeyboardState(byte[] pbKeyState);
+
+
+        public static bool CapsLockStatus
+        {
+            get
+            {
+                byte[] bs = new byte[256];
+                GetKeyboardState(bs);
+                return (bs[0x14] == 1);
+            }
+        }
+        public static bool NumLockStatus
+        {
+            get
+            {
+                byte[] bs = new byte[256];
+                GetKeyboardState(bs);
+                return (bs[0x90] == 1);
+            }
+        }
+
+
+        public static bool InsertStatus
+        {
+            get
+            {
+                byte[] bs = new byte[256];
+                GetKeyboardState(bs);
+                return (bs[0x2D] == 1);
+            }
+        }
+
         private void 工艺计算ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             w1 = new Windows1();
@@ -47,7 +85,7 @@ namespace 天然气供应方案分析与决策软件
             w1.Show();
 
         }
-        #region  这部分没解决  复制、粘贴 
+
         private void 粘贴ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SendKeys.Send("^{V}");
@@ -58,7 +96,7 @@ namespace 天然气供应方案分析与决策软件
             SendKeys.Send("^{C}");
         }
 
-        #endregion
+     
         private void 母站ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             w2 = new Windows2();
@@ -93,7 +131,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string SourcePath = "C:\\天然气供应方案与决策软件";
+            string SourcePath = "C:\\GasSupplyProgramAndDecisionSoftware";
             string destPath = null;
             if (Directory.Exists(SourcePath) == false)//如果不存在就创建file文件夹
             {
@@ -186,13 +224,27 @@ namespace 天然气供应方案分析与决策软件
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-            save.Title = "保存文件";
-            save.Filter = "所有文件|*";
-            if (save.ShowDialog() == DialogResult.OK)
+            string path = Common.path;
+            //SaveFileDialog save = new SaveFileDialog();
+            //save.Title = "保存文件";
+            //save.Filter = "所有文件|*";
+            foreach (Form item in this.MdiChildren)
             {
-                //TODO:保存文件代码
+                switch (item.Text)
+                {
+                    case "CNG子母站站工程量与投资匡算":
+                        CNGWindowsProject frm = new CNGWindowsProject(this);
+                        frm.SaveCurrentParameters(path,path);
+                        MessageBox.Show("ok");
+                        break;
+                    default:
+                        break;
+                }
             }
+            //if (save.ShowDialog() == DialogResult.OK)
+            //{
+            //    //TODO:保存文件代码
+            //}
 
         }
 
@@ -265,20 +317,50 @@ namespace 天然气供应方案分析与决策软件
             int count = Properties.Settings.Default.historMaxFiles;
             SetImg();   //为菜单子选项设置图标
             ReadRecentDocumentsInIniFile(count);    //读取历史文件
-            this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd  hh:mm:ss");
+            //this.toolStripStatusLabel6.Text =DateTime.Now.ToString("hh:mm:ss");
+            this.toolStripStatusLabel7.Text = "当前操作：     ";
             AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开软件");
             Reset();
 
             try
             {
                 this.BackgroundImage = Image.FromFile( skinPath + "BackgroundImage.jpg");
+                CapsLockStatusShow();
+                NumLockStatusShow();
+                InsertStatusShow();
+
             }
             catch (Exception)
             {
             }
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 50;
 
             this.timer1.Start();
+        }
+
+        private void CapsLockStatusShow()
+        {
+            if (CapsLockStatus == true)
+                toolStripStatusLabel2.Text = "大小键状态：  " + "大写锁定";
+            else
+                toolStripStatusLabel2.Text = "大小键状态：  " +  "小写锁定";
+        }
+
+        private void NumLockStatusShow()
+        {
+            if (NumLockStatus == true)
+                toolStripStatusLabel4.Text = "数字键状态：  " + "开启";
+            else
+                toolStripStatusLabel4.Text = "数字键状态：  " + "关闭";
+        }
+
+        private void InsertStatusShow()
+        {
+            if (InsertStatus == true)
+                toolStripStatusLabel5.Text = "插入键状态：  " +  "开启";
+            else
+                toolStripStatusLabel5.Text = "插入键状态：  " + "关闭";
         }
 
         private void ReadRecentDocumentsInIniFile(int c)
@@ -436,7 +518,18 @@ namespace 天然气供应方案分析与决策软件
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd  hh:mm:ss");
+            //this.toolStripStatusLabel6.Text = DateTime.Now.ToString("hh:mm:ss");
+            CapsLockStatusShow();
+            NumLockStatusShow();
+            InsertStatusShow();
+            Form frm = this.ActiveMdiChild;
+            if (frm!=null)
+            {
+                toolStripStatusLabel7.Text = "当前操作：   " + frm.Text;
+            }
+            else
+                toolStripStatusLabel7.Text = "当前操作：   " +  "无";
         }
 
         private void 剪切ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -628,6 +721,16 @@ namespace 天然气供应方案分析与决策软件
         private void toolStripLabel10_Click(object sender, EventArgs e)
         {
             内容ToolStripMenuItem.PerformClick();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

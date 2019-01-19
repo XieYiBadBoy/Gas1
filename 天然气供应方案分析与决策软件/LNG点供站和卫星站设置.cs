@@ -50,46 +50,64 @@ namespace 天然气供应方案分析与决策软件
                 this.dataGridView1.Rows[1].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale5Investment");
                 this.dataGridView1.Rows[1].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale5Area");
                 this.dataGridView1.Rows[1].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale5ProjectTime");
-            this.dataGridView1.Rows[1].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale5TurnoverRate");
-            this.dataGridView1.Rows[1].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale5OperationCost");
+                this.dataGridView1.Rows[1].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale5TurnoverRate");
+                this.dataGridView1.Rows[1].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale5OperationCost");
 
-            this.dataGridView1.Rows[2].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale4");
+                this.dataGridView1.Rows[2].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale4");
                 this.dataGridView1.Rows[2].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale4Investment");
                 this.dataGridView1.Rows[2].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale4Area");
                 this.dataGridView1.Rows[2].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale4ProjectTime");
-            this.dataGridView1.Rows[2].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale4TurnoverRate");
-            this.dataGridView1.Rows[2].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale4OperationCost");
+                this.dataGridView1.Rows[2].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale4TurnoverRate");
+                this.dataGridView1.Rows[2].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale4OperationCost");
 
-            this.dataGridView1.Rows[3].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale3");
+                      this.dataGridView1.Rows[3].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale3");
                 this.dataGridView1.Rows[3].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale3Investment");
                 this.dataGridView1.Rows[3].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale3Area");
                 this.dataGridView1.Rows[3].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale3ProjectTime");
-            this.dataGridView1.Rows[3].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale3TurnoverRate");
-            this.dataGridView1.Rows[3].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale3OperationCost");
+                this.dataGridView1.Rows[3].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale3TurnoverRate");
+                this.dataGridView1.Rows[3].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale3OperationCost");
 
-            this.dataGridView1.Rows[4].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale2");
+                this.dataGridView1.Rows[4].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale2");
                 this.dataGridView1.Rows[4].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale2Investment");
                 this.dataGridView1.Rows[4].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale2Area");
                 this.dataGridView1.Rows[4].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale2ProjectTime");
-            this.dataGridView1.Rows[4].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale2TurnoverRate");
-            this.dataGridView1.Rows[4].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale2OperationCost");
+                this.dataGridView1.Rows[4].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale2TurnoverRate");
+                this.dataGridView1.Rows[4].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale2OperationCost");
 
-            this.dataGridView1.Rows[5].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale1");
+                this.dataGridView1.Rows[5].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale1");
                 this.dataGridView1.Rows[5].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale1Investment");
                 this.dataGridView1.Rows[5].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale1Area");
                 this.dataGridView1.Rows[5].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime");
-            this.dataGridView1.Rows[5].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale1TurnoverRate");
-            this.dataGridView1.Rows[5].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale1OperationCost");
+                this.dataGridView1.Rows[5].Cells[4].Value = ReadXml(xmlDoc, "PrimaryStationScale1TurnoverRate");
+                this.dataGridView1.Rows[5].Cells[5].Value = ReadXml(xmlDoc, "PrimaryStationScale1OperationCost");
 
 
-            this.dataGridView1.Rows[0].HeaderCell.Value = "1";
+                this.dataGridView1.Rows[0].HeaderCell.Value = "1";
                 this.dataGridView1.Rows[1].HeaderCell.Value = "2";
                 this.dataGridView1.Rows[2].HeaderCell.Value = "3";
                 this.dataGridView1.Rows[3].HeaderCell.Value = "4";
                 this.dataGridView1.Rows[4].HeaderCell.Value = "5";
                 this.dataGridView1.Rows[5].HeaderCell.Value = "6";
 
-            }
+               dataGridView1.EnableHeadersVisualStyles = false;
+
+
+            //设置标题高度;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridView1.ColumnHeadersHeight = 40;
+            //设置标题内容居中显示;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+            this.dataGridView1.Columns[0].HeaderText = "母站规模\r\n" + "（万方 / 天）";
+            this.dataGridView1.Columns[1].HeaderText = "投资\r\n" + "（万元）";
+            this.dataGridView1.Columns[2].HeaderText = "占地面积\r\n" + "（万平方米）";
+            this.dataGridView1.Columns[3].HeaderText = "工期\r\n" + "（月）";
+            this.dataGridView1.Columns[4].HeaderText = "周转率\r\n" + "（天/次）";
+            this.dataGridView1.Columns[5].HeaderText = "气化运行成本\r\n" + "（元/方）";
+
+
+        }
         private void SaveElement()
         {
             XmlDocument xmlDoc = new XmlDocument();
