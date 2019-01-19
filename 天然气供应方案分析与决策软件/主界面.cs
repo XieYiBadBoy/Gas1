@@ -68,22 +68,15 @@ namespace 天然气供应方案分析与决策软件
 
         private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("是否关闭当前窗口？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            if (this.MdiChildren != null)
             {
-                //Form[] frm = this.MdiChildren;
-                //for (int i = 0; i < frm.Length; i++)
-                //{
-                //   if (frm[i].Focused==true)
-                //    {
-                //        frm[i].Close();
-                //    }
-                //}
+                if (DialogResult.Yes == MessageBox.Show("是否关闭当前窗口？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+                {
+                    //TODO:save fiel or parameters
+                    this.ActiveMdiChild.Close();
+                }
             }
-            else
-            {
             
-            }
-      
         }
 
         private void 关闭所有ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,10 +88,6 @@ namespace 天然气供应方案分析与决策软件
                     frm.Close();
                 }
                 Reset();
-            }
-            else
-            {
-
             }
         }
 
