@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace 天然气供应方案分析与决策软件
 {
@@ -104,8 +105,20 @@ namespace 天然气供应方案分析与决策软件
 
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //TODO:新建文件代码
-        }
+            string SourcePath = "C:\\天然气供应方案与决策软件";
+            string destPath = null;
+            if (Directory.Exists(SourcePath) == false)//如果不存在就创建file文件夹
+            {
+                Directory.CreateDirectory(SourcePath);
+            }
+            string strAttURL = "OpenNewFile.xml";
+            if (File.Exists(strAttURL) == true)//如果不存在就创建file文件夹
+            {
+                destPath = Path.Combine(SourcePath, Path.GetFileName(strAttURL));
+                System.IO.File.Copy(@strAttURL, destPath,true);
+            }
+            OpenProject(destPath);
+      }
 
         private void 打开ToolStripMenuItem_Click(object sender, EventArgs e)
         {

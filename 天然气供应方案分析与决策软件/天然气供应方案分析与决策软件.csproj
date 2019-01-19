@@ -337,6 +337,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DefaultSetting.xml" />
+    <Content Include="OpenNewFile.xml" />
     <Content Include="XMLFile1.xml">
       <SubType>Designer</SubType>
     </Content>
