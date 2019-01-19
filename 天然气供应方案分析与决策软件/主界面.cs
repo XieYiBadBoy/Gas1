@@ -68,7 +68,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void 关闭ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.MdiChildren != null)
+            if (this.MdiChildren.Length>0)
             {
                 if (DialogResult.Yes == MessageBox.Show("是否关闭当前窗口？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                 {
@@ -126,10 +126,17 @@ namespace 天然气供应方案分析与决策软件
             }
         }
 
+        private void RefreshRecentDocList()
+        {
+            //TODO:刷新最近文件列表
+        }
+
         private void OpenProject(string selectedFile)
         {
             Common.path = selectedFile;
+            this.Text = "中国石油规划总院--" + selectedFile;
             WriteRecentDocumentsToIniFile(selectedFile);    //将打开的文件存入历史文件
+            RefreshRecentDocList(); //刷新最近文件列表
 
             AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开文件：" + selectedFile);
             bianjiToolStripMenuItem.Visible = true;
@@ -373,6 +380,8 @@ namespace 天然气供应方案分析与决策软件
             toolStripSeparator2.Visible = false;
             rtbInf.Visible = false;
             toolStripMenuItem1.Visible = false;
+
+            this.Text = "中国石油规划总院";
         }
         private void 工具栏ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -440,14 +449,34 @@ namespace 天然气供应方案分析与决策软件
             Clipboard.Clear();
         }
 
+        /// <summary>
+        /// 清空当前文本s the tool strip menu item_ click.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
         private void 清空当前文本ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Control c in this.Controls)//遍历控件
+            Form currentForm = this.ActiveMdiChild;
+            if (currentForm!=null)
             {
-                if (c.Focused)//判断是否有焦点
+                foreach (Control c in currentForm.Controls)//遍历控件
                 {
-                    c.Text = "";
-                    //return;
+                    if (c is TextBox)
+                    {
+                        //清掉含有TexBox控件上的内容
+                        c.Text = "";
+                    }
+                    if (c is GroupBox)
+                    {
+                        foreach (Control cc in c.Controls)
+                        {
+                            if (cc is TextBox)
+                            {
+                                //清掉含有TexBox控件上的内容
+                                cc.Text = "";
+                            }
+                        }
+                    }
                 }
             }
         }
