@@ -559,5 +559,45 @@ namespace 天然气供应方案分析与决策软件
         {
             BAOCUNToolStripMenuItem.PerformClick();
         }
+
+        private void ZOHEFENXIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripLabel5_Click(object sender, EventArgs e)
+        {
+            剪切ToolStripMenuItem.PerformClick();
+        }
+
+        private void toolStripLabel6_Click(object sender, EventArgs e)
+        {
+            复制ToolStripMenuItem.PerformClick();
+        }
+
+        private void toolStripLabel7_Click(object sender, EventArgs e)
+        {
+            粘贴ToolStripMenuItem.PerformClick();
+        }
+
+        private void 查找ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripLabel8_Click(object sender, EventArgs e)
+        {
+            查找ToolStripMenuItem.PerformClick();
+        }
+
+        private void 帮助ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripLabel10_Click(object sender, EventArgs e)
+        {
+            内容ToolStripMenuItem.PerformClick();
+        }
     }
 }

@@ -235,8 +235,115 @@ namespace 天然气供应方案分析与决策软件
             serie2.Points.Clear();
             serie3.Points.Clear();
             serie4.Points.Clear();
-            serie1.Name = "1";
-            serie3.Name = "2";
+
+          
+  
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
+             string Str1 = ReadXml(xmlDoc, "PNGCoefficientA");
+             string Str2 = ReadXml(xmlDoc, "PNGCoefficientB");
+             string Str3 = ReadXml(xmlDoc, "PNGCoefficientC");
+             string Str4 = ReadXml(xmlDoc, "PNGCoefficientD");
+
+             string Str5 = ReadXml(xmlDoc, "LNGCoefficientA");
+             string Str6 = ReadXml(xmlDoc, "LNGCoefficientB");
+             string Str7 = ReadXml(xmlDoc, "LNGCoefficientC");
+             string Str8 = ReadXml(xmlDoc, "LNGCoefficientD");
+
+             string Str9 = ReadXml(xmlDoc, "CNGCoefficientA");
+             string Str10 = ReadXml(xmlDoc, "CNGCoefficientB");
+             string Str11 = ReadXml(xmlDoc, "CNGCoefficientC");
+             string Str12 = ReadXml(xmlDoc, "CNGCoefficientD");
+
+             string Str13;
+             string Str14;
+             string Str15;
+
+                if (Convert.ToDouble(Str2) < 0)
+                {
+                    if (Convert.ToDouble(Str4) < 0)
+                    {
+                        Str13 = "q=(" + Str1 + "L" + Str2 + ")/(" + Str3 + "L" + Str4 + ")";
+                    }
+                    else
+                    {
+                        Str13 = "q=(" + Str1 + "L" + Str2 + ")/(" + Str3 + "L" + "+" + Str4 + ")";
+                    }
+                }
+                else
+                {
+                    if (Convert.ToDouble(Str4) < 0)
+                    {
+                        Str13 = "q=(" + Str1 + "L" + "+" + Str2 + ")/(" + Str3 + "L" + Str4 + ")";
+                    }
+                    else
+                    {
+                        Str13 = "q=(" + Str1 + "L" + "+" + Str2 + ")/(" + Str3 + "L" + "+" + Str4 + ")";
+                    }
+                }
+
+
+                if (Convert.ToDouble(Str6) < 0)
+                {
+                    if (Convert.ToDouble(Str8) < 0)
+                    {
+                        Str14 = "q=(" + Str5 + "L" + Str6 + ")/(" + Str7 + "L" + Str8 + ")";
+                    }
+                    else
+                    {
+                        Str14 = "q=(" + Str5 + "L" + Str6 + ")/(" + Str7 + "L" + "+" + Str8 + ")";
+                    }
+                }
+                else
+                {
+                    if (Convert.ToDouble(Str8) < 0)
+                    {
+                        Str14 = "q=(" + Str5 + "L" + "+" + Str6 + ")/(" + Str7 + "L" + Str8 + ")";
+                    }
+                    else
+                    {
+                        Str14 = "q=(" + Str5 + "L" + "+" + Str6 + ")/(" + Str7 + "L" + "+" + Str8 + ")";
+                    }
+                }
+
+
+                if (Convert.ToDouble(Str10) < 0)
+                {
+                    if (Convert.ToDouble(Str12) < 0)
+                    {
+                        Str15 = "q=(" + Str9 + "L" + Str10 + ")/(" + Str11 + "L" + Str12 + ")";
+                    }
+                    else
+                    {
+                        Str15 = "q=(" + Str9 + "L" + Str10 + ")/(" + Str11 + "L" + "+" + Str12 + ")";
+                    }
+                }
+                else
+                {
+                    if (Convert.ToDouble(Str12) < 0)
+                    {
+                        Str15 = "q=(" + Str9 + "L" + "+" + Str10 + ")/(" + Str11 + "L" + Str12 + ")";
+                    }
+                    else
+                    {
+                        Str15 = "q=(" + Str9 + "L" + "+" + Str10 + ")/(" + Str11 + "L" + "+" + Str12 + ")";
+                    }
+                }
+
+
+
+
+
+
+
+
+
+            serie1.Name = Str13;
+            serie2.Name = Str14;
+            serie3.Name = Str15;
+            serie4.Name = "输入值";
             serie4.Points.AddXY(InputValue2, InputValue1);
 
             //设置是否显示坐标标注
@@ -279,8 +386,8 @@ namespace 天然气供应方案分析与决策软件
             chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
 
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+            //XmlDocument xmlDoc = new XmlDocument();
+            //xmlDoc.Load("XMLFile1.xml"); //加载xml文件
 
             double q1;
             double q2;

@@ -39,6 +39,80 @@ namespace 天然气供应方案分析与决策软件
             textBox17.Text = ReadXml(xmlDoc, "CNGCoefficientD");
 
 
+
+           if (Convert.ToDouble(textBox3.Text) < 0)
+            {
+                if (Convert.ToDouble(textBox5.Text) < 0)
+                {
+                    textBox6.Text = "q=(" + textBox2.Text + "L" + textBox3.Text + ")/(" + textBox4.Text + "L" + textBox5.Text + ")";
+                }
+                else
+                { 
+                    textBox6.Text = "q=(" + textBox2.Text + "L" + textBox3.Text + ")/(" + textBox4.Text + "L" + "+" + textBox5.Text + ")";
+                }
+            }
+            else
+            {
+                if (Convert.ToDouble(textBox5.Text) < 0)
+                {
+                    textBox6.Text = "q=(" + textBox2.Text + "L" + "+" + textBox3.Text + ")/(" + textBox4.Text + "L" + textBox5.Text + ")";
+                }
+                else
+                {
+                    textBox6.Text = "q=(" + textBox2.Text + "L" + "+" + textBox3.Text + ")/(" + textBox4.Text + "L" + "+" + textBox5.Text + ")";
+                }
+            }
+
+
+            if (Convert.ToDouble(textBox9.Text) < 0)
+            {
+                if (Convert.ToDouble(textBox11.Text) < 0)
+                {
+                    textBox7.Text = "q=(" + textBox8.Text + "L" + textBox9.Text + ")/(" + textBox10.Text + "L" + textBox11.Text + ")";
+                }
+                else
+                {
+                    textBox7.Text = "q=(" + textBox8.Text + "L" + textBox9.Text + ")/(" + textBox10.Text + "L" + "+" + textBox11.Text + ")";
+                }
+            }
+            else
+            {
+                if (Convert.ToDouble(textBox11.Text) < 0)
+                {
+                    textBox7.Text = "q=(" + textBox8.Text + "L" + "+" + textBox9.Text + ")/(" + textBox10.Text + "L" + textBox11.Text + ")";
+                }
+                else
+                {
+                    textBox7.Text = "q=(" + textBox8.Text + "L" + "+" + textBox9.Text + ")/(" + textBox10.Text + "L" + "+" + textBox11.Text + ")";
+                }
+            }
+
+
+            if (Convert.ToDouble(textBox15.Text) < 0)
+            {
+                if (Convert.ToDouble(textBox17.Text) < 0)
+                {
+                    textBox13.Text = "q=(" + textBox14.Text + "L" + textBox15.Text + ")/(" + textBox16.Text + "L" + textBox17.Text + ")";
+                }
+                else
+                {
+                    textBox13.Text = "q=(" + textBox14.Text + "L" + textBox15.Text + ")/(" + textBox16.Text + "L" + "+" + textBox17.Text + ")";
+                }
+            }
+            else
+            {
+                if (Convert.ToDouble(textBox17.Text) < 0)
+                {
+                    textBox13.Text = "q=(" + textBox14.Text + "L" + "+" + textBox15.Text + ")/(" + textBox16.Text + "L" + textBox17.Text + ")";
+                }
+                else
+                {
+                    textBox13.Text = "q=(" + textBox14.Text + "L" + "+" + textBox15.Text + ")/(" + textBox16.Text + "L" + "+" + textBox17.Text + ")";
+                }
+            }
+
+
+
         }
 
         private string ReadXml(XmlDocument xmlDoc, string s)
