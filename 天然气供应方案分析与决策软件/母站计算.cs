@@ -29,8 +29,8 @@ namespace 天然气供应方案分析与决策软件
                 double t = Convert.ToDouble(natstationsetup .NatTime);       //工作时长
                 double N = calculator1.CompressorPower(Z,StdFlow2,t,UpPre ,ExitPre);           
                 double TotalArea = 9500 + 0.04 * StdFlow2;
-                txtOutput1.Text = N.ToString("0.0000");
-                txtOutput2.Text = TotalArea.ToString("0.0000");
+                txtOutput1.Text = N.ToString("");
+                txtOutput2.Text = TotalArea.ToString("0.00");
                
 
             }
@@ -78,6 +78,11 @@ namespace 天然气供应方案分析与决策软件
         private void Setbutton1_Click(object sender, EventArgs e)
         {
             natstationsetup.ShowDialog();
+        }
+
+        private void Windows2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

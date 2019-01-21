@@ -65,8 +65,27 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -74,37 +93,18 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -114,7 +114,7 @@
             this.tabControl1.Location = new System.Drawing.Point(11, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(423, 339);
+            this.tabControl1.Size = new System.Drawing.Size(423, 330);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -125,7 +125,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(415, 313);
+            this.tabPage1.Size = new System.Drawing.Size(415, 304);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "参数（P）";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -165,7 +165,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(199, 126);
+            this.label20.Location = new System.Drawing.Point(199, 123);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(29, 12);
             this.label20.TabIndex = 23;
@@ -174,7 +174,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(199, 99);
+            this.label18.Location = new System.Drawing.Point(199, 98);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(29, 12);
             this.label18.TabIndex = 22;
@@ -183,7 +183,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(199, 68);
+            this.label12.Location = new System.Drawing.Point(199, 67);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 21;
@@ -193,7 +193,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(199, 17);
+            this.label19.Location = new System.Drawing.Point(199, 19);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(47, 12);
             this.label19.TabIndex = 20;
@@ -202,7 +202,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(199, 44);
+            this.label17.Location = new System.Drawing.Point(199, 43);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 12);
             this.label17.TabIndex = 18;
@@ -210,7 +210,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(113, 120);
+            this.textBox10.Location = new System.Drawing.Point(113, 118);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(80, 21);
             this.textBox10.TabIndex = 17;
@@ -226,7 +226,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(113, 65);
+            this.textBox8.Location = new System.Drawing.Point(113, 66);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(80, 21);
             this.textBox8.TabIndex = 15;
@@ -234,7 +234,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(113, 39);
+            this.textBox7.Location = new System.Drawing.Point(113, 40);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(80, 21);
             this.textBox7.TabIndex = 14;
@@ -279,7 +279,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(199, 175);
+            this.label11.Location = new System.Drawing.Point(199, 174);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 8;
@@ -287,7 +287,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(113, 13);
+            this.textBox6.Location = new System.Drawing.Point(113, 14);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(80, 21);
             this.textBox6.TabIndex = 7;
@@ -296,7 +296,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 17);
+            this.label10.Location = new System.Drawing.Point(6, 20);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 12);
             this.label10.TabIndex = 6;
@@ -304,7 +304,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(113, 172);
+            this.textBox5.Location = new System.Drawing.Point(113, 170);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(80, 21);
             this.textBox5.TabIndex = 5;
@@ -330,7 +330,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(113, 147);
+            this.textBox4.Location = new System.Drawing.Point(113, 144);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(80, 21);
             this.textBox4.TabIndex = 2;
@@ -391,12 +391,12 @@
             this.txtInput3.Name = "txtInput3";
             this.txtInput3.Size = new System.Drawing.Size(80, 21);
             this.txtInput3.TabIndex = 22;
-            this.txtInput3.Text = "23";
+            this.txtInput3.Text = "20";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 69);
+            this.label3.Location = new System.Drawing.Point(5, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 12);
             this.label3.TabIndex = 21;
@@ -404,16 +404,16 @@
             // 
             // txtInput2
             // 
-            this.txtInput2.Location = new System.Drawing.Point(113, 41);
+            this.txtInput2.Location = new System.Drawing.Point(113, 40);
             this.txtInput2.Name = "txtInput2";
             this.txtInput2.Size = new System.Drawing.Size(80, 21);
             this.txtInput2.TabIndex = 20;
-            this.txtInput2.Text = "0.5";
+            this.txtInput2.Text = "0.6";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 44);
+            this.label2.Location = new System.Drawing.Point(6, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 19;
@@ -431,7 +431,7 @@
             // 
             // txtInput1
             // 
-            this.txtInput1.Location = new System.Drawing.Point(113, 17);
+            this.txtInput1.Location = new System.Drawing.Point(113, 14);
             this.txtInput1.Name = "txtInput1";
             this.txtInput1.Size = new System.Drawing.Size(80, 21);
             this.txtInput1.TabIndex = 1;
@@ -455,7 +455,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(415, 313);
+            this.tabPage2.Size = new System.Drawing.Size(415, 304);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "计算（C）";
             // 
@@ -474,106 +474,10 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(7, 20);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(96, 16);
+            this.checkBox5.Size = new System.Drawing.Size(120, 16);
             this.checkBox5.TabIndex = 0;
-            this.checkBox5.Text = "显示计算速度";
+            this.checkBox5.Text = "显示中间计算过程";
             this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.groupBox7);
-            this.groupBox3.Controls.Add(this.checkBox4);
-            this.groupBox3.Controls.Add(this.groupBox6);
-            this.groupBox3.Controls.Add(this.checkBox3);
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox1);
-            this.groupBox3.Location = new System.Drawing.Point(7, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(400, 100);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "计算前";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(7, 78);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(156, 16);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "检查输入间参数大小关系";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(7, 58);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(120, 16);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "检查输入参数范围";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(7, 35);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(96, 16);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "检查输入类型";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(7, 12);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(120, 16);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "检查输入是否为空";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(11, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "恢复默认值（D）";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(192, 347);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "确定（O）";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(273, 347);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "取消（C）";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(354, 347);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "应用（A）";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox5
             // 
@@ -590,26 +494,100 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "计算前";
             // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.checkBox19);
+            this.groupBox9.Location = new System.Drawing.Point(0, 106);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(400, 74);
+            this.groupBox9.TabIndex = 1;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "计算中";
+            // 
+            // checkBox19
+            // 
+            this.checkBox19.AutoSize = true;
+            this.checkBox19.Location = new System.Drawing.Point(7, 20);
+            this.checkBox19.Name = "checkBox19";
+            this.checkBox19.Size = new System.Drawing.Size(96, 16);
+            this.checkBox19.TabIndex = 0;
+            this.checkBox19.Text = "显示计算速度";
+            this.checkBox19.UseVisualStyleBackColor = true;
+            // 
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(7, 78);
+            this.checkBox6.Location = new System.Drawing.Point(7, 79);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(156, 16);
             this.checkBox6.TabIndex = 3;
-            this.checkBox6.Text = "检查输入间参数大小关系";
+            this.checkBox6.Text = "检查输入参数间大小关系";
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(7, 58);
+            this.checkBox7.Location = new System.Drawing.Point(7, 59);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(120, 16);
             this.checkBox7.TabIndex = 2;
             this.checkBox7.Text = "检查输入参数范围";
             this.checkBox7.UseVisualStyleBackColor = true;
             this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.checkBox15);
+            this.groupBox8.Controls.Add(this.checkBox16);
+            this.groupBox8.Controls.Add(this.checkBox17);
+            this.groupBox8.Controls.Add(this.checkBox18);
+            this.groupBox8.Location = new System.Drawing.Point(0, 0);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(400, 100);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "计算前";
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Location = new System.Drawing.Point(7, 78);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(156, 16);
+            this.checkBox15.TabIndex = 3;
+            this.checkBox15.Text = "检查输入间参数大小关系";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Location = new System.Drawing.Point(7, 58);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(120, 16);
+            this.checkBox16.TabIndex = 2;
+            this.checkBox16.Text = "检查输入参数范围";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            this.checkBox16.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // checkBox17
+            // 
+            this.checkBox17.AutoSize = true;
+            this.checkBox17.Location = new System.Drawing.Point(7, 38);
+            this.checkBox17.Name = "checkBox17";
+            this.checkBox17.Size = new System.Drawing.Size(96, 16);
+            this.checkBox17.TabIndex = 1;
+            this.checkBox17.Text = "检查输入类型";
+            this.checkBox17.UseVisualStyleBackColor = true;
+            // 
+            // checkBox18
+            // 
+            this.checkBox18.AutoSize = true;
+            this.checkBox18.Location = new System.Drawing.Point(7, 17);
+            this.checkBox18.Name = "checkBox18";
+            this.checkBox18.Size = new System.Drawing.Size(120, 16);
+            this.checkBox18.TabIndex = 0;
+            this.checkBox18.Text = "检查输入是否为空";
+            this.checkBox18.UseVisualStyleBackColor = true;
             // 
             // checkBox8
             // 
@@ -630,6 +608,51 @@
             this.checkBox9.TabIndex = 0;
             this.checkBox9.Text = "检查输入是否为空";
             this.checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.groupBox7);
+            this.groupBox3.Controls.Add(this.checkBox4);
+            this.groupBox3.Controls.Add(this.groupBox6);
+            this.groupBox3.Controls.Add(this.checkBox3);
+            this.groupBox3.Controls.Add(this.checkBox2);
+            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Location = new System.Drawing.Point(7, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(400, 100);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "计算前";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.checkBox14);
+            this.groupBox7.Location = new System.Drawing.Point(0, 106);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(400, 74);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "计算中";
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Location = new System.Drawing.Point(7, 20);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(96, 16);
+            this.checkBox14.TabIndex = 0;
+            this.checkBox14.Text = "显示计算速度";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(7, 78);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(156, 16);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "检查输入间参数大小关系";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -685,106 +708,83 @@
             this.checkBox13.Text = "检查输入是否为空";
             this.checkBox13.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
+            // checkBox3
             // 
-            this.groupBox7.Controls.Add(this.checkBox14);
-            this.groupBox7.Location = new System.Drawing.Point(0, 106);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(400, 74);
-            this.groupBox7.TabIndex = 1;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "计算中";
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(7, 58);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(120, 16);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "检查输入参数范围";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox14
+            // checkBox2
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(7, 20);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(96, 16);
-            this.checkBox14.TabIndex = 0;
-            this.checkBox14.Text = "显示计算速度";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(7, 35);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(96, 16);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "检查输入类型";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // groupBox8
+            // checkBox1
             // 
-            this.groupBox8.Controls.Add(this.checkBox15);
-            this.groupBox8.Controls.Add(this.checkBox16);
-            this.groupBox8.Controls.Add(this.checkBox17);
-            this.groupBox8.Controls.Add(this.checkBox18);
-            this.groupBox8.Location = new System.Drawing.Point(0, 0);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(400, 100);
-            this.groupBox8.TabIndex = 0;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "计算前";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(7, 12);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(120, 16);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "检查输入是否为空";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // checkBox15
+            // button1
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(7, 78);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(156, 16);
-            this.checkBox15.TabIndex = 3;
-            this.checkBox15.Text = "检查输入间参数大小关系";
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(12, 342);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "恢复默认值（D）";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox16
+            // button2
             // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(7, 58);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(120, 16);
-            this.checkBox16.TabIndex = 2;
-            this.checkBox16.Text = "检查输入参数范围";
-            this.checkBox16.UseVisualStyleBackColor = true;
-            this.checkBox16.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.button2.Location = new System.Drawing.Point(193, 341);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "确定（O）";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox17
+            // button3
             // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(7, 35);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(96, 16);
-            this.checkBox17.TabIndex = 1;
-            this.checkBox17.Text = "检查输入类型";
-            this.checkBox17.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(274, 341);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "取消（C）";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // checkBox18
+            // button4
             // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(7, 12);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(120, 16);
-            this.checkBox18.TabIndex = 0;
-            this.checkBox18.Text = "检查输入是否为空";
-            this.checkBox18.UseVisualStyleBackColor = true;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.checkBox19);
-            this.groupBox9.Location = new System.Drawing.Point(0, 106);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(400, 74);
-            this.groupBox9.TabIndex = 1;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "计算中";
-            // 
-            // checkBox19
-            // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Location = new System.Drawing.Point(7, 20);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(96, 16);
-            this.checkBox19.TabIndex = 0;
-            this.checkBox19.Text = "显示计算速度";
-            this.checkBox19.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(355, 341);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "应用（A）";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // PipeSetup1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(434, 377);
+            this.ClientSize = new System.Drawing.Size(434, 368);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -805,18 +805,18 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -233,14 +233,15 @@ namespace 天然气供应方案分析与决策软件
                 switch (item.Text)
                 {
                     case "CNG子母站站工程量与投资匡算":
-                        CNGWindowsProject frm = new CNGWindowsProject(this);
-                        frm.SaveCurrentParameters(path,path);
-                        MessageBox.Show("ok");
+                        //CNGWindowsProject frm = new CNGWindowsProject(this);
+                        //frm.SaveCurrentParameters(path,path);
                         break;
                     default:
                         break;
                 }
             }
+            //TODO
+            MessageBox.Show("ok");
             //if (save.ShowDialog() == DialogResult.OK)
             //{
             //    //TODO:保存文件代码
@@ -730,6 +731,22 @@ namespace 天然气供应方案分析与决策软件
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void LINGCUNWEIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string projectPath = Common.path;
+            SaveFileDialog save = new SaveFileDialog();
+            save.Title = "另存为";
+            save.Filter = "gsa(*.gsa)|*.gsa";//设置文件类型
+            
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                string path = save.FileName;
+                System.IO.File.Copy(projectPath, path, true);
+                OpenProject(path);
+            }
 
         }
     }

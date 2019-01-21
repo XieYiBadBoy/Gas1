@@ -39,8 +39,13 @@ namespace 天然气供应方案分析与决策软件
             textBox17.Text = ReadXml(xmlDoc, "CNGCoefficientD");
 
 
+            textBox19.Text = ReadXml(xmlDoc, "ChartInitialPoint");
+            textBox20.Text = ReadXml(xmlDoc, "ChartTerminalPoint");
+            textBox21.Text = ReadXml(xmlDoc, "ChartInterval");
 
-           if (Convert.ToDouble(textBox3.Text) < 0)
+
+
+            if (Convert.ToDouble(textBox3.Text) < 0)
             {
                 if (Convert.ToDouble(textBox5.Text) < 0)
                 {
@@ -185,7 +190,17 @@ namespace 天然气供应方案分析与决策软件
             XmlNode xn12 = xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/CNGCoefficientD");
             xn12.InnerText = textBox17.Text;
 
-          xmlDoc.Save("XMLFile1.xml");
+
+                XmlNode xn13= xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/ChartInitialPoint");
+                xn13.InnerText = textBox19.Text;
+
+                XmlNode xn14 = xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/ChartTerminalPoint");
+                xn14.InnerText = textBox20.Text;
+
+                XmlNode xn15 = xmlDoc.SelectSingleNode("configuration/ComprehensiveAnalysis/ChartInterval");
+                xn15.InnerText = textBox21.Text;
+
+                xmlDoc.Save("XMLFile1.xml");
 
                 if (Convert.ToDouble(textBox3.Text) < 0)
                 {
@@ -286,6 +301,11 @@ namespace 天然气供应方案分析与决策软件
         private void button6_Click(object sender, EventArgs e)
         {
             Savement();
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

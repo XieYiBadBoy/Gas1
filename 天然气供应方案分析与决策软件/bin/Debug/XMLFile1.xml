@@ -136,6 +136,9 @@
     <CNGCoefficientA>0</CNGCoefficientA>
     <CNGCoefficientB>0.284</CNGCoefficientB>
     <CNGCoefficientC>0.00248</CNGCoefficientC>
-    <CNGCoefficientD>-0.566</CNGCoefficientD>
+    <CNGCoefficientD>-0.556</CNGCoefficientD>
+    <ChartInitialPoint>100</ChartInitialPoint>
+    <ChartTerminalPoint>500</ChartTerminalPoint>
+    <ChartInterval>5</ChartInterval>
   </ComprehensiveAnalysis>
 </configuration>

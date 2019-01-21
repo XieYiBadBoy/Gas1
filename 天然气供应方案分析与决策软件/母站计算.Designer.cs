@@ -161,7 +161,7 @@
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Location = new System.Drawing.Point(268, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(250, 68);
+            this.groupBox2.Size = new System.Drawing.Size(250, 59);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "计算类型";
@@ -332,6 +332,7 @@
             this.MinimizeBox = false;
             this.Name = "Windows2";
             this.Text = "CNG分析--母站计算";
+            this.Load += new System.EventHandler(this.Windows2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

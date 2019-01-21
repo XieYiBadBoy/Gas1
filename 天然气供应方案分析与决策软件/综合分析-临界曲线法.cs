@@ -386,13 +386,11 @@ namespace 天然气供应方案分析与决策软件
             chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
 
-            //XmlDocument xmlDoc = new XmlDocument();
-            //xmlDoc.Load("XMLFile1.xml"); //加载xml文件
 
             double q1;
             double q2;
             double q3;
-            for (int i = 100; i < 700; i=i+5)
+            for (Double i = Convert.ToDouble(ReadXml(xmlDoc, "ChartInitialPoint")); i < Convert.ToDouble(ReadXml(xmlDoc, "ChartTerminalPoint")); i=i+Convert.ToDouble(ReadXml(xmlDoc, "ChartInterval")))
             {
 
                 q1= (Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientA")) * i + Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientB"))) / (Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientC")) * i + Convert.ToDouble(ReadXml(xmlDoc, "PNGCoefficientD")));
@@ -403,12 +401,6 @@ namespace 天然气供应方案分析与决策软件
                 serie3.Points.AddXY(i, q3);
 
 
-                //q3 = 0.284 / (2.48 *Math.Pow(10,-3) * i - 0.566);
-                //serie1.Points.AddXY(i,q3);
-                //q2=(0.0734*i - 0.888)/ (Math.Pow(10, -4)*i + 0.927);
-                //serie2.Points.AddXY(i, q2);
-                //q1 = (0.0734 * i - 0.604) / (2.93 * Math.Pow(10, -3) * i + 0.361);
-                //serie3.Points.AddXY(i, q1);
             }
             }
             catch (Exception ex)

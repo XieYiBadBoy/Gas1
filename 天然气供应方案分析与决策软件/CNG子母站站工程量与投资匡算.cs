@@ -173,8 +173,30 @@ namespace 天然气供应方案分析与决策软件
         }
         private void Calculate()
         {
-            try { 
-                double targetValue1 = Convert.ToDouble(txtInput1.Text);
+            try {
+                if (txtInput1.Text == "")
+                {
+                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为空，请重新输入。");
+
+                }
+
+              double targetValue1 = Convert.ToDouble(txtInput1.Text);
+
+                if (targetValue1 < 0)
+                {
+                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为负数，请重新输入。");
+
+                }
+                if (targetValue1 == 0)
+                {
+                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为零，请重新输入。");
+
+                }
+                if (targetValue1>100000000)
+                {
+                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}超过输入范围，请重新输入。");
+                }
+
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load("XMLFile1.xml"); //加载xml文件
                 double SubstationScale1 = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale1"));
@@ -190,16 +212,7 @@ namespace 天然气供应方案分析与决策软件
                 radioButton1.Text = textBox14.Text + "万方/座";
                 radioButton2.Text = textBox15.Text + "万方/座";
 
-                if (targetValue1 < 0)
-                {
-                    throw new InvalidOperationException("您的输入为负数，管子尺寸初步计算(经济及可行性)计算对象无效!");
 
-                }
-                if (targetValue1 ==0)
-                {
-                    throw new InvalidOperationException("您的输入为零，管子尺寸初步计算(经济及可行性)计算对象无效!");
-
-                }
                 int targetValue = Convert.ToInt32(Math.Ceiling(targetValue1));
                 if (radioButton3.Checked == true)
                 {
