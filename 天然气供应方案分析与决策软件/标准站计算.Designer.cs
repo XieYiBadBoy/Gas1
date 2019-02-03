@@ -85,6 +85,7 @@
             this.lblInput2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label52 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -102,6 +103,7 @@
             // 
             // txtOutput11
             // 
+            this.txtOutput11.Enabled = false;
             this.txtOutput11.Location = new System.Drawing.Point(113, 229);
             this.txtOutput11.Name = "txtOutput11";
             this.txtOutput11.Size = new System.Drawing.Size(100, 21);
@@ -127,6 +129,7 @@
             // 
             // txtOutput10
             // 
+            this.txtOutput10.Enabled = false;
             this.txtOutput10.Location = new System.Drawing.Point(113, 200);
             this.txtOutput10.Name = "txtOutput10";
             this.txtOutput10.Size = new System.Drawing.Size(100, 21);
@@ -152,6 +155,7 @@
             // 
             // txtOutput9
             // 
+            this.txtOutput9.Enabled = false;
             this.txtOutput9.Location = new System.Drawing.Point(113, 172);
             this.txtOutput9.Name = "txtOutput9";
             this.txtOutput9.Size = new System.Drawing.Size(100, 21);
@@ -177,6 +181,7 @@
             // 
             // txtOutput8
             // 
+            this.txtOutput8.Enabled = false;
             this.txtOutput8.Location = new System.Drawing.Point(113, 145);
             this.txtOutput8.Name = "txtOutput8";
             this.txtOutput8.Size = new System.Drawing.Size(100, 21);
@@ -202,6 +207,7 @@
             // 
             // txtOutput7
             // 
+            this.txtOutput7.Enabled = false;
             this.txtOutput7.Location = new System.Drawing.Point(113, 118);
             this.txtOutput7.Name = "txtOutput7";
             this.txtOutput7.Size = new System.Drawing.Size(100, 21);
@@ -236,6 +242,7 @@
             // 
             // txtOutput5
             // 
+            this.txtOutput5.Enabled = false;
             this.txtOutput5.Location = new System.Drawing.Point(113, 66);
             this.txtOutput5.Name = "txtOutput5";
             this.txtOutput5.Size = new System.Drawing.Size(100, 21);
@@ -252,6 +259,7 @@
             // 
             // txtOutput3
             // 
+            this.txtOutput3.Enabled = false;
             this.txtOutput3.Location = new System.Drawing.Point(113, 39);
             this.txtOutput3.Name = "txtOutput3";
             this.txtOutput3.Size = new System.Drawing.Size(100, 21);
@@ -286,9 +294,9 @@
             this.groupBox3.Controls.Add(this.txtOutput4);
             this.groupBox3.Controls.Add(this.lblOutput1);
             this.groupBox3.Controls.Add(this.lblOutput9);
-            this.groupBox3.Location = new System.Drawing.Point(339, 97);
+            this.groupBox3.Location = new System.Drawing.Point(322, 70);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(268, 283);
+            this.groupBox3.Size = new System.Drawing.Size(268, 291);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "输出";
@@ -304,6 +312,7 @@
             // 
             // txtOutput6
             // 
+            this.txtOutput6.Enabled = false;
             this.txtOutput6.Location = new System.Drawing.Point(113, 93);
             this.txtOutput6.Name = "txtOutput6";
             this.txtOutput6.Size = new System.Drawing.Size(100, 21);
@@ -331,10 +340,11 @@
             // 
             // txtOutput4
             // 
+            this.txtOutput4.Enabled = false;
             this.txtOutput4.Location = new System.Drawing.Point(113, 256);
             this.txtOutput4.Name = "txtOutput4";
             this.txtOutput4.Size = new System.Drawing.Size(100, 21);
-            this.txtOutput4.TabIndex = 23;
+            this.txtOutput4.TabIndex = 52;
             // 
             // lblOutput1
             // 
@@ -379,9 +389,9 @@
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(14, 376);
+            this.groupBox5.Location = new System.Drawing.Point(3, 364);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(588, 54);
+            this.groupBox5.Size = new System.Drawing.Size(587, 54);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             // 
@@ -396,7 +406,7 @@
             // 
             // Calbutton1
             // 
-            this.Calbutton1.Location = new System.Drawing.Point(339, 436);
+            this.Calbutton1.Location = new System.Drawing.Point(327, 432);
             this.Calbutton1.Name = "Calbutton1";
             this.Calbutton1.Size = new System.Drawing.Size(75, 23);
             this.Calbutton1.TabIndex = 21;
@@ -406,7 +416,7 @@
             // 
             // Clobutton3
             // 
-            this.Clobutton3.Location = new System.Drawing.Point(527, 436);
+            this.Clobutton3.Location = new System.Drawing.Point(515, 432);
             this.Clobutton3.Name = "Clobutton3";
             this.Clobutton3.Size = new System.Drawing.Size(75, 23);
             this.Clobutton3.TabIndex = 23;
@@ -416,7 +426,7 @@
             // 
             // Clebutton2
             // 
-            this.Clebutton2.Location = new System.Drawing.Point(433, 436);
+            this.Clebutton2.Location = new System.Drawing.Point(421, 432);
             this.Clebutton2.Name = "Clebutton2";
             this.Clebutton2.Size = new System.Drawing.Size(75, 23);
             this.Clebutton2.TabIndex = 22;
@@ -445,9 +455,9 @@
             this.groupBox1.Controls.Add(this.lblInput5);
             this.groupBox1.Controls.Add(this.lblInput4);
             this.groupBox1.Controls.Add(this.lblInput2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 358);
+            this.groupBox1.Size = new System.Drawing.Size(313, 358);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "输入";
@@ -641,7 +651,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(344, 21);
+            this.groupBox2.Location = new System.Drawing.Point(322, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(268, 63);
             this.groupBox2.TabIndex = 18;
@@ -660,12 +670,22 @@
             this.radioButton1.Text = "标准站计算";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // label52
+            // 
+            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label52.Location = new System.Drawing.Point(3, 421);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(588, 2);
+            this.label52.TabIndex = 24;
+            this.label52.Text = "label52";
+            // 
             // Windows5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(614, 481);
+            this.ClientSize = new System.Drawing.Size(600, 462);
+            this.Controls.Add(this.label52);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.Calbutton1);
@@ -748,5 +768,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comInput1;
         private System.Windows.Forms.Label lblInput11;
+        private System.Windows.Forms.Label label52;
     }
 }

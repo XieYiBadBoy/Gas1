@@ -224,13 +224,15 @@
             // 
             // txtOuput14
             // 
-            this.txtOuput14.Location = new System.Drawing.Point(314, 87);
+            this.txtOuput14.Enabled = false;
+            this.txtOuput14.Location = new System.Drawing.Point(314, 88);
             this.txtOuput14.Name = "txtOuput14";
             this.txtOuput14.Size = new System.Drawing.Size(100, 21);
             this.txtOuput14.TabIndex = 19;
             // 
             // txtOuput13
             // 
+            this.txtOuput13.Enabled = false;
             this.txtOuput13.Location = new System.Drawing.Point(314, 67);
             this.txtOuput13.Name = "txtOuput13";
             this.txtOuput13.Size = new System.Drawing.Size(100, 21);
@@ -274,6 +276,7 @@
             // 
             // txtOuput11
             // 
+            this.txtOuput11.Enabled = false;
             this.txtOuput11.Location = new System.Drawing.Point(74, 87);
             this.txtOuput11.Name = "txtOuput11";
             this.txtOuput11.Size = new System.Drawing.Size(100, 21);
@@ -281,6 +284,7 @@
             // 
             // txtOuput10
             // 
+            this.txtOuput10.Enabled = false;
             this.txtOuput10.Location = new System.Drawing.Point(74, 66);
             this.txtOuput10.Name = "txtOuput10";
             this.txtOuput10.Size = new System.Drawing.Size(100, 21);
@@ -330,6 +334,7 @@
             // 
             // txtOuput7
             // 
+            this.txtOuput7.Enabled = false;
             this.txtOuput7.Location = new System.Drawing.Point(312, 12);
             this.txtOuput7.Name = "txtOuput7";
             this.txtOuput7.Size = new System.Drawing.Size(100, 21);
@@ -431,6 +436,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "导入（L）";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 

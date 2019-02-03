@@ -149,7 +149,7 @@
             this.txtInput2.Name = "txtInput2";
             this.txtInput2.Size = new System.Drawing.Size(100, 21);
             this.txtInput2.TabIndex = 9;
-            this.txtInput2.Text = "10";
+            this.txtInput2.Text = "8";
             // 
             // lblInput4
             // 
@@ -193,7 +193,7 @@
             this.txtInput1.Name = "txtInput1";
             this.txtInput1.Size = new System.Drawing.Size(100, 21);
             this.txtInput1.TabIndex = 1;
-            this.txtInput1.Text = "4000";
+            this.txtInput1.Text = "10";
             // 
             // lblInput1
             // 
@@ -322,12 +322,13 @@
             this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(196, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
+            this.label1.Size = new System.Drawing.Size(35, 12);
             this.label1.TabIndex = 28;
-            this.label1.Text = "千米/秒";
+            this.label1.Text = "米/秒";
             // 
             // txtOutput4
             // 
+            this.txtOutput4.Enabled = false;
             this.txtOutput4.Location = new System.Drawing.Point(89, 79);
             this.txtOutput4.Name = "txtOutput4";
             this.txtOutput4.Size = new System.Drawing.Size(100, 21);
@@ -335,6 +336,7 @@
             // 
             // txtOutput3
             // 
+            this.txtOutput3.Enabled = false;
             this.txtOutput3.Location = new System.Drawing.Point(89, 58);
             this.txtOutput3.Name = "txtOutput3";
             this.txtOutput3.Size = new System.Drawing.Size(100, 21);
@@ -360,6 +362,7 @@
             // 
             // txtOutput2
             // 
+            this.txtOutput2.Enabled = false;
             this.txtOutput2.Location = new System.Drawing.Point(89, 37);
             this.txtOutput2.Name = "txtOutput2";
             this.txtOutput2.Size = new System.Drawing.Size(100, 21);
@@ -387,6 +390,7 @@
             // 
             // txtOutput1
             // 
+            this.txtOutput1.Enabled = false;
             this.txtOutput1.Location = new System.Drawing.Point(89, 16);
             this.txtOutput1.Name = "txtOutput1";
             this.txtOutput1.Size = new System.Drawing.Size(100, 21);
@@ -491,7 +495,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(505, 328);
+            this.ClientSize = new System.Drawing.Size(504, 328);
             this.Controls.Add(this.label52);
             this.Controls.Add(this.Clobutton3);
             this.Controls.Add(this.Clebutton2);

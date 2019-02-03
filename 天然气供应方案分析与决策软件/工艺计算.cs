@@ -34,12 +34,12 @@ namespace 天然气供应方案分析与决策软件
                 }
 
 
-                double StdFlow = Convert.ToDouble(txtInput1.Text);   //标准体积流量   StdFlow
+                double StdFlow = Convert.ToDouble(txtInput1.Text)/10000;   //标准体积流量   StdFlow
                 double UpPre = Convert.ToDouble(txtInput2.Text);     //管线上游表压   UpPre
                 double Dia = Convert.ToDouble(txtInput3.Text);        //管线内径       Dia
                 double AbsRough = Convert.ToDouble(pipesetup.PipeRough);   //绝对粗糙度     AbsRough
                 double Length = Convert.ToDouble(txtInput4.Text);     //管线长度       Length
-                double GasWeight = Convert.ToDouble(pipesetup.PipeGasWeight );  //气体比重       GasWeight
+                double GasWeight = Convert.ToDouble(pipesetup.PipeGasWeight);  //气体比重       GasWeight
                 double Tep = Convert.ToDouble(pipesetup.PipeTep);        //气体平均温度 
                 double PP1 = UpPre;
                 double z1 = CompressibilityFactor(UpPre, GasWeight, Tep);
@@ -68,7 +68,10 @@ namespace 天然气供应方案分析与决策软件
                     PP2 = calculator.PipelinePressure(UpPre, StdFlow, RR1, z1, GasWeight, Tep, Length, Dia);
                 }
                 txtOutput1.Text = calculator.PipelinePressure(UpPre, StdFlow, RR1, z1, GasWeight, Tep, Length, Dia).ToString("0.000000");
-                txtOutput2.Text = calculator.MeanVelocity(StdFlow, Dia).ToString("0.000000");
+                double bn = calculator.CompressibilityFactorParameter(UpPre, PP1, GasWeight, Tep);
+
+                //txtOutput2.Text = calculator.MeanVelocity(StdFlow, Dia).ToString("0.000000");
+                txtOutput2.Text = (calculator.MeanVelocity(StdFlow, Dia) * bn * bn).ToString("0.000");
                 txtOutput3.Text = calculator.LeiNuoXiShu(Tep, GasWeight, Dia, StdFlow).ToString("0.000000");
                 txtOutput4.Text = calculator.DaXiXiShu(Tep, GasWeight, Dia, StdFlow, AbsRough).ToString("0.000000");
             }
@@ -151,13 +154,13 @@ namespace 天然气供应方案分析与决策软件
             try
             {
 
-                double StdFlow = Convert.ToDouble(txtInput1.Text);      //标准体积流量 StdFlow
+                double StdFlow = Convert.ToDouble(txtInput1.Text)/10000;      //标准体积流量 StdFlow
                 double DownPre = Convert.ToDouble(txtInput2.Text);      //管线下游表压 DownPre
                 double Dia = Convert.ToDouble(txtInput3.Text);          //管线内径    Dia
-                double AbsRough = Convert.ToDouble(pipesetup .PipeRough );     //绝对粗糙度   AbsRough
+                double AbsRough = Convert.ToDouble(pipesetup.PipeRough);     //绝对粗糙度   AbsRough
                 double Length = Convert.ToDouble(txtInput4.Text);       //管线长度     Length
                 double GasWeight = Convert.ToDouble(pipesetup.PipeGasWeight);    //气体比重     GasWeight
-                double Tep = Convert.ToDouble(pipesetup.PipeTep );          //气体平均温度 Tep
+                double Tep = Convert.ToDouble(pipesetup.PipeTep);          //气体平均温度 Tep
                 double PP1 = DownPre;
                 double z1 = calculator.CompressibilityFactor(DownPre, GasWeight, Tep);
                 double RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia, StdFlow, AbsRough);  //计算达西摩阻系数
@@ -168,9 +171,11 @@ namespace 天然气供应方案分析与决策软件
                     z1 = calculator.CompressibilityFactor(PP2, GasWeight, Tep);
                     PP2 = calculator.PipelinePressure1(DownPre, StdFlow, RR1, z1, GasWeight, Tep, Length, Dia);
                 }
-                txtOutput1.Text = PP2.ToString("0.000000");
-                txtOutput2.Text = calculator.MeanVelocity(StdFlow, Dia).ToString("0.000000");
-                txtOutput3.Text = calculator.LeiNuoXiShu(Tep, GasWeight, Dia, StdFlow).ToString("0.000000");
+                txtOutput1.Text = PP2.ToString("0.000");
+                double bn = calculator.CompressibilityFactorParameter(PP2, DownPre, GasWeight, Tep);
+                //txtOutput2.Text = calculator.MeanVelocity(StdFlow, Dia).ToString("0.000");
+                txtOutput2.Text = (calculator.MeanVelocity(StdFlow, Dia) * bn * bn).ToString("0.000");
+                txtOutput3.Text = calculator.LeiNuoXiShu(Tep, GasWeight, Dia, StdFlow).ToString("0.000");
                 txtOutput4.Text = calculator.DaXiXiShu(Tep, GasWeight, Dia, StdFlow, AbsRough).ToString("0.000000");
             }
             catch (Exception ex)
@@ -178,8 +183,8 @@ namespace 天然气供应方案分析与决策软件
                 MessageBox.Show(ex.Message);
             }
         }
-        
-        #endregion     
+
+        #endregion
         #region   计算流体体积流量
         private void Add3()
         {
@@ -189,7 +194,7 @@ namespace 天然气供应方案分析与决策软件
                 double UpPre = Convert.ToDouble(txtInput1.Text);       //管线上游表压 UpPre
                 double DownPre = Convert.ToDouble(txtInput2.Text);     //管线下游表压 DownPre
                 double Dia = Convert.ToDouble(txtInput3.Text);         //管线内径     Dia
-                double AbsRough = Convert.ToDouble(pipesetup.PipeRough );    //绝对粗糙度   AbsRough
+                double AbsRough = Convert.ToDouble(pipesetup.PipeRough);    //绝对粗糙度   AbsRough
                 double Length = Convert.ToDouble(txtInput4.Text);      //管线长度     Length
                 double GasWeight = Convert.ToDouble(pipesetup.PipeGasWeight);   //气体比重     GasWeight
                 double Tep = Convert.ToDouble(pipesetup.PipeTep);         //气体平均温度 Tep
@@ -197,17 +202,19 @@ namespace 天然气供应方案分析与决策软件
                 double RE = calculator.LeiNuoXiShu(Tep, GasWeight, Dia, StdFlow1);          //计算雷诺数
                 double z1 = calculator.CompressibilityFactor1(UpPre, DownPre, GasWeight, Tep);   //计算压缩因子系数
                 double RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia, StdFlow1, AbsRough);   //计算达西摩阻系数
-                double StdFlow2 = calculator.StandardVolumeFlow(UpPre, DownPre, RR1, z1, GasWeight, Tep, Length, Dia);
-                while (Math.Abs(StdFlow2 - StdFlow1) > 0.01)
+                double StdFlow2 = calculator.StandardVolumeFlow(UpPre, DownPre, Dia, RR1, z1, GasWeight, Tep, Length);
+                while (Math.Abs(StdFlow1 - StdFlow2) > 0.01)
                 {
                     StdFlow1 = StdFlow2;
                     RE = calculator.LeiNuoXiShu(Tep, GasWeight, Dia, StdFlow1);
                     RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia, StdFlow1, AbsRough);
-                    StdFlow2 = calculator.StandardVolumeFlow(UpPre, DownPre, RR1, z1, GasWeight, Tep, Length, Dia);
+                    StdFlow2 = calculator.StandardVolumeFlow(UpPre, DownPre, Dia, RR1, z1, GasWeight, Tep, Length);
                 }
-                txtOutput1.Text = StdFlow2.ToString("0.000000");
-                txtOutput2.Text = calculator.MeanVelocity(StdFlow2, Dia).ToString("0.000000");
-                txtOutput3.Text = RE.ToString("0.000000");
+                txtOutput1.Text = (StdFlow2).ToString("0.000");
+                double bn = calculator.CompressibilityFactorParameter(UpPre, DownPre, GasWeight, Tep);
+                //txtOutput2.Text = calculator.MeanVelocity(StdFlow2, Dia).ToString("0.000");
+                txtOutput2.Text = (calculator.MeanVelocity(StdFlow2 , Dia) * bn * bn).ToString("0.000");
+                txtOutput3.Text = RE.ToString("0.000");
                 txtOutput4.Text = RR1.ToString("0.000000");
             }
             catch (Exception ex)
@@ -223,23 +230,27 @@ namespace 天然气供应方案分析与决策软件
             try
             {
 
-                double StdFlow = Convert.ToDouble(txtInput1.Text);     //标准体积流量 StdFlow
+                double StdFlow = Convert.ToDouble(txtInput1.Text)/10000;     //标准体积流量 StdFlow
                 double UpPre = Convert.ToDouble(txtInput2.Text);       //管线上游表压 UpPre
-                double DownPre = Convert.ToDouble(txtInput3.Text);     //管线下游表压 DownPre
-                double Dia = Convert.ToDouble(txtInput4.Text);         //管线内径    Dia
-                double AbsRough = Convert.ToDouble(pipesetup.PipeRough );    //绝对粗糙度   K
+                double DownPre = Convert.ToDouble(txtInput4.Text);     //管线下游表压 DownPre
+                double Dia = Convert.ToDouble(txtInput3.Text);         //管线内径    Dia
+                double AbsRough = Convert.ToDouble(pipesetup.PipeRough);    //绝对粗糙度   K
                 double GasWeight = Convert.ToDouble(pipesetup.PipeGasWeight);   //气体比重    GasWeight
                 double Tep = Convert.ToDouble(pipesetup.PipeTep);         //气体平均温度 Tep
-                double RE = calculator.LeiNuoXiShu(Tep, GasWeight, Dia, StdFlow);               //计算雷诺系数
                 double Z1 = calculator.CompressibilityFactor1(UpPre, DownPre, GasWeight, Tep);   //计算压缩因子系数
+                double bn = calculator.CompressibilityFactorParameter(UpPre, DownPre, GasWeight, Tep);
+                double RE = calculator.LeiNuoXiShu(Tep, GasWeight, Dia, StdFlow);               //计算雷诺系数
+
                 double RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia, StdFlow, AbsRough);         //计算达西摩阻系数
                 txtOutput1.Text = calculator.PipelineLength(UpPre, DownPre, Dia, StdFlow, RR1, Z1, GasWeight, Tep).ToString("0.000000");
-                txtOutput2.Text = calculator.MeanVelocity(StdFlow, Dia).ToString("0.000000");
-                txtOutput3.Text = RE.ToString("0.000000");
+
+                //txtOutput2.Text = calculator.MeanVelocity(StdFlow, Dia).ToString("0.000");
+                txtOutput2.Text = (calculator.MeanVelocity(StdFlow, Dia) * bn * bn).ToString("0.000");
+                txtOutput3.Text = RE.ToString("0.000");
                 txtOutput4.Text = RR1.ToString("0.000000");
             }
             catch (Exception ex)
-            {  
+            {
                 MessageBox.Show(ex.Message);
             }
         }
@@ -250,28 +261,34 @@ namespace 天然气供应方案分析与决策软件
             try
             {
 
-                double StdFlow = Convert.ToDouble(txtInput1.Text);     //标准体积流量 StdFlow
+                double StdFlow = Convert.ToDouble(txtInput1.Text)/10000;     //标准体积流量 StdFlow
                 double UpPre = Convert.ToDouble(txtInput2.Text);       //管线上游表压 UpPre
-                double DownPre = Convert.ToDouble(txtInput3.Text);     //管线下游表压 DownPre
-                double Length = Convert.ToDouble(txtInput4.Text);      //管道长度    Length
+                double DownPre = Convert.ToDouble(txtInput4.Text);     //管线下游表压 DownPre
+                double Length = Convert.ToDouble(txtInput3.Text);      //管道长度    Length
                 double AbsRough = Convert.ToDouble(pipesetup.PipeRough);    //绝对粗糙度   AbsRough
                 double GasWeight = Convert.ToDouble(pipesetup.PipeGasWeight);   //气体比重    GasWeight
                 double Tep = Convert.ToDouble(pipesetup.PipeTep);         //气体平均温度 Tep
                 double Z1 = calculator.CompressibilityFactor1(UpPre, DownPre, GasWeight, Tep);
+                double bn = calculator.CompressibilityFactorParameter(UpPre, DownPre, GasWeight, Tep);
                 double Dia1 = Math.Pow(1000 * StdFlow / 9 / 36 / Math.PI, 0.5);
                 double RE = calculator.LeiNuoXiShu(Tep, GasWeight, Dia1, StdFlow);
                 double RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia1, StdFlow, AbsRough);
-                double Dia2 = calculator.PipelineDiameter(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
-                while (Math.Abs(Dia2 - Dia1) > 0.01)
+                double Dia2 = PipelineDiameter1(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
+                //double dia2 = calculator.PipelineDiameter(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
+                while (Math.Abs(Dia2 - Dia1) > 0.001)
                 {
                     Dia1 = Dia2;
                     RE = calculator.LeiNuoXiShu(Tep, GasWeight, Dia1, StdFlow);
                     RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia1, StdFlow, AbsRough);
-                    Dia2 = calculator.PipelineDiameter(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
+                    Dia2 = PipelineDiameter1(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
                 }
-                txtOutput1.Text = Dia2.ToString("0.00000000");
-                txtOutput2.Text = calculator.MeanVelocity(StdFlow, Dia2).ToString("0.000000");
-                txtOutput3.Text = RE.ToString("0.000000");
+
+
+                //double Dia2 = calculator.PipelineDiameter(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
+
+                txtOutput1.Text = Dia2.ToString("0.00");
+                txtOutput2.Text = (calculator.MeanVelocity(StdFlow, Dia2) * bn * bn).ToString("0.000");
+                txtOutput3.Text = RE.ToString("0.000");
                 txtOutput4.Text = RR1.ToString("0.000000");
 
             }
@@ -281,6 +298,19 @@ namespace 天然气供应方案分析与决策软件
             }
         }
         #endregion
+
+
+        private double PipelineDiameter1(double F6, double R6, double Z6, double Q8, double T17, double L4, double P10, double P11)
+        {
+            double T18 = T17 + 273;
+            double C = 3.32355;
+            double BL21 = F6 * F6 / (C * C);
+            double BL22 = R6 * Z6 * Q8 * T18 * L4;
+            double BL23 = P10 * P10 - P11 * P11;
+            double BL24 = BL21 * BL22 / BL23;
+            double PipeDia = Math.Pow(BL24, 0.2);
+            return PipeDia;
+        }
         private void LabelChange1()
         {
         }
@@ -301,7 +331,7 @@ namespace 天然气供应方案分析与决策软件
         public PipeSetup1 set;
         private void button1_Click(object sender, EventArgs e)
         {
-            set =  new PipeSetup1();
+            set = new PipeSetup1();
             set.ShowDialog();
         }
 
@@ -345,14 +375,12 @@ namespace 天然气供应方案分析与决策软件
             lblInput2.Text = "管线上游表压：";
             lblInput3.Text = "管线内径：";
             lblInput4.Text = "管线长度：";
-            //lblInput5.Text = "管线长度：";
             lblOutput1.Text = "管线下游表压：";
-            label8.Text = "m3/d";
-            label9.Text = "Mpa";
-            label10.Text = "mm";
-            label11.Text = "mm";
-            //label12.Text = "km";
-            label19.Text = "Mpa";
+            label8.Text = "万方/日";
+            label9.Text = "兆帕";
+            label10.Text = "毫米";
+            label11.Text = "千米";
+            label19.Text = "兆帕";
         }
         #endregion
         #region   上游压力标签改变
@@ -364,12 +392,11 @@ namespace 天然气供应方案分析与决策软件
             //lblInput4.Text = "绝对粗糙度：";
             lblInput4.Text = "管线长度：";
             lblOutput1.Text = "管线上游表压：";
-            label8.Text = "m3/d";
-            label9.Text = "Mpa";
-            label10.Text = "mm";
-            label11.Text = "km";
-            //label12.Text = "km";
-            label19.Text = "Mpa";
+            label8.Text = "万方/日";
+            label9.Text = "兆帕";
+            label10.Text = "毫米";
+            label11.Text = "千米";
+            label19.Text = "兆帕";
         }
         #endregion
         #region 流体体积流量标签改变
@@ -381,12 +408,12 @@ namespace 天然气供应方案分析与决策软件
             //lblInput4.Text = "绝对粗糙度：";
             lblInput4.Text = "管线长度：";
             lblOutput1.Text = "标准体积流量：";
-            label8.Text = "Mpa";
-            label9.Text = "Mpa";
-            label10.Text = "mm";
-            label11.Text = "km";
+            label8.Text = "兆帕";
+            label9.Text = "兆帕";
+            label10.Text = "毫米";
+            label11.Text = "千米";
             //label12.Text = "km";
-            label19.Text = "m3/d";
+            label19.Text = "万方/日";
         }
         #endregion
         #region 管长标签改变
@@ -394,16 +421,14 @@ namespace 天然气供应方案分析与决策软件
         {
             lblInput1.Text = "标准体积流量：";
             lblInput2.Text = "管线上游表压：";
-            lblInput3.Text = "管线下游表压：";
-            lblInput4.Text = "管线内径：";
-            //lblInput5.Text = "绝对粗糙度：";
+            lblInput4.Text = "管线下游表压：";
+            lblInput3.Text = "管线内径：";
             lblOutput1.Text = "管线长度：";
-            label8.Text = "m3/d";
-            label9.Text = "Mpa";
-            label10.Text = "Mpa";
-            label11.Text = "mm";
-            //label12.Text = "mm";
-            label19.Text = "km";
+            label8.Text = "万方/日";
+            label9.Text = "兆帕";
+            label10.Text = "毫米";
+            label11.Text = "兆帕";
+            label19.Text = "千米";
         }
         #endregion
         #region 管内径标签改变
@@ -411,16 +436,14 @@ namespace 天然气供应方案分析与决策软件
         {
             lblInput1.Text = "标准体积流量：";
             lblInput2.Text = "管线上游表压：";
-            lblInput3.Text = "管线下游表压：";
-            lblInput4.Text = "管道长度：";
-            //lblInput5.Text = "绝对粗糙度：";
+            lblInput4.Text = "管线下游表压：";
+            lblInput3.Text = "管道长度：";
             lblOutput1.Text = "管线内径：";
-            label8.Text = "m3/d";
-            label9.Text = "Mpa";
-            label10.Text = "Mpa";
-            label11.Text = "km";
-            //label12.Text = "mm";
-            label19.Text = "mm";
+            label8.Text = "万方/日";
+            label9.Text = "兆帕";
+            label10.Text = "千米";
+            label11.Text = "兆帕";
+            label19.Text = "毫米";
         }
         #endregion
         private void PipeClear()

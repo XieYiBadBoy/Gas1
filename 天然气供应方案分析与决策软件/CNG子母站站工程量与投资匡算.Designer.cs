@@ -349,6 +349,7 @@
             // 
             // txtOuput14
             // 
+            this.txtOuput14.Enabled = false;
             this.txtOuput14.Location = new System.Drawing.Point(331, 269);
             this.txtOuput14.Name = "txtOuput14";
             this.txtOuput14.Size = new System.Drawing.Size(100, 21);
@@ -356,6 +357,7 @@
             // 
             // txtOuput13
             // 
+            this.txtOuput13.Enabled = false;
             this.txtOuput13.Location = new System.Drawing.Point(331, 248);
             this.txtOuput13.Name = "txtOuput13";
             this.txtOuput13.Size = new System.Drawing.Size(100, 21);
@@ -363,6 +365,7 @@
             // 
             // txtOuput12
             // 
+            this.txtOuput12.Enabled = false;
             this.txtOuput12.Location = new System.Drawing.Point(331, 227);
             this.txtOuput12.Name = "txtOuput12";
             this.txtOuput12.Size = new System.Drawing.Size(100, 21);
@@ -424,6 +427,7 @@
             // 
             // txtOuput11
             // 
+            this.txtOuput11.Enabled = false;
             this.txtOuput11.Location = new System.Drawing.Point(81, 267);
             this.txtOuput11.Name = "txtOuput11";
             this.txtOuput11.Size = new System.Drawing.Size(100, 21);
@@ -431,6 +435,7 @@
             // 
             // txtOuput10
             // 
+            this.txtOuput10.Enabled = false;
             this.txtOuput10.Location = new System.Drawing.Point(81, 246);
             this.txtOuput10.Name = "txtOuput10";
             this.txtOuput10.Size = new System.Drawing.Size(100, 21);
@@ -438,6 +443,7 @@
             // 
             // txtOuput9
             // 
+            this.txtOuput9.Enabled = false;
             this.txtOuput9.Location = new System.Drawing.Point(81, 225);
             this.txtOuput9.Name = "txtOuput9";
             this.txtOuput9.Size = new System.Drawing.Size(100, 21);
@@ -502,6 +508,7 @@
             // 
             // txtOuput8
             // 
+            this.txtOuput8.Enabled = false;
             this.txtOuput8.Location = new System.Drawing.Point(324, 37);
             this.txtOuput8.Name = "txtOuput8";
             this.txtOuput8.Size = new System.Drawing.Size(100, 21);
@@ -527,6 +534,7 @@
             // 
             // txtOuput7
             // 
+            this.txtOuput7.Enabled = false;
             this.txtOuput7.Location = new System.Drawing.Point(324, 16);
             this.txtOuput7.Name = "txtOuput7";
             this.txtOuput7.Size = new System.Drawing.Size(100, 21);
@@ -993,7 +1001,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(430, 445);
+            this.button4.Location = new System.Drawing.Point(429, 445);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;

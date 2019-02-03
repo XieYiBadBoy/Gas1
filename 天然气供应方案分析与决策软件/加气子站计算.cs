@@ -17,13 +17,14 @@ namespace 天然气供应方案分析与决策软件
             InitializeComponent();
         }
         private MathOpt calculator2 = new MathOpt();
-        SecStatSetup SecSetup = new SecStatSetup();
+        SetStationSetup SecSetup = new SetStationSetup();
         private void Change1()
         {
             
             lblInput2.Text = "设计体积流量：";
           
             lblInput4.Text = "压缩机出口压力：";
+            txtInput4.Visible = true ;
             txtInput5.Visible = true ;
             txtInput6.Visible = true ;
             txtInput7.Visible = true ;
@@ -40,21 +41,21 @@ namespace 天然气供应方案分析与决策软件
         
          
         
-            label9.Text = "Nm3/d";
+            label9.Text = "万方/日";
            
-            label11.Text = "Mpa";
-            label12.Text = "Mpa";
-            label13.Text = "t,h";
+            label11.Text = "兆帕";
+            label12.Text = "兆帕";
+            label13.Text = "小时/日";
           
             label16.Text = "台";
-            label17.Text = "Nm3";
-            label18.Text = "Nm3";
-            label19.Text = "Nm3";
+            label17.Text = "立方米";
+            label18.Text = "立方米";
+            label19.Text = "立方米";
             label20.Text = "个";
             label21.Text = "个";
             label22.Text = "个";
             label23.Text = "台";
-            label24.Text = "m3";
+            label24.Text = "立方米";
             lblOutput1.Text = "压缩机的台数：";
             lblOutput2.Text = "低压区储气容积：";
             lblOutput3.Text = "中压区储气容积：";
@@ -77,14 +78,14 @@ namespace 天然气供应方案分析与决策软件
           
             lblInput2.Text = "设计体积流量：";
            
-            lblInput4.Text = "每日工作时长：";
-            txtInput5.Visible = false;
+            lblInput5.Text = "每日工作时长：";
+            txtInput4.Visible = false;
             txtInput6.Visible = false;
             txtInput7.Visible = false;
             
           
             comInput1.Visible = false;
-            lblInput5.Text = "";
+            lblInput4.Text = "";
             lblInput6.Text = "";
             lblInput7.Text = "";
             lblInput8.Text = "";
@@ -92,14 +93,14 @@ namespace 天然气供应方案分析与决策软件
             lblInput10.Text = "";
             lblInput11.Text = "";
 
-            label9.Text = "Nm3/d";
+            label9.Text = "万方/日";
           
-            label11.Text = "t,h";
-            label12.Text = "";
+            label12.Text = "小时/日";
+            label11.Text = "";
             label13.Text = "";
          
             label16.Text = "台";
-            label17.Text = "m3";
+            label17.Text = "立方米";
             label18.Text = "";
             label19.Text = "";
             label20.Text = "";
@@ -130,7 +131,7 @@ namespace 天然气供应方案分析与决策软件
             {  
                 double z = Convert.ToDouble(SecSetup .SecStationFactor);    //压缩机因子
                 double StdFlow3 = Convert.ToDouble(txtInput2.Text);   //标准体积流量       StdFlow
-                double Time = Convert.ToDouble(SecSetup.SecStationTime);      //子站加气机工作时间 Time  
+                double Time = Convert.ToDouble(SecSetup.SecStationTime);    //子站加气机工作时间 Time  
                 double ExitPre = Convert.ToDouble(txtInput4.Text);   //压缩机出口压力     ExitPre  
                 double UpPre = Convert.ToDouble(txtInput5.Text);     //压缩机入口压力   UpPre       
                 double LowProp = Convert.ToDouble(txtInput6.Text);  //低压区容积比例
@@ -147,11 +148,11 @@ namespace 天然气供应方案分析与决策软件
                 double n3 = Vg31 / 2700;
                 double n2 = Vg21 / 2700;
                 double n1 = Vg11 / 2700;
-                txtOutput3.Text = PreRat.ToString("0.0000");
-                txtOutput4.Text = TotalArea.ToString("0.0000");
-                txtOutput5.Text = Vg31.ToString("0.0000");
-                txtOutput6.Text = Vg21.ToString("0.0000");
-                txtOutput7.Text = Vg11.ToString("0.0000");
+                txtOutput3.Text = PreRat.ToString("");
+                txtOutput4.Text = TotalArea.ToString("0.00");
+                txtOutput5.Text = Vg31.ToString("0.00");
+                txtOutput6.Text = Vg21.ToString("0.00");
+                txtOutput7.Text = Vg11.ToString("0.00");
                 txtOutput8.Text = Math.Ceiling(n3).ToString();
                 txtOutput9.Text = Math.Ceiling(n2).ToString();
                 txtOutput10.Text = Math.Ceiling(n1).ToString();
@@ -168,13 +169,13 @@ namespace 天然气供应方案分析与决策软件
             {
 
                 double StdFlow4 = Convert.ToDouble(txtInput2.Text);   //标准体积流量       StdFlow
-                double Time = Convert.ToDouble(txtInput4.Text);      //每日工作时长       Time
+                double Time = Convert.ToDouble(txtInput5.Text);      //每日工作时长       Time
                 double TaxiNum = Convert.ToDouble(SecSetup.SecStationTaxiNum);   //出租车数量    TaxiNum  
-                double BarNum = Convert.ToDouble(SecSetup.SecStationTaxiNum);       //公交车数量     BarNum
+                double BarNum = Convert.ToDouble(SecSetup.SecStationBusNum);       //公交车数量     BarNum
                 double Num11 = calculator2.CNGNum(TaxiNum, BarNum, Time);
                 double TotalArea = 1000 + 0.1 * StdFlow4;
-                txtOutput3.Text = Math.Ceiling (Num11).ToString("0.0000");
-                txtOutput5.Text = TotalArea.ToString("0.0000");
+                txtOutput3.Text = Math.Ceiling (Num11).ToString("");
+                txtOutput5.Text = TotalArea.ToString("0.00");
             }
             catch (Exception ex)
             {
@@ -276,6 +277,22 @@ namespace 天然气供应方案分析与决策软件
             {
                 Clear1();
             }
+        }
+
+        private void lblOutput4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SecSetup.ShowDialog();
+
         }
     }
 }

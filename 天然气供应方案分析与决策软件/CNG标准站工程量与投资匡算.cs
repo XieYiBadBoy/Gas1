@@ -17,7 +17,7 @@ namespace 天然气供应方案分析与决策软件
         {
             InitializeComponent();
         }
-       
+
         public CNGStandardStationSet CngStandardStationSet;
 
         int SubstationNumber;//子站数
@@ -25,42 +25,33 @@ namespace 天然气供应方案分析与决策软件
         double ProjectTime;//工期
         double Investment;//投资
         double StandardStationArea;
-        private void CheckError(double Input)
+        private string XMLRead(XmlDocument xmlDoc, string s)
         {
-           if (Input<0)
-            {
-                MessageBox.Show("您的输入为负数，管子尺寸初步计算(经济及可行性)计算对象无效!","提示",MessageBoxButtons.OK,MessageBoxIcon.Error);              
-            }
-        }
-        private string XMLRead(XmlDocument xmlDoc ,string s)
-        {
-            string Str = "configuration/CNGStandardStationRoughEstimate/"+s;
+            string Str = "configuration/CNGStandardStationRoughEstimate/" + s;
             XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
             return xn0.InnerText;
         }
         private void Calculate()
         {
-            try {
-                double Supply = Convert.ToDouble(txtInput1.Text);
-                if (Supply <0)
-                {
-                    throw new InvalidOperationException("您的输入为负数，管子尺寸初步计算(经济及可行性)计算对象无效!");
-                }
-                if (Supply == 0)
-                {
-                    throw new InvalidOperationException("您的输入为负数，管子尺寸初步计算(经济及可行性)计算对象无效!");
-                }
+            try
+            {
+                ParameterErrorDetection();
+
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
+                double Supply = Convert.ToDouble(txtInput1.Text);
+
                 textBox14.Text = XMLRead(xmlDoc, "StandardStationScale");
                 radioButton1.Text = textBox14.Text + "万方/座";
-                double StandardStationScale= Convert.ToDouble(XMLRead(xmlDoc, "StandardStationScale"));            
-                StandardStationArea = Convert.ToDouble(XMLRead(xmlDoc, "StandardStationArea"));
-                double SandardStationProjectTime= Convert.ToDouble(XMLRead(xmlDoc, "SandardStationProjectTime"));
-                double StandardStationInvestment= Convert.ToDouble(XMLRead(xmlDoc, "StandardStationInvestment"));
 
-                SubstationNumber = Convert.ToInt16(Math.Ceiling(Supply / StandardStationScale));
-                PermanentArea = SubstationNumber* StandardStationArea;
+                double StandardStationScale = Convert.ToDouble(XMLRead(xmlDoc, "StandardStationScale"));
+                StandardStationArea = Convert.ToDouble(XMLRead(xmlDoc, "StandardStationArea"));
+                double SandardStationProjectTime = Convert.ToDouble(XMLRead(xmlDoc, "SandardStationProjectTime"));
+                double StandardStationInvestment = Convert.ToDouble(XMLRead(xmlDoc, "StandardStationInvestment"));
+
+                SubstationNumber = Convert.ToInt32(Math.Ceiling(Supply / StandardStationScale));
+                PermanentArea = SubstationNumber * StandardStationArea;
                 ProjectTime = SandardStationProjectTime;
                 Investment = SubstationNumber * StandardStationInvestment;
 
@@ -76,6 +67,44 @@ namespace 天然气供应方案分析与决策软件
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void ParameterErrorDetection()
+        {
+            //参数检测，判断输入是否为空
+            if (txtInput1.Text == "")
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为空，请重新输入。");
+
+            }
+            //参数检测，判断输入是否含有字符
+            foreach (char c in txtInput1.Text)
+            {
+                if (char.IsLetter(c))
+                {
+                    //有字母
+                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}输入参数含有字符，请重新输入。");
+                }
+            }
+
+            double Supply = Convert.ToDouble(txtInput1.Text);
+            //参数检测，判断输入是否为数字、零
+            if (Supply < 0)
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为负数，请重新输入。");
+
+            }
+            if (Supply == 0)
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为零，请重新输入。");
+
+            }
+            //参数检测，判断输入是否在规定范围内 （0,1000000]
+            if (Supply > 1000000)
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}超过输入参数范围，请重新输入(0,10000000]。");
+            }
+        }
+
         private void ClearString()
         {
             txtInput1.Text = "";
@@ -118,6 +147,11 @@ namespace 天然气供应方案分析与决策软件
         {
             CngStandardStationSet = new CNGStandardStationSet();
             CngStandardStationSet.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

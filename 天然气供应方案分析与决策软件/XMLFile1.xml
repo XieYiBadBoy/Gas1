@@ -1,5 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
+  <!--母站计算-->
+  <PrimaryStation>
+    <StdFlow>100000</StdFlow>
+    <UpPre >25</UpPre >
+    <ExitPre>30</ExitPre>
+    <CompresiveNumber></CompresiveNumber>
+    <CNGPrimaryStationArea></CNGPrimaryStationArea>
+    <CompersiveFactor>0.89</CompersiveFactor>
+    <DailyWorkTime>24</DailyWorkTime>
+  </PrimaryStation>
+  <!--CNG子站计算-->
+  <CNGStandardStation>
+    <StdFlow>100000</StdFlow>
+    <UpPre >4</UpPre >
+    <ExitPre>25</ExitPre>
+    <LowPressureVolumeRatio>3</LowPressureVolumeRatio>
+    <MiddlePressureVolumeRatio>2</MiddlePressureVolumeRatio>
+    <CompressorFillingTime>7</CompressorFillingTime>
+    <CompressorCount></CompressorCount>
+    <LowPressureVolume></LowPressureVolume>
+    <MIddlePressureVolume></MIddlePressureVolume>
+    <HighPressureVolume></HighPressureVolume>
+    <LowPressureCount></LowPressureCount>
+    <MiddlePresureCount></MiddlePresureCount>
+    <HighPressureCount></HighPressureCount>
+    <CngStationaAddGasCount></CngStationaAddGasCount>
+    <CngTotalArea></CngTotalArea>
+    <CompressureFator>0.89</CompressureFator>
+    <DailyWorkTime>20</DailyWorkTime>
+    <TaxiCount>1000</TaxiCount>
+    <BusCount>200</BusCount>
+  </CNGStandardStation>
   <CNGPrimaryStationRoughEstimate>
     <!--CNG子母站工程量与投资匡算-->
     <Supply>86</Supply>

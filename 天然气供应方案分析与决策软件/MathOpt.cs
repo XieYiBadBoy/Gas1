@@ -35,7 +35,7 @@ namespace 天然气供应方案分析与决策软件
             {
                 N2 = N1 * Math.Pow(T2, 0.71 + 0.29 * 191.16 / (T1 + 273));
             }
-            double Re1 = 0.558 * Q1 * F1 / (D1 * N2 * Math.PI);
+            double Re1 = 0.01777 * Q1 * F1 / (D1 * N2);
             double BL1;   //BL1,BL2 均为中间变量，方便计算
             double BL2;
             if (Re1 <= 4000)
@@ -80,7 +80,7 @@ namespace 天然气供应方案分析与决策软件
             {
                 N4 = N3 * Math.Pow(T4, 0.71 + 0.29 * 191.16 / (T3 + 273));
             }
-            double Re1 = 0.558 * Q2 * F2 / (D2 * N4 * Math.PI);
+            double Re1 = 0.01777* Q2 * F2 / (D2 * N4 );
             return Re1;
         }
         #endregion
@@ -93,8 +93,8 @@ namespace 天然气供应方案分析与决策软件
         /// <returns></returns>
         public double MeanVelocity(double F2, double D2)
         {
-            double BL3 = 3.6 * 4 * Math.Pow(10, 6) * F2;    //BL3,BL4 均为中间变量，计算方便，无实义
-            double BL4 = 24 * 3600 * Math.PI * D2 * D2;
+            double BL3 =  4 * Math.Pow(10, 6) * F2 *0.101325;    //BL3,BL4 均为中间变量，计算方便，无实义
+            double BL4 = 24 * 3600 * Math.PI * D2 * D2*0.10325;
             double V;
             V = BL3 / BL4;
             return V;
@@ -113,10 +113,10 @@ namespace 天然气供应方案分析与决策软件
             double T6 = T5 + 273;
             double PK1 = P1;                                     //选取表压初值
             double BL4 = P1 + PK1 * PK1 / (PK1 + P1);
-            double PJ1 = 2 / 3 * BL4;   //计算管线平均表压
-            double BL5 = 507200 * PJ1 * Math.Pow(10, 1.785 * Q3); //BL5,BL6 均为中间变量，计算方便，无实义  
+            double PJ1 = 2 / 3.0 * BL4;   //计算管线平均表压
+            double BL5 = 5072000 * PJ1 * Math.Pow(10, 1.785 * Q3); //BL5,BL6 均为中间变量，计算方便，无实义  
             double BL6 = BL5 / (Math.Pow(T6, 3.825));
-            double Z1 = 1 / (1 + BL6);    // Calculate Compressibility Fcator 
+            double Z1 = 1.0 / (1 + BL6);    // Calculate Compressibility Fcator 
             return Z1;
             //现在开始进入迭代过程
         }
@@ -138,8 +138,8 @@ namespace 天然气供应方案分析与决策软件
                                        double Q4, double T7, double L1, double D3)
         {
             double T8 = T7 + 273;
-            double PP1;                                           //PP1 为管线下游表压
-            double C = 0.332 * Math.Pow(10, -6);                   //C为常数
+            double PP1;
+            double C = 3.32355;//PP1 为管线下游表压                  
             double BL7 = F3 * F3 / (C * C);                       //BL7,BL8,BL9 BL10 均为中间变量，计算方便，无实义
             double BL8 = R2 * Z2 * Q4 * T8 * L1;            //注意温度单位是℉而不是摄氏度，需要单位换算
             double BL9 = BL7 * BL8 / (Math.Pow(D3, 5));
@@ -166,7 +166,7 @@ namespace 天然气供应方案分析与决策软件
         {
             double T10 = T9 + 273;                           //摄氏温度转化为华式温度
             double PP2;                                      //PP2 为管线上游表压
-            double C = 0.332 * Math.Pow(10, -6);             //C为常数
+            double C = 3.32355;    //PP1 为管线下游表压  
             double BL11 = F4 * F4 / (C * C);                  //BL11,BL12,BL13,BL14 均为中间变量，计算方便，无实义
             double BL12 = R3 * Z3 * Q5 * T10 * L2;          //注意温度单位是℉而不是摄氏度，需要单位换算
             double BL13 = BL11 * BL12 / (Math.Pow(D4, 5));
@@ -192,11 +192,13 @@ namespace 天然气供应方案分析与决策软件
         public double StandardVolumeFlow(double P4, double P5, double D5, double R4, double Z4, double Q6, double T11, double L3)
         {
             double T12 = T11 + 273;                    //摄氏温度转化为华式温度
-            double C = 0.332 * Math.Pow(10, -6);
+            double C = 3.32355;
             double BL15 = P4 * P4 - P5 * P5;
             double BL16 = R4 * Z4 * Q6 * T12 * L3;    //注意温度单位是℉而不是摄氏度，需要单位换算
-            double BL17 = BL15 * Math.Pow(D5, 6) / BL16;
-            double StdFlow = C * Math.Pow(BL17, 0.5);
+            double BN = Math.Pow(D5, 5);
+            double BL17 = BL15 * Math.Pow(D5, 5) / BL16;
+
+            double StdFlow = C * Math.Pow(BL17, 0.5)/10000;
             return StdFlow;
         }
         #endregion  
@@ -213,13 +215,36 @@ namespace 天然气供应方案分析与决策软件
         {
             double T14 = T13 + 273;
             double BL30 = P6 + P7 * P7 / (P6 + P7);
-            double PJ2 = 2 / 3 * BL30;   //计算管线平均表压
-            double BL5 = 507200 * PJ2 * Math.Pow(10, 1.785 * Q4); //BL5,BL6 均为中间变量，计算方便，无实义  
+            double PJ2 =(2/3.0)*BL30;   //计算管线平均表压
+            double BL5 = 5072000 * PJ2 * Math.Pow(10, 1.785 * Q4); //BL5,BL6 均为中间变量，计算方便，无实义  
             double BL6 = BL5 / (Math.Pow(T14, 3.825));
-            double Z1 = 1 / (1 + BL6);    // Calculate Compressibility Fcator 
+            double Z1 = 1.0 / (1 + BL6);    // Calculate Compressibility Fcator 
             return Z1;
         }
         #endregion
+
+        #region    计算压缩因子系数12（与标准体积流量无关，可直接计算得出）
+        /// <summary>
+        /// 计算压缩因子系数
+        /// </summary>
+        /// <param name="P6">管线上游表压</param>
+        /// <param name="P7">管线下游表压</param>
+        /// <param name="Q4">气体比重</param>
+        /// <param name="T13">气体平均温度</param>
+        /// <returns></returns>
+        public double CompressibilityFactorParameter(double P6, double P7, double Q4, double T13)
+        {
+            double T14 = T13 + 273;
+            double BL30 = P6 + P7 * P7 / (P6 + P7);
+            double PJ2 = (2 / 3.0) * BL30;   //计算管线平均表压
+            double BL5 = 5072000 * PJ2 * Math.Pow(10, 1.785 * Q4); //BL5,BL6 均为中间变量，计算方便，无实义  
+            double BL6 = BL5 / (Math.Pow(T14, 3.825));
+            double Z1 = 1.0 / (1 + BL6);    // Calculate Compressibility Fcator 
+            double BN = Z1 / PJ2;
+            return BN;
+        }
+        #endregion
+
         #region   计算管长
         /// <summary>
         /// 计算管长
@@ -236,11 +261,11 @@ namespace 天然气供应方案分析与决策软件
         public double PipelineLength(double P8, double P9, double D6, double F5, double R5, double Z5, double Q7, double T15)
         {
             double T16 = T15 + 273;
-            double C = 0.332 * Math.Pow(10, -6);
             double BL18 = P8 * P8 - P9 * P9;
-            double BL19 = F5 * F5 / (C * C);
+            double BL19 = F5 * F5 / (3.32*3.32);
             double BL20 = BL19 * R5 * Z5 * Q7 * T16;
-            double L = BL18 * Math.Pow(D6, 5) / BL20;
+            double BL21 = BL18 * Math.Pow(D6, 5);
+            double L = BL21 / BL20;
             return L;
         }
         #endregion
@@ -257,13 +282,13 @@ namespace 天然气供应方案分析与决策软件
         /// <param name="P10">管道上线压力</param>
         /// <param name="P11">管道下线压力</param>
         /// <returns></returns>
-        public double PipelineDiameter(double F6, double R6, double Z6, double Q8, double T17, double L4, double P10, double P11)
+        public double PipelineDiameter(double stdflow, double R6, double Z6, double Q8, double T17, double L4, double uppre, double downpre)
         {
             double T18 = T17 + 273;
-            double C = 0.332 * Math.Pow(10, -6);
-            double BL21 = F6 * F6 / (C * C);
+            double C = 3.32355;
+            double BL21 = stdflow * stdflow / (C * C);
             double BL22 = R6 * Z6 * Q8 * T18 * L4;
-            double BL23 = P10 * P10 - P11 * P11;
+            double BL23 = uppre * uppre - downpre * downpre;
             double BL24 = BL21 * BL22 / BL23;
             double PipeDia = Math.Pow(BL24, 0.2);
             return PipeDia;

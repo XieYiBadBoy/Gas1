@@ -271,6 +271,7 @@
             // 
             // txtOuput14
             // 
+            this.txtOuput14.Enabled = false;
             this.txtOuput14.Location = new System.Drawing.Point(331, 189);
             this.txtOuput14.Name = "txtOuput14";
             this.txtOuput14.Size = new System.Drawing.Size(100, 21);
@@ -278,6 +279,7 @@
             // 
             // txtOuput13
             // 
+            this.txtOuput13.Enabled = false;
             this.txtOuput13.Location = new System.Drawing.Point(331, 168);
             this.txtOuput13.Name = "txtOuput13";
             this.txtOuput13.Size = new System.Drawing.Size(100, 21);
@@ -321,6 +323,7 @@
             // 
             // txtOuput11
             // 
+            this.txtOuput11.Enabled = false;
             this.txtOuput11.Location = new System.Drawing.Point(80, 190);
             this.txtOuput11.Name = "txtOuput11";
             this.txtOuput11.Size = new System.Drawing.Size(100, 21);
@@ -328,6 +331,7 @@
             // 
             // txtOuput10
             // 
+            this.txtOuput10.Enabled = false;
             this.txtOuput10.Location = new System.Drawing.Point(80, 169);
             this.txtOuput10.Name = "txtOuput10";
             this.txtOuput10.Size = new System.Drawing.Size(100, 21);
@@ -818,6 +822,7 @@
             this.MinimizeBox = false;
             this.Name = "LNGProjectAndInvestment";
             this.Text = "LNG点供站和卫星站工程量与投资匡算";
+            this.Load += new System.EventHandler(this.LNGProjectAndInvestment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

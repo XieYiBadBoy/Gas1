@@ -30,7 +30,6 @@ namespace 天然气供应方案分析与决策软件
         public Windows4 w4;   // 槽车数计算
         public Windows5 w5;   // 标准站计算
         private  AboutBox1 w11;
-        //public AboutBox1 W1;  // 母站计算
         public Windows6 w6;    //LNG液化站计算
         public Windows7 w7;    //LNG液化站计算
         public CompressorCalculate compressorcalculate;
@@ -110,7 +109,6 @@ namespace 天然气供应方案分析与决策软件
             {
                 if (DialogResult.Yes == MessageBox.Show("是否关闭当前窗口？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                 {
-                    //TODO:save fiel or parameters
                     this.ActiveMdiChild.Close();
                 }
             }
@@ -131,13 +129,13 @@ namespace 天然气供应方案分析与决策软件
 
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string SourcePath = "C:\\GasSupplyProgramAndDecisionSoftware";
+            string SourcePath = "GasSupplyProgramAndDecisionSoftware";
             string destPath = null;
             if (Directory.Exists(SourcePath) == false)//如果不存在就创建file文件夹
             {
                 Directory.CreateDirectory(SourcePath);
             }
-            string strAttURL = "OpenNewFile.xml";
+            string strAttURL = "OpenNewFile.gsa";
             if (File.Exists(strAttURL) == true)//如果不存在就创建file文件夹
             {
                 destPath = Path.Combine(SourcePath, Path.GetFileName(strAttURL));
@@ -191,18 +189,17 @@ namespace 天然气供应方案分析与决策软件
             GUANBISUOYOUToolStripMenuItem.Visible = true;
             BAOCUNToolStripMenuItem.Visible = true;
             LINGCUNWEIToolStripMenuItem.Visible = true;
-            //toolStripLabel1.Visible = true;
-            //toolStripLabel2.Visible = true;
-            //toolStripLabel3.Visible = true;
             toolStripLabel5.Visible = true;
             toolStripLabel6.Visible = true;
             toolStripLabel7.Visible = true;
             toolStripLabel8.Visible = true;
             toolStripLabel10.Visible = true;
-            //toolStripSeparator1.Visible = true;
             toolStripSeparator2.Visible = true;
             rtbInf.Visible = true;
             toolStripMenuItem1.Visible = true;
+            ToolStripMenuItem42.Checked = true;
+            GAUNBIToolStripMenuItem.Enabled = false;
+
         }
 
         private void WriteRecentDocumentsToIniFile(string v)
@@ -319,10 +316,10 @@ namespace 天然气供应方案分析与决策软件
             SetImg();   //为菜单子选项设置图标
             ReadRecentDocumentsInIniFile(count);    //读取历史文件
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd  hh:mm:ss");
-            //this.toolStripStatusLabel6.Text =DateTime.Now.ToString("hh:mm:ss");
             this.toolStripStatusLabel7.Text = "当前操作：     ";
             AddInf(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + " 打开软件");
             Reset();
+         
 
             try
             {
@@ -451,18 +448,14 @@ namespace 天然气供应方案分析与决策软件
             GUANBISUOYOUToolStripMenuItem.Visible = false;
             BAOCUNToolStripMenuItem.Visible = false;
             LINGCUNWEIToolStripMenuItem.Visible = false;
-            //toolStripLabel1.Visible = false;
-            //toolStripLabel2.Visible = false;
-            //toolStripLabel3.Visible = false;
             toolStripLabel5.Visible = false;
             toolStripLabel6.Visible = false;
             toolStripLabel7.Visible = false;
             toolStripLabel8.Visible = false;
-            //toolStripLabel10.Visible = false;
-            //toolStripSeparator1.Visible = false;
             toolStripSeparator2.Visible = false;
             rtbInf.Visible = false;
             toolStripMenuItem1.Visible = false;
+           
 
             this.Text = "中国石油规划总院";
         }
@@ -520,17 +513,21 @@ namespace 天然气供应方案分析与决策软件
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.toolStripStatusLabel3.Text = "系统当前时间：" + DateTime.Now.ToString("yyyy-MM-dd  hh:mm:ss");
-            //this.toolStripStatusLabel6.Text = DateTime.Now.ToString("hh:mm:ss");
             CapsLockStatusShow();
             NumLockStatusShow();
             InsertStatusShow();
             Form frm = this.ActiveMdiChild;
             if (frm!=null)
             {
+                GAUNBIToolStripMenuItem.Enabled = true;
                 toolStripStatusLabel7.Text = "当前操作：   " + frm.Text;
             }
             else
-                toolStripStatusLabel7.Text = "当前操作：   " +  "无";
+            {
+                GAUNBIToolStripMenuItem.Enabled = false;
+                toolStripStatusLabel7.Text = "当前操作：   " + "无";
+            }
+                
         }
 
         private void 剪切ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -581,7 +578,7 @@ namespace 天然气供应方案分析与决策软件
             Optionset = new OptionSet();
             //Optionset.MdiParent = this;
             Optionset.ShowDialog();
-            SendKeys.Send("^{F}");
+          
         }
 
         private void 子母站匡算ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -626,12 +623,12 @@ namespace 天然气供应方案分析与决策软件
 
         private void 有月量测算不平均系数ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\Administrator\Desktop\EXCEL工具\01测算月不均匀系数.xlsx"; //由月均测算不平均系数
+            string path = @"EXCEL工具\01测算月不均匀系数.xlsx"; //由月均测算不平均系数
             System.Diagnostics.Process.Start(path); //打开此文件。
         }
 
         private void 中间过程ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {  
             ToolStripMenuItem42.Checked = !ToolStripMenuItem42.Checked;
             rtbInf.Visible = !rtbInf.Visible;
         }
@@ -652,14 +649,14 @@ namespace 天然气供应方案分析与决策软件
 
         private void 内容ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string path = @"EXCEL工具\Help.docx"; //打开帮助文档
+            string path = @"帮助\Help.docx"; //打开帮助文档
             System.Diagnostics.Process.Start(path); //打开此文件
         }
             
 
         private void 归一化月不平均系数ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\Administrator\Desktop\EXCEL工具\02归一化月不均匀系数.xlsx"; //打开归一化月不均匀系数表
+            string path = @"EXCEL工具\02归一化月不均匀系数.xlsx"; //打开归一化月不均匀系数表
             System.Diagnostics.Process.Start(path); //打开此文件
         }
 
@@ -706,7 +703,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void 查找ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SendKeys.Send("^{F}");
         }
 
         private void toolStripLabel8_Click(object sender, EventArgs e)
@@ -748,6 +745,11 @@ namespace 天然气供应方案分析与决策软件
                 OpenProject(path);
             }
 
+        }
+
+        private void 文件ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             //ReadRecentDocumentsInIniFile(count);    //读取历史文件
         }
     }
 }

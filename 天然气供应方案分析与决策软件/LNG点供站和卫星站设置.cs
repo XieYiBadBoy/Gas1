@@ -257,5 +257,10 @@ namespace 天然气供应方案分析与决策软件
         {
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

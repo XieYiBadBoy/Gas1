@@ -45,22 +45,7 @@ namespace 天然气供应方案分析与决策软件
         double PrimaryStationScale3ProjectTime;
         double PrimaryStationScale4ProjectTime;
         double PrimaryStationScale5ProjectTime;
-        double PrimaryStationScale6ProjectTime;
-
-        double TurnoverRate1;   //周转率 最大
-        double TurnoverRate2;
-        double TurnoverRate3;
-        double TurnoverRate4;
-        double TurnoverRate5;
-        double TurnoverRate6;
-
-        double GasificattionOperationCost1;  //气化运行成本 最大
-        double GasificattionOperationCost2;
-        double GasificattionOperationCost3;
-        double GasificattionOperationCost4;
-        double GasificattionOperationCost5;
-        double GasificattionOperationCost6;
-
+        double PrimaryStationScale6ProjectTime; 
 
         private void groupBox5_Enter(object sender, EventArgs e)
         {
@@ -69,113 +54,149 @@ namespace 天然气供应方案分析与决策软件
 
         private void Calculate()
         {
-       //try {
+            try
+            {
+
+                ParameterErrorDetectionInput1();
+
+                double targetValue1 = Convert.ToDouble(txtInput1.Text);
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
+                textBox2.Text = ReadXml(xmlDoc, "PrimaryStationScale1");
+                textBox3.Text = ReadXml(xmlDoc, "PrimaryStationScale2");
+                textBox4.Text = ReadXml(xmlDoc, "PrimaryStationScale3");
+                textBox5.Text = ReadXml(xmlDoc, "PrimaryStationScale4");
+                textBox6.Text = ReadXml(xmlDoc, "PrimaryStationScale5");
+                textBox7.Text = ReadXml(xmlDoc, "PrimaryStationScale6");
+
+                int targetValue = Convert.ToInt32(Math.Ceiling(targetValue1));
+
+                if (radioButton3.Checked == true)
+                {
+                    ScaleLargeToSmall(targetValue);
+                }
+                else
+                {
+                    ScaleNearest(targetValue);
+                }
+
+                MiddleVariable1 = Convert.ToInt32(txtOuput1.Text);
+                MiddleVariable2 = Convert.ToInt32(txtOuput2.Text);
+                MiddleVariable3 = Convert.ToInt32(txtOuput3.Text);
+                MiddleVariable4 = Convert.ToInt32(txtOuput4.Text);
+                MiddleVariable5 = Convert.ToInt32(txtOuput5.Text);
+                MiddleVariable6 = Convert.ToInt32(txtOuput6.Text);
+
+
+                PrimaryStationScale1Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Investment"));
+                PrimaryStationScale2Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2Investment"));
+                PrimaryStationScale3Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3Investment"));
+                PrimaryStationScale4Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4Investment"));
+                PrimaryStationScale5Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5Investment"));
+                PrimaryStationScale6Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6Investment"));
+
+                PrimaryStationScale1Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Area"));
+                PrimaryStationScale2Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2Area"));
+                PrimaryStationScale3Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3Area"));
+                PrimaryStationScale4Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4Area"));
+                PrimaryStationScale5Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5Area"));
+                PrimaryStationScale6Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6Area"));
+
+                PrimaryStationScale1ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime"));
+                PrimaryStationScale2ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2ProjectTime"));
+                PrimaryStationScale3ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3ProjectTime"));
+                PrimaryStationScale4ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4ProjectTime"));
+                PrimaryStationScale5ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5ProjectTime"));
+                PrimaryStationScale6ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6ProjectTime"));
+
+
+
+                double PermanentFloorArea = MiddleVariable1 * PrimaryStationScale1Area + MiddleVariable2 * PrimaryStationScale2Area + MiddleVariable3 * PrimaryStationScale3Area + MiddleVariable4 * PrimaryStationScale4Area + MiddleVariable5 * PrimaryStationScale5Area + MiddleVariable6 * PrimaryStationScale6Area;
+                double PrimaryStationInvestment = MiddleVariable1 * PrimaryStationScale1Investment + MiddleVariable2 * PrimaryStationScale2Investment + MiddleVariable3 * PrimaryStationScale3Investment + MiddleVariable4 * PrimaryStationScale4Investment + MiddleVariable5 * PrimaryStationScale5Investment + MiddleVariable6 * PrimaryStationScale6Investment;
+                double Investment = PrimaryStationInvestment + 0;
+                double ProjectTime = 0;
+                if (MiddleVariable1 != 0)
+                {
+                    ProjectTime = PrimaryStationScale1ProjectTime;
+                }
+                else if (MiddleVariable2 != 0)
+                {
+                    ProjectTime = PrimaryStationScale2ProjectTime;
+                }
+                else if (MiddleVariable3 != 0)
+                {
+                    ProjectTime = PrimaryStationScale2ProjectTime;
+                }
+                else if (MiddleVariable4 != 0)
+                {
+                    ProjectTime = PrimaryStationScale2ProjectTime;
+                }
+                else if (MiddleVariable5 != 0)
+                {
+                    ProjectTime = PrimaryStationScale2ProjectTime;
+                }
+
+                else if (MiddleVariable6 != 0)
+                {
+                    ProjectTime = PrimaryStationScale2ProjectTime;
+                }
+
+
+                txtOuput10.Text = PermanentFloorArea.ToString("0.000");//永久占地面积
+                txtOuput11.Text = ProjectTime.ToString();
+                txtOuput13.Text = "0.000";//临时占地
+                txtOuput14.Text = Investment.ToString(); //总投资
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ParameterErrorDetectionInput2()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ParameterErrorDetectionInput1()
+        {
+    
+            //参数检测，判断输入是否为空
+            if (txtInput1.Text == "")
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为空，请重新输入。");
+
+            }
+            //参数检测，判断输入是否含有字符
+            foreach (char c in txtInput1.Text)
+            {
+                if (char.IsLetter(c))
+                {
+                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}输入参数含有字符，请重新输入。");
+                }
+            }
 
             double targetValue1 = Convert.ToDouble(txtInput1.Text);
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("XMLFile1.xml"); //加载xml文件
-
-         
-            textBox2.Text = ReadXml(xmlDoc, "PrimaryStationScale1");
-            textBox3.Text = ReadXml(xmlDoc, "PrimaryStationScale2");
-            textBox4.Text = ReadXml(xmlDoc, "PrimaryStationScale3");
-            textBox5.Text = ReadXml(xmlDoc, "PrimaryStationScale4");
-            textBox6.Text = ReadXml(xmlDoc, "PrimaryStationScale5");
-            textBox7.Text = ReadXml(xmlDoc, "PrimaryStationScale6");
-
+            //参数检测，判断输入是否为数字、零
             if (targetValue1 < 0)
             {
-                throw new InvalidOperationException("您的输入为负数，管子尺寸初步计算(经济及可行性)计算对象无效!");
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为负数，请重新输入。");
 
             }
             if (targetValue1 == 0)
             {
-                throw new InvalidOperationException("您的输入为零，管子尺寸初步计算(经济及可行性)计算对象无效!");
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为零，请重新输入。");
 
             }
-            int targetValue = Convert.ToInt32(Math.Ceiling(targetValue1));
-            if (radioButton3.Checked == true)
+            //参数检测，判断输入是否在规定范围内 （0,1000000]
+            if (targetValue1 > 1000000)
             {
-                ScaleLargeToSmall(targetValue);
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}超过输入参数范围（0,1000000]，请重新输入。");
             }
-            else 
-            {
-                ScaleNearest(targetValue);
-            }
-
-            MiddleVariable1 = Convert.ToInt32(txtOuput1.Text);
-            MiddleVariable2 = Convert.ToInt32(txtOuput2.Text);
-            MiddleVariable3 = Convert.ToInt32(txtOuput3.Text);
-            MiddleVariable4 = Convert.ToInt32(txtOuput4.Text);
-            MiddleVariable5 = Convert.ToInt32(txtOuput5.Text);
-            MiddleVariable6 = Convert.ToInt32(txtOuput6.Text);
-
-                
-            PrimaryStationScale1Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Investment"));
-            PrimaryStationScale2Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2Investment"));
-            PrimaryStationScale3Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3Investment"));
-            PrimaryStationScale4Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4Investment"));
-            PrimaryStationScale5Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5Investment"));
-            PrimaryStationScale6Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6Investment"));
-
-            PrimaryStationScale1Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Area"));
-            PrimaryStationScale2Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2Area"));
-            PrimaryStationScale3Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3Area"));
-            PrimaryStationScale4Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4Area"));
-            PrimaryStationScale5Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5Area"));
-            PrimaryStationScale6Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6Area"));
-
-            PrimaryStationScale1ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime"));
-            PrimaryStationScale2ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2ProjectTime"));
-            PrimaryStationScale3ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3ProjectTime"));
-            PrimaryStationScale4ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4ProjectTime"));
-            PrimaryStationScale5ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5ProjectTime"));
-            PrimaryStationScale6ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6ProjectTime"));
-
-
-           
-            double PermanentFloorArea =MiddleVariable1 * PrimaryStationScale1Area + MiddleVariable2 * PrimaryStationScale2Area + MiddleVariable3 * PrimaryStationScale3Area + MiddleVariable4 * PrimaryStationScale4Area + MiddleVariable5 * PrimaryStationScale5Area + MiddleVariable6 * PrimaryStationScale6Area ;
-            double PrimaryStationInvestment = MiddleVariable1 * PrimaryStationScale1Investment + MiddleVariable2 * PrimaryStationScale2Investment + MiddleVariable3 * PrimaryStationScale3Investment + MiddleVariable4 * PrimaryStationScale4Investment + MiddleVariable5 * PrimaryStationScale5Investment + MiddleVariable6 * PrimaryStationScale6Investment;         
-            double Investment = PrimaryStationInvestment + 0;
-            double ProjectTime = 0;
-            if (MiddleVariable1 != 0)
-            {
-                ProjectTime = PrimaryStationScale1ProjectTime;
-            }
-            else if (MiddleVariable2 != 0)
-            {
-                ProjectTime = PrimaryStationScale2ProjectTime;
-            }
-            else if (MiddleVariable3 != 0)
-            {
-                ProjectTime = PrimaryStationScale2ProjectTime;
-            }
-            else if (MiddleVariable4!= 0)
-            {
-                ProjectTime = PrimaryStationScale2ProjectTime;
-            }
-            else if (MiddleVariable5 != 0)
-            {
-                ProjectTime = PrimaryStationScale2ProjectTime;
-            }
-
-            else if (MiddleVariable6 != 0)
-            {
-                ProjectTime = PrimaryStationScale2ProjectTime;
-            }
-
-       
-            txtOuput10.Text = PermanentFloorArea.ToString("0.000");//永久占地面积
-            txtOuput11.Text = ProjectTime.ToString();
-            txtOuput13.Text = "0.000";//临时占地
-            txtOuput14.Text = Investment.ToString(); //总投资
-
-        //}
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-}
+        }
 
         private void Clear()
         {
@@ -186,7 +207,7 @@ namespace 天然气供应方案分析与决策软件
             txtOuput3.Text = "";
             txtOuput4.Text = "";
             txtOuput5.Text = "";
-            txtOuput6.Text = "";      
+            txtOuput6.Text = "";
             txtOuput10.Text = "";
             txtOuput11.Text = "";
             txtOuput13.Text = "";
@@ -198,21 +219,21 @@ namespace 天然气供应方案分析与决策软件
         }
         private string ReadXml(XmlDocument xmlDoc, string s)
         {
-            string Str = "configuration/LNGGasificattionStationRoughEstimate/"+ s;
+            string Str = "configuration/LNGGasificattionStationRoughEstimate/" + s;
             XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
             return xn0.InnerText;
         }
-        private void ScaleLargeToSmall(int   Variable)
+        private void ScaleLargeToSmall(int Variable)
         {
-      
-            double  v = Variable;
+
+            double v = Variable;
             int[] s = new int[6] { 0, 0, 0, 0, 0, 0 };
-            double [] a = new double [6];
+            double[] a = new double[6];
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load("XMLFile1.xml"); //加载xml文件
-            a[0] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1"))/ Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1TurnoverRate"))* Convert.ToDouble (ReadXml(xmlDoc, "PrimaryStationGasificattionRate"))*(1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation")))/10000;
-            a[1] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale2"))/ Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale2TurnoverRate"))* Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate"))*(1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation")))/ 10000;
-            a[2] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale3"))/ Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale3TurnoverRate"))* Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate"))*(1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation")))/ 10000;
+            a[0] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1")) / Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1TurnoverRate")) * Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate")) * (1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation"))) / 10000;
+            a[1] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale2")) / Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale2TurnoverRate")) * Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate")) * (1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation"))) / 10000;
+            a[2] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale3")) / Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale3TurnoverRate")) * Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate")) * (1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation"))) / 10000;
             a[3] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale4")) / Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale4TurnoverRate")) * Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate")) * (1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation"))) / 10000;
             a[4] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale5")) / Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale5TurnoverRate")) * Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate")) * (1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation"))) / 10000;
             a[5] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale6")) / Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale6TurnoverRate")) * Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate")) * (1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation"))) / 10000;
@@ -224,7 +245,7 @@ namespace 天然气供应方案分析与决策软件
                     s[i] = 1;
                     break;
                 }
-                v = v -s[i]*a[i];
+                v = v - s[i] * a[i];
             }
             txtOuput1.Text = s[0].ToString();
             txtOuput2.Text = s[1].ToString();
@@ -235,7 +256,7 @@ namespace 天然气供应方案分析与决策软件
         }
         private void ScaleNearest(int Variable)
         {
-            double  v;
+            double v;
             if (Variable % 5 != 0)
             {
                 v = Variable + 5 - (Variable % 5);
@@ -246,7 +267,7 @@ namespace 天然气供应方案分析与决策软件
             }
 
             int[] s = new int[6];
-            double [] a = new double[6];
+            double[] a = new double[6];
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load("XMLFile1.xml"); //加载xml文件
             a[0] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1")) / Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1TurnoverRate")) * Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationGasificattionRate")) * (1 - Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationColdInsulation"))) / 10000;
@@ -271,7 +292,7 @@ namespace 天然气供应方案分析与决策软件
             txtOuput5.Text = s[4].ToString();
             txtOuput6.Text = s[5].ToString();
         }
-        private void button6_Click(object sender, EventArgs e)  
+        private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -406,6 +427,11 @@ namespace 天然气供应方案分析与决策软件
 
                 xmlDoc.Save(path);
             }
+        }
+
+        private void LNGProjectAndInvestment_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

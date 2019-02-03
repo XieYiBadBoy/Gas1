@@ -1,8 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
+  <!--母站计算-->
+  <PrimaryStation>
+    <StdFlow></StdFlow>
+    <UpPre ></UpPre >
+    <ExitPre></ExitPre>
+    <CompresiveNumber></CompresiveNumber>
+    <CNGPrimaryStationArea></CNGPrimaryStationArea>
+    <CompersiveFactor>0.89</CompersiveFactor>
+    <DailyWorkTime>24</DailyWorkTime>
+  </PrimaryStation>
+  <CNGStandardStation>
+  </CNGStandardStation>
   <CNGPrimaryStationRoughEstimate>
     <!--CNG子母站工程量与投资匡算-->
-    <Supply>86</Supply>
+    <Supply></Supply>
     <PrimaryStationScale1></PrimaryStationScale1>
     <PrimaryStationScale2></PrimaryStationScale2>
     <PrimaryStationScale3></PrimaryStationScale3>

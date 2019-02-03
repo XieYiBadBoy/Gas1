@@ -57,8 +57,8 @@ namespace 天然气供应方案分析与决策软件
         double SubstationScale1ProjectTime;   //子站工期 最大
         double SubstationScale2ProjectTime;
 
-        public CNGSubstationSet CngSubstationSet=new CNGSubstationSet();
-  
+        public CNGSubstationSet CngSubstationSet = new CNGSubstationSet();
+
 
         private void ClearTextBox()
         {
@@ -74,9 +74,9 @@ namespace 天然气供应方案分析与决策软件
             txtOuput10.Text = "";
             txtOuput11.Text = "";
             txtOuput12.Text = "";
-            txtOuput13.Text = ""; 
+            txtOuput13.Text = "";
             txtOuput14.Text = "";
-       
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -99,15 +99,14 @@ namespace 天然气供应方案分析与决策软件
         {
             CngSubstationSet = new CNGSubstationSet();
             //CngSubstationSet.MdiParent = this;
-            CngSubstationSet.ShowDialog 
-                ();
+            CngSubstationSet.ShowDialog();
         }
 
-        private void ScaleLargeToSmall(int  Variable)
+        private void ScaleLargeToSmall(int Variable)
         {
             int v = Variable;
-            int[] s = new int[6] { 0,0,0,0,0,0};
-            int [] a = new int[6];
+            int[] s = new int[6] { 0, 0, 0, 0, 0, 0 };
+            int[] a = new int[6];
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load("template.gsa"); //加载xml文件
             a[0] = Convert.ToInt32(ReadXml(xmlDoc, "PrimaryStationScale1"));
@@ -119,7 +118,7 @@ namespace 天然气供应方案分析与决策软件
             for (int i = 0; i < 6; i++)
             {
                 s[i] = v / a[i];
-                if (s[i] ==0)
+                if (s[i] == 0)
                 {
                     s[i] = 1;
                     break;
@@ -136,7 +135,7 @@ namespace 天然气供应方案分析与决策软件
         private void ScaleNearest(int Variable)
         {
             int v;
-            if (Variable%5!=0)
+            if (Variable % 5 != 0)
             {
                 v = Variable + 5 - (Variable % 5);
             }
@@ -144,7 +143,7 @@ namespace 天然气供应方案分析与决策软件
             {
                 v = Variable;
             }
-            
+
             int[] s = new int[6];
             int[] a = new int[6];
             XmlDocument xmlDoc = new XmlDocument();
@@ -173,32 +172,14 @@ namespace 天然气供应方案分析与决策软件
         }
         private void Calculate()
         {
-            try {
-                if (txtInput1.Text == "")
-                {
-                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为空，请重新输入。");
-
-                }
-
-              double targetValue1 = Convert.ToDouble(txtInput1.Text);
-
-                if (targetValue1 < 0)
-                {
-                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为负数，请重新输入。");
-
-                }
-                if (targetValue1 == 0)
-                {
-                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为零，请重新输入。");
-
-                }
-                if (targetValue1>100000000)
-                {
-                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}超过输入范围，请重新输入。");
-                }
+            try
+            {
+                ParameterErrorDetection();
+                double targetValue1 = Convert.ToDouble(txtInput1.Text);
 
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+
                 double SubstationScale1 = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale1"));
                 double SubstationScale2 = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale2"));
                 textBox2.Text = ReadXml(xmlDoc, "PrimaryStationScale1");
@@ -207,11 +188,10 @@ namespace 天然气供应方案分析与决策软件
                 textBox5.Text = ReadXml(xmlDoc, "PrimaryStationScale4");
                 textBox6.Text = ReadXml(xmlDoc, "PrimaryStationScale5");
                 textBox7.Text = ReadXml(xmlDoc, "PrimaryStationScale6");
-                textBox14.Text= ReadXml(xmlDoc, "SubstationScale1");
+                textBox14.Text = ReadXml(xmlDoc, "SubstationScale1");
                 textBox15.Text = ReadXml(xmlDoc, "SubstationScale2");
                 radioButton1.Text = textBox14.Text + "万方/座";
                 radioButton2.Text = textBox15.Text + "万方/座";
-
 
                 int targetValue = Convert.ToInt32(Math.Ceiling(targetValue1));
                 if (radioButton3.Checked == true)
@@ -262,21 +242,21 @@ namespace 天然气供应方案分析与决策软件
                 double BundleInvestment = Convert.ToDouble(ReadXml(xmlDoc, "BundleInvestment"));
                 double TractorInvestment = Convert.ToDouble(ReadXml(xmlDoc, "TractorInvestment"));
                 double BundleStorageGasScale = Convert.ToDouble(ReadXml(xmlDoc, "BundleScale"));
-                PrimaryStationScale1Investment= Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Investment"));
+                PrimaryStationScale1Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Investment"));
                 PrimaryStationScale2Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2Investment"));
                 PrimaryStationScale3Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3Investment"));
                 PrimaryStationScale4Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4Investment"));
                 PrimaryStationScale5Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5Investment"));
                 PrimaryStationScale6Investment = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6Investment"));
 
-                PrimaryStationScale1Area= Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Area"));
+                PrimaryStationScale1Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1Area"));
                 PrimaryStationScale2Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2Area"));
                 PrimaryStationScale3Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3Area"));
                 PrimaryStationScale4Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4Area"));
                 PrimaryStationScale5Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5Area"));
                 PrimaryStationScale6Area = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6Area"));
 
-                PrimaryStationScale1ProjectTime= Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime"));
+                PrimaryStationScale1ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime"));
                 PrimaryStationScale2ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2ProjectTime"));
                 PrimaryStationScale3ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3ProjectTime"));
                 PrimaryStationScale4ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4ProjectTime"));
@@ -298,23 +278,35 @@ namespace 天然气供应方案分析与决策软件
                 double ProjectTime = 0;
                 if (MiddleVariable1 != 0)
                 {
-                    ProjectTime = 8;
+                    ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime"));
                 }
                 else if (MiddleVariable2 != 0)
                 {
-                    ProjectTime = 7;
+                    ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale2ProjectTime"));
                 }
                 else if (MiddleVariable3 != 0)
                 {
-                    ProjectTime = 6;
+                    ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale3ProjectTime"));
                 }
-                else if (MiddleVariable4 != 0 || MiddleVariable5 != 0 || MiddleVariable6 != 0 || MiddleVariable7 != 0)
+                else if (MiddleVariable4 != 0)
                 {
-                    ProjectTime = 5;
+                    ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale4ProjectTime"));
+                }
+                else if (MiddleVariable5 != 0)
+                {
+                    ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale5ProjectTime"));
+                }
+                else if (MiddleVariable6 != 0)
+                {
+                    ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "PrimaryStationScale6ProjectTime"));
+                }
+                else if (MiddleVariable7 != 0)
+                {
+                    ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale1ProjectTime"));
                 }
                 else if (MiddleVariable8 != 0)
                 {
-                    ProjectTime = 4;
+                    ProjectTime = Convert.ToDouble(ReadXml(xmlDoc, "SubstationScale2ProjectTime"));
                 }
 
                 txtOuput9.Text = Bundle.ToString();//管束车
@@ -330,10 +322,47 @@ namespace 天然气供应方案分析与决策软件
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void ParameterErrorDetection()
+        {
+            //参数检测，判断输入是否为空
+            if (txtInput1.Text == "")
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为空，请重新输入。");
+
+            }
+            //参数检测，判断输入是否含有字符
+            foreach (char c in txtInput1.Text)
+            {
+                if (char.IsLetter(c))
+                {
+                    throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}输入参数含有字符，请重新输入。");
+                }
+            }
+
+            double targetValue1 = Convert.ToDouble(txtInput1.Text);
+            //参数检测，判断输入是否为数字、零
+            if (targetValue1 < 0)
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为负数，请重新输入。");
+
+            }
+            if (targetValue1 == 0)
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}为零，请重新输入。");
+
+            }
+            //参数检测，判断输入是否在规定范围内 （0,1000000]
+            if (targetValue1 > 1000000)
+            {
+                throw new InvalidOperationException("输入参数{" + label1.Text + txtInput1.Text + "}超过输入参数范围(0,1000000]，请重新输入。");
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Calculate();
-           
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -408,8 +437,8 @@ namespace 天然气供应方案分析与决策软件
         }
         private string ReadXml(XmlDocument xmlDoc, string s)
         {
-            string  Str = "configuration/CNGPrimaryStationRoughEstimate/" + s;
-            
+            string Str = "configuration/CNGPrimaryStationRoughEstimate/" + s;
+
             XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
             return xn0.InnerText;
         }
@@ -424,8 +453,8 @@ namespace 天然气供应方案分析与决策软件
                 path = saveFile.FileName;
                 SaveCurrentParameters("template.gsa", path);
 
-                
-            }     
+
+            }
         }
 
         public void SaveCurrentParameters(string sourcePath, string targetPath)
@@ -502,7 +531,7 @@ namespace 天然气供应方案分析与决策软件
             XmlNode xn22 = xmlDoc.SelectSingleNode("configuration/CNGPrimaryStationRoughEstimate/Investment");
             xn22.InnerText = txtOuput14.Text;
 
-            xmlDoc.Save(targetPath);
+            xmlDoc.Save(targetPath);// 保存至目标文件
         }
 
         private void groupBox1_MouseHover(object sender, EventArgs e)

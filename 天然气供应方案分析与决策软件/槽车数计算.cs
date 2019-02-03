@@ -26,7 +26,7 @@ namespace 天然气供应方案分析与决策软件
         {
             if (radioButton1.Checked == true)
             {
-
+                Calculate();
             }
             else
             {
@@ -43,6 +43,19 @@ namespace 天然气供应方案分析与决策软件
 
         private void Clebutton2_Click(object sender, EventArgs e)
         {
-            Clear1();        }
+            Clear1();
+        }
+        private void Calculate()
+        {
+            double Scale = Convert.ToDouble(txtInput1.Text);
+            double Distence = Convert.ToDouble(txtInput2.Text);
+            double Number = Math.Ceiling(Scale*(2*Distence/70+3.5)/9600);
+            txtOutput1.Text = Number.ToString();
+        }
+
+        private void Windows4_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

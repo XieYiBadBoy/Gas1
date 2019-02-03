@@ -48,6 +48,7 @@
             this.Clobutton3 = new System.Windows.Forms.Button();
             this.Clebutton2 = new System.Windows.Forms.Button();
             this.Calbutton1 = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -62,9 +63,9 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtInput1);
             this.groupBox1.Controls.Add(this.lblInput1);
-            this.groupBox1.Location = new System.Drawing.Point(1, 12);
+            this.groupBox1.Location = new System.Drawing.Point(1, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(233, 254);
+            this.groupBox1.Size = new System.Drawing.Size(268, 102);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "输入";
@@ -73,53 +74,55 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(212, 59);
+            this.label9.Location = new System.Drawing.Point(208, 41);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 12);
+            this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 15;
-            this.label9.Text = "km";
+            this.label9.Text = "千米";
             this.label9.UseWaitCursor = true;
             // 
             // txtInput2
             // 
-            this.txtInput2.Location = new System.Drawing.Point(104, 53);
+            this.txtInput2.Location = new System.Drawing.Point(102, 38);
             this.txtInput2.Name = "txtInput2";
             this.txtInput2.Size = new System.Drawing.Size(100, 21);
             this.txtInput2.TabIndex = 9;
+            this.txtInput2.Text = "50";
             this.txtInput2.UseWaitCursor = true;
             // 
             // lblInput2
             // 
             this.lblInput2.AutoSize = true;
-            this.lblInput2.Location = new System.Drawing.Point(6, 57);
+            this.lblInput2.Location = new System.Drawing.Point(6, 41);
             this.lblInput2.Name = "lblInput2";
             this.lblInput2.Size = new System.Drawing.Size(101, 12);
             this.lblInput2.TabIndex = 3;
-            this.lblInput2.Text = "子站至母站距离：";
+            this.lblInput2.Text = "母站距子站距离：";
             this.lblInput2.UseWaitCursor = true;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(212, 29);
+            this.label8.Location = new System.Drawing.Point(208, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 12);
+            this.label8.Size = new System.Drawing.Size(59, 12);
             this.label8.TabIndex = 2;
-            this.label8.Text = "m3";
+            this.label8.Text = "立方米/日";
             this.label8.UseWaitCursor = true;
             // 
             // txtInput1
             // 
-            this.txtInput1.Location = new System.Drawing.Point(104, 26);
+            this.txtInput1.Location = new System.Drawing.Point(102, 17);
             this.txtInput1.Name = "txtInput1";
             this.txtInput1.Size = new System.Drawing.Size(100, 21);
             this.txtInput1.TabIndex = 1;
+            this.txtInput1.Text = "10000";
             this.txtInput1.UseWaitCursor = true;
             // 
             // lblInput1
             // 
             this.lblInput1.AutoSize = true;
-            this.lblInput1.Location = new System.Drawing.Point(6, 29);
+            this.lblInput1.Location = new System.Drawing.Point(6, 22);
             this.lblInput1.Name = "lblInput1";
             this.lblInput1.Size = new System.Drawing.Size(89, 12);
             this.lblInput1.TabIndex = 0;
@@ -129,9 +132,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(240, 12);
+            this.groupBox2.Location = new System.Drawing.Point(277, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(233, 121);
+            this.groupBox2.Size = new System.Drawing.Size(211, 45);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "计算类型";
@@ -153,9 +156,9 @@
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.txtOutput1);
             this.groupBox3.Controls.Add(this.lblOutput1);
-            this.groupBox3.Location = new System.Drawing.Point(240, 139);
+            this.groupBox3.Location = new System.Drawing.Point(277, 57);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(233, 127);
+            this.groupBox3.Size = new System.Drawing.Size(211, 51);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "输出";
@@ -164,7 +167,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label19.Location = new System.Drawing.Point(200, 21);
+            this.label19.Location = new System.Drawing.Point(186, 19);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(17, 12);
             this.label19.TabIndex = 19;
@@ -172,7 +175,7 @@
             // 
             // txtOutput1
             // 
-            this.txtOutput1.Location = new System.Drawing.Point(94, 16);
+            this.txtOutput1.Location = new System.Drawing.Point(79, 16);
             this.txtOutput1.Name = "txtOutput1";
             this.txtOutput1.Size = new System.Drawing.Size(100, 21);
             this.txtOutput1.TabIndex = 1;
@@ -180,7 +183,7 @@
             // lblOutput1
             // 
             this.lblOutput1.AutoSize = true;
-            this.lblOutput1.Location = new System.Drawing.Point(6, 18);
+            this.lblOutput1.Location = new System.Drawing.Point(6, 19);
             this.lblOutput1.Name = "lblOutput1";
             this.lblOutput1.Size = new System.Drawing.Size(77, 12);
             this.lblOutput1.TabIndex = 0;
@@ -191,9 +194,9 @@
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(1, 272);
+            this.groupBox5.Location = new System.Drawing.Point(1, 110);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(472, 56);
+            this.groupBox5.Size = new System.Drawing.Size(487, 56);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             // 
@@ -208,7 +211,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(396, 20);
+            this.button4.Location = new System.Drawing.Point(406, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
@@ -217,7 +220,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(294, 20);
+            this.button5.Location = new System.Drawing.Point(305, 20);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 4;
@@ -226,7 +229,7 @@
             // 
             // Clobutton3
             // 
-            this.Clobutton3.Location = new System.Drawing.Point(397, 343);
+            this.Clobutton3.Location = new System.Drawing.Point(408, 186);
             this.Clobutton3.Name = "Clobutton3";
             this.Clobutton3.Size = new System.Drawing.Size(75, 23);
             this.Clobutton3.TabIndex = 12;
@@ -236,7 +239,7 @@
             // 
             // Clebutton2
             // 
-            this.Clebutton2.Location = new System.Drawing.Point(295, 343);
+            this.Clebutton2.Location = new System.Drawing.Point(306, 186);
             this.Clebutton2.Name = "Clebutton2";
             this.Clebutton2.Size = new System.Drawing.Size(75, 23);
             this.Clebutton2.TabIndex = 11;
@@ -246,7 +249,7 @@
             // 
             // Calbutton1
             // 
-            this.Calbutton1.Location = new System.Drawing.Point(194, 343);
+            this.Calbutton1.Location = new System.Drawing.Point(205, 186);
             this.Calbutton1.Name = "Calbutton1";
             this.Calbutton1.Size = new System.Drawing.Size(75, 23);
             this.Calbutton1.TabIndex = 10;
@@ -254,12 +257,22 @@
             this.Calbutton1.UseVisualStyleBackColor = true;
             this.Calbutton1.Click += new System.EventHandler(this.Calbutton1_Click);
             // 
+            // label52
+            // 
+            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label52.Location = new System.Drawing.Point(1, 176);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(490, 2);
+            this.label52.TabIndex = 15;
+            this.label52.Text = "label52";
+            // 
             // Windows4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(478, 376);
+            this.ClientSize = new System.Drawing.Size(495, 221);
+            this.Controls.Add(this.label52);
             this.Controls.Add(this.Clobutton3);
             this.Controls.Add(this.Clebutton2);
             this.Controls.Add(this.Calbutton1);
@@ -272,6 +285,7 @@
             this.MinimizeBox = false;
             this.Name = "Windows4";
             this.Text = "CNG分析--槽车个数计算";
+            this.Load += new System.EventHandler(this.Windows4_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -305,5 +319,6 @@
         private System.Windows.Forms.Button Clobutton3;
         private System.Windows.Forms.Button Clebutton2;
         private System.Windows.Forms.Button Calbutton1;
+        private System.Windows.Forms.Label label52;
     }
 }
