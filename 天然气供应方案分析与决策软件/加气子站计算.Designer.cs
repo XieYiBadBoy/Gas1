@@ -87,6 +87,8 @@
             this.Clebutton2 = new System.Windows.Forms.Button();
             this.Clobutton3 = new System.Windows.Forms.Button();
             this.label52 = new System.Windows.Forms.Label();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.loadFile = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -403,7 +405,7 @@
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 12);
             this.label24.TabIndex = 28;
-            this.label24.Text = "立方米";
+            this.label24.Text = "平方米";
             // 
             // groupBox3
             // 
@@ -635,6 +637,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "导入(L)";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -644,6 +647,7 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "导出(E)";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -705,6 +709,10 @@
             this.label52.TabIndex = 17;
             this.label52.Text = "label52";
             // 
+            // loadFile
+            // 
+            this.loadFile.FileName = "openFileDialog1";
+            // 
             // Windows3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -724,6 +732,7 @@
             this.MinimizeBox = false;
             this.Name = "Windows3";
             this.Text = "CNG分析--子站计算";
+            this.Load += new System.EventHandler(this.Windows3_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -795,5 +804,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtOutput11;
         private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.OpenFileDialog loadFile;
     }
 }

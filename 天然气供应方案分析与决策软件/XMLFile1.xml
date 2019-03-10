@@ -32,8 +32,34 @@
     <TaxiCount>1000</TaxiCount>
     <BusCount>200</BusCount>
   </CNGStandardStation>
+  <!--Cng槽车计算-->
+  <CngTankCar>
+    
+  </CngTankCar>
+  <!--Cng标准站计算-->
+  <CNGStandard>
+    <StdFlow>100000</StdFlow>
+    <UpPre >4</UpPre >
+    <ExitPre>25</ExitPre>
+    <LowPressureVolumeRatio>3</LowPressureVolumeRatio>
+    <MiddlePressureVolumeRatio>2</MiddlePressureVolumeRatio>
+    <CompressorFillingTime>7</CompressorFillingTime>
+    <CompressorCount></CompressorCount>
+    <LowPressureVolume></LowPressureVolume>
+    <MIddlePressureVolume></MIddlePressureVolume>
+    <HighPressureVolume></HighPressureVolume>
+    <LowPressureCount></LowPressureCount>
+    <MiddlePresureCount></MiddlePresureCount>
+    <HighPressureCount></HighPressureCount>
+    <CngStationaAddGasCount></CngStationaAddGasCount>
+    <CngTotalArea></CngTotalArea>
+    <CompressureFator>0.89</CompressureFator>
+    <DailyWorkTime>20</DailyWorkTime>
+    <TaxiCount>1000</TaxiCount>
+    <BusCount>200</BusCount>
+  </CNGStandard>
+  <!--CNG子母站工程量与投资匡算-->
   <CNGPrimaryStationRoughEstimate>
-    <!--CNG子母站工程量与投资匡算-->
     <Supply>86</Supply>
     <PrimaryStationScale1>50</PrimaryStationScale1>  
     <PrimaryStationScale2>30</PrimaryStationScale2>

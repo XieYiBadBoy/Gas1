@@ -210,8 +210,6 @@ namespace 天然气供应方案分析与决策软件
             {
                 path = saveFile.FileName;
                 SaveCurrentParameters("OpenNewFile.gsa", path);
-
-
             }
         }
 

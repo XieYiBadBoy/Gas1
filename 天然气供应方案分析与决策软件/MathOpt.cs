@@ -94,7 +94,7 @@ namespace 天然气供应方案分析与决策软件
         public double MeanVelocity(double F2, double D2)
         {
             double BL3 =  4 * Math.Pow(10, 6) * F2 *0.101325;    //BL3,BL4 均为中间变量，计算方便，无实义
-            double BL4 = 24 * 3600 * Math.PI * D2 * D2*0.10325;
+            double BL4 = 24 * 3600 * Math.PI * D2 * D2;
             double V;
             V = BL3 / BL4;
             return V;

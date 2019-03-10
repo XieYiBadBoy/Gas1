@@ -24,15 +24,16 @@ namespace 天然气供应方案分析与决策软件
 
         private void Calbutton1_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == true)
+            try
             {
                 Calculate();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("请选择计算类型");
-
+                MessageBox.Show(ex.Message);
             }
+            
+
         }
         private void Clear1()
         {

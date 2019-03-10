@@ -41,8 +41,8 @@ namespace 天然气供应方案分析与决策软件
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 string str1 = label1.Text;
                 string str2 = txtInput1.Text;
                 string str3 = label2.Text;
@@ -58,14 +58,14 @@ namespace 天然气供应方案分析与决策软件
                 Common.ParameterErrorDetectionBusCount(str7, str8);
                 SaveParameter();
                 this.Close();
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show(ex.Message);
-            //}
-
         }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+}
 
         private void SecStatSetup_Load(object sender, EventArgs e)
         {
@@ -79,16 +79,15 @@ namespace 天然气供应方案分析与决策软件
 
         private string ReadXml(XmlDocument xmlDoc, string s)
         {
-            string Str = "configuration/CNGStandardStation/" + s;
+            string Str = "configuration/CNGStandardSation/" + s;
             XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
             return xn0.InnerText;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-            //try
-            //{
+            try
+            {
                 string str1 = label1.Text;
                 string str2 = txtInput1.Text;
                 string str3 = label2.Text;
@@ -103,13 +102,13 @@ namespace 天然气供应方案分析与决策软件
                 Common.ParameterErrorDetectionTaxiCount(str5 ,str6);
                 Common.ParameterErrorDetectionBusCount(str7,str8);
                 SaveParameter();
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show(ex.Message);
-            //}
         }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+}
 
         private void SaveParameter()
         {
@@ -129,6 +128,17 @@ namespace 天然气供应方案分析与决策软件
             xn3.InnerText = txtInput5.Text;
 
             xmlDoc.Save("XMLFile1.xml");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("OpenNewFile.gsa"); //加载xml文件
+
+            txtInput1.Text = ReadXml(xmlDoc, "CompressureFator");
+            txtInput2.Text = ReadXml(xmlDoc, "DailyWorkTime");
+            txtInput4.Text = ReadXml(xmlDoc, "TaxiCount");
+            txtInput5.Text = ReadXml(xmlDoc, "BusCount");
         }
     }
 }

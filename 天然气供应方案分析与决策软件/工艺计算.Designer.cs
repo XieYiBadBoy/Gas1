@@ -149,7 +149,7 @@
             this.txtInput2.Name = "txtInput2";
             this.txtInput2.Size = new System.Drawing.Size(100, 21);
             this.txtInput2.TabIndex = 9;
-            this.txtInput2.Text = "8";
+            this.txtInput2.Text = "10";
             // 
             // lblInput4
             // 
@@ -193,7 +193,7 @@
             this.txtInput1.Name = "txtInput1";
             this.txtInput1.Size = new System.Drawing.Size(100, 21);
             this.txtInput1.TabIndex = 1;
-            this.txtInput1.Text = "10";
+            this.txtInput1.Text = "4000";
             // 
             // lblInput1
             // 
@@ -395,6 +395,7 @@
             this.txtOutput1.Name = "txtOutput1";
             this.txtOutput1.Size = new System.Drawing.Size(100, 21);
             this.txtOutput1.TabIndex = 1;
+            this.txtOutput1.TextChanged += new System.EventHandler(this.txtOutput1_TextChanged);
             // 
             // lblOutput1
             // 

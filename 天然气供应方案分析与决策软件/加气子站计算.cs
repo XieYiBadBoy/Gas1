@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace 天然气供应方案分析与决策软件
 {
@@ -292,6 +293,115 @@ namespace 天然气供应方案分析与决策软件
         private void button1_Click(object sender, EventArgs e)
         {
             SecSetup.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string path = null;
+            saveFile.Filter = "gsa(*.gsa)|*.gsa";//设置文件类型
+            saveFile.FileName = "GAS";//设置默认文件名
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                path = saveFile.FileName;
+                SaveCurrentParameters("OpenNewFile.gsa", path);
+            }
+        }
+
+        private void SaveCurrentParameters(string sourcePath, string targetPath)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(sourcePath); //加载xml文件
+
+            XmlNode xn0 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/StdFlow");
+            xn0.InnerText = txtInput2.Text;
+
+            XmlNode xn1 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/ExitPre");
+            xn1.InnerText = txtInput4.Text;
+
+            XmlNode xn2 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/UpPre");
+            xn2.InnerText = txtInput5.Text;
+
+            XmlNode xn3 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/LowPressureVolumeRatio");
+            xn3.InnerText = txtInput6.Text;
+
+            XmlNode xn4 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/MiddlePressureVolumeRatio");
+            xn4.InnerText = txtInput7.Text;
+
+            XmlNode xn6 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/CompressorFillingTime");
+            xn6.InnerText = comInput1.Text;
+
+            XmlNode xn7 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/CompressorCount");
+            xn7.InnerText = txtOutput3.Text;
+
+            XmlNode xn8 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/CngTotalArea");
+            xn8.InnerText = txtOutput4.Text;
+
+            XmlNode xn9= xmlDoc.SelectSingleNode("configuration/CNGStandardStation/LowPressureVolume");
+            xn9.InnerText = txtOutput5.Text;
+
+            XmlNode xn10= xmlDoc.SelectSingleNode("configuration/CNGStandardStation/MIddlePressureVolume");
+            xn10.InnerText = txtOutput6.Text;
+
+            XmlNode xn11 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/HighPressureVolume");
+            xn8.InnerText = txtOutput7.Text;
+
+            XmlNode xn12 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/LowPressureCount");
+            xn12.InnerText = txtOutput8.Text;
+
+            XmlNode xn13 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/MiddlePresureCount");
+            xn13.InnerText = txtOutput9.Text;
+
+            XmlNode xn14 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/HighPressureCount");
+            xn14.InnerText = txtOutput10.Text;
+
+            XmlNode xn15 = xmlDoc.SelectSingleNode("configuration/CNGStandardStation/CngStationaAddGasCount");
+            xn15.InnerText = txtOutput11.Text;
+
+            xmlDoc.Save(targetPath);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string path = null;
+            loadFile.Multiselect = false;
+            loadFile.Filter = "gsa(*.gsa)|*.gsa";
+            if (loadFile.ShowDialog() == DialogResult.OK)
+            {
+                path = loadFile.FileName;
+                LoadCurrentParameters(path);
+            }
+        }
+
+        private void LoadCurrentParameters(string path)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(path); //加载xml文件
+            txtInput2.Text = ReadXml(xmlDoc, "StdFlow");
+            txtInput4.Text = ReadXml(xmlDoc, "ExitPre");
+            txtInput5.Text = ReadXml(xmlDoc, "UpPre");
+            txtInput6.Text = ReadXml(xmlDoc, "LowPressureVolumeRatio");
+            txtInput7.Text = ReadXml(xmlDoc, "MiddlePressureVolumeRatio");
+            comInput1.Text = ReadXml(xmlDoc, "CompressorFillingTime");
+            txtOutput3.Text = ReadXml(xmlDoc, "CompressorCount");
+            txtOutput4.Text = ReadXml(xmlDoc, "CngTotalArea");
+            txtOutput5.Text = ReadXml(xmlDoc, "LowPressureVolume");
+            txtOutput6.Text = ReadXml(xmlDoc, "MIddlePressureVolume");
+            txtOutput7.Text = ReadXml(xmlDoc, "HighPressureVolume");
+            txtOutput8.Text = ReadXml(xmlDoc, "LowPressureCount");
+            txtOutput9.Text = ReadXml(xmlDoc, "MiddlePresureCount");
+            txtOutput10.Text = ReadXml(xmlDoc, "HighPressureCount");
+            txtOutput11.Text = ReadXml(xmlDoc, "CngStationaAddGasCount");
+        }
+
+        private string ReadXml(XmlDocument xmlDoc, string s)
+        {
+            string Str = "configuration/CNGStandardStation/" + s;
+            XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
+            return xn0.InnerText;
+        }
+
+        private void Windows3_Load(object sender, EventArgs e)
+        {
 
         }
     }

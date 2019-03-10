@@ -23,16 +23,16 @@ namespace 天然气供应方案分析与决策软件
         {
             try
             {
-                double z = Convert.ToDouble(stdsetup2.StdFactor);    //压缩机因子
-                double StdFlow3 = Convert.ToDouble(txtInput1.Text);   //标准体积流量       StdFlow
-                double Time = Convert.ToDouble(stdsetup2.StdTime);      //子站加气机工作时间 Time  
-                double ExitPre = Convert.ToDouble(txtInput4.Text);   //压缩机出口压力     ExitPre  
-                double UpPre = Convert.ToDouble(txtInput5.Text);     //压缩机入口压力   UpPre       
-                double LowProp = Convert.ToDouble(txtInput2.Text);  //低压区容积比例
-                double MidProp = Convert.ToDouble(txtInput3.Text);   //中压区容积比例
-                double TaxiNum = Convert.ToDouble(stdsetup2.StdTaxiNum);   //出租车数量
-                double BusNum = Convert.ToDouble(stdsetup2.StdBusNum);    //公交车数量
-                double CompTime = Convert.ToDouble(comInput1.Text );  //压缩机补气时间
+                double z = Convert.ToDouble(stdsetup2.StdFactor);         //压缩机因子
+                double StdFlow3 = Convert.ToDouble(txtInput1.Text);       //标准体积流量       StdFlow
+                double Time = Convert.ToDouble(stdsetup2.StdTime);        //子站加气机工作时间 Time  
+                double ExitPre = Convert.ToDouble(txtInput4.Text);        //压缩机出口压力     ExitPre  
+                double UpPre = Convert.ToDouble(txtInput5.Text);          //压缩机入口压力   UpPre       
+                double LowProp = Convert.ToDouble(stdsetup2.StdLowProp);  //低压区容积比例
+                double MidProp = Convert.ToDouble(stdsetup2.StdMidProp);  //中压区容积比例
+                double TaxiNum = Convert.ToDouble(textBox2.Text);         //出租车数量
+                double BusNum = Convert.ToDouble(textBox1.Text);          //公交车数量
+                double CompTime = Convert.ToDouble(comInput1.Text);      //压缩机补气时间
                 double PreRat = calculator3.CompressorPower(z, StdFlow3, Time, UpPre, ExitPre);
                 double TotalArea = 10000 + 0.14 * StdFlow3;
                 double CNGnum = Math.Ceiling(calculator3.CNGNum(TaxiNum, BusNum, Time));
@@ -42,7 +42,7 @@ namespace 天然气供应方案分析与决策软件
                 double n3 = Vg31 / 2700;
                 double n2 = Vg21 / 2700;
                 double n1 = Vg11 / 2700;
-                txtOutput3.Text = PreRat.ToString("0.0000");
+                txtOutput3.Text = PreRat.ToString();
                 txtOutput4.Text = TotalArea.ToString("0.0000");
                 txtOutput5.Text = Vg31.ToString("0.0000");
                 txtOutput6.Text = Vg21.ToString("0.0000");
@@ -77,8 +77,8 @@ namespace 天然气供应方案分析与决策软件
         private void Clear()
         {
             txtInput1.Text = "";
-            txtInput2.Text = "";
-            txtInput3.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
             txtInput4.Text = "";
             txtInput5.Text = "";
             txtOutput3.Text = "";
@@ -101,6 +101,21 @@ namespace 天然气供应方案分析与决策软件
         {
             stdset = new StdSetup2();
             stdset.ShowDialog();
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Windows5_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
