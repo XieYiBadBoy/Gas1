@@ -482,7 +482,8 @@ namespace 天然气供应方案分析与决策软件
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
+            //////545454545；
+            //todo
         }
 
         private void txtOutput1_TextChanged(object sender, EventArgs e)

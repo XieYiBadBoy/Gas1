@@ -125,6 +125,12 @@
     <Compile Include="压气站计算.Designer.cs">
       <DependentUpon>压气站计算.cs</DependentUpon>
     </Compile>
+    <Compile Include="批量分析--管道适应性分析--下端压力分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="批量分析--管道适应性分析--下端压力分析.Designer.cs">
+      <DependentUpon>批量分析--管道适应性分析--下端压力分析.cs</DependentUpon>
+    </Compile>
     <Compile Include="标准站-设置.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="压气站计算.resx">
       <DependentUpon>压气站计算.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="批量分析--管道适应性分析--下端压力分析.resx">
+      <DependentUpon>批量分析--管道适应性分析--下端压力分析.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="标准站-设置.resx">
       <DependentUpon>标准站-设置.cs</DependentUpon>

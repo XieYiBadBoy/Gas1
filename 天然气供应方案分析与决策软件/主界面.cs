@@ -39,6 +39,7 @@ namespace 天然气供应方案分析与决策软件
         public ComprehensiveAnalysCriticalCurveMethod CriticalCurveMethod;
         public LNGProjectAndInvestment LngProjectAndInvestment;
         public OptionSet Optionset;
+        public LowPressureAnalysis LowpressureAnalysis;
 
         private  string skinPath = @"Resources\";
 
@@ -750,6 +751,13 @@ namespace 天然气供应方案分析与决策软件
         private void 文件ToolStripMenuItem_Click(object sender, EventArgs e)
         {
              //ReadRecentDocumentsInIniFile(count);    //读取历史文件
+        }
+
+        private void 下端压力分析ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LowpressureAnalysis = new LowPressureAnalysis();
+            LowpressureAnalysis.MdiParent = this;
+            LowpressureAnalysis.Show();
         }
     }
 }
