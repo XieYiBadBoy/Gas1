@@ -86,5 +86,10 @@ namespace 天然气供应方案分析与决策软件
         {
             SaveElement();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
