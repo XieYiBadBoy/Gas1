@@ -1,4 +1,4 @@
-C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\bin\Debug\天然气供应方案分析与决策软件.exe.config
+﻿C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\bin\Debug\天然气供应方案分析与决策软件.exe.config
 C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\bin\Debug\天然气供应方案分析与决策软件.exe
 C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\bin\Debug\天然气供应方案分析与决策软件.pdb
 C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.csprojResolveAssemblyReference.cache
@@ -70,3 +70,6 @@ C:\Users\Administrator\Documents\Visual Studio 2015\Projects\天然气供应方�
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\天然气供应方案分析与决策软件（求你不死机版）\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.Windows2.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\天然气供应方案分析与决策软件（求你不死机版）\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.OptionSet.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\天然气供应方案分析与决策软件（求你不死机版）\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.PlumberDiameterAnalysis.resources
+C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.OutputAmountAnalysis.resources
+

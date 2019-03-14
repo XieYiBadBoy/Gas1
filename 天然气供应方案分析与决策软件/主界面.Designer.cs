@@ -394,51 +394,83 @@
             // 工艺计算ToolStripMenuItem
             // 
             this.工艺计算ToolStripMenuItem.Name = "工艺计算ToolStripMenuItem";
+
             this.工艺计算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+
+            this.工艺计算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+
             this.工艺计算ToolStripMenuItem.Text = "工艺计算";
             this.工艺计算ToolStripMenuItem.Click += new System.EventHandler(this.工艺计算ToolStripMenuItem_Click);
             // 
             // 耗钢量计算ToolStripMenuItem
             // 
             this.耗钢量计算ToolStripMenuItem.Name = "耗钢量计算ToolStripMenuItem";
+
             this.耗钢量计算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+
+            this.耗钢量计算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+
             this.耗钢量计算ToolStripMenuItem.Text = "耗钢量计算";
             this.耗钢量计算ToolStripMenuItem.Click += new System.EventHandler(this.耗钢量计算ToolStripMenuItem_Click);
             // 
             // 压气站布置ToolStripMenuItem
             // 
             this.压气站布置ToolStripMenuItem.Name = "压气站布置ToolStripMenuItem";
+
             this.压气站布置ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+
+            this.压气站布置ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+
             this.压气站布置ToolStripMenuItem.Text = "压气站布置";
             this.压气站布置ToolStripMenuItem.Click += new System.EventHandler(this.压气站布置ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+
             this.toolStripMenuItem7.Size = new System.Drawing.Size(133, 6);
+
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(178, 6);
+
             // 
             // 工程量匡算ToolStripMenuItem
             // 
             this.工程量匡算ToolStripMenuItem.Name = "工程量匡算ToolStripMenuItem";
+
             this.工程量匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+
+            this.工程量匡算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+
             this.工程量匡算ToolStripMenuItem.Text = "工程量匡算";
             this.工程量匡算ToolStripMenuItem.Click += new System.EventHandler(this.工程量匡算ToolStripMenuItem_Click);
             // 
             // 投资量匡算ToolStripMenuItem
             // 
             this.投资量匡算ToolStripMenuItem.Name = "投资量匡算ToolStripMenuItem";
+
             this.投资量匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+
+            this.投资量匡算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+
             this.投资量匡算ToolStripMenuItem.Text = "投资匡算";
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+
             this.toolStripMenuItem8.Size = new System.Drawing.Size(133, 6);
+
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(178, 6);
+
             // 
             // 方案匡算ToolStripMenuItem
             // 
             this.方案匡算ToolStripMenuItem.Name = "方案匡算ToolStripMenuItem";
+
             this.方案匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+
+            this.方案匡算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+
             this.方案匡算ToolStripMenuItem.Text = "方案匡算";
             // 
             // CNGfenxiToolStripMenuItem
@@ -588,6 +620,7 @@
             this.PILAINGFENXIToolStripMenuItem.Name = "PILAINGFENXIToolStripMenuItem";
             this.PILAINGFENXIToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.PILAINGFENXIToolStripMenuItem.Text = "批量分析";
+            this.PILAINGFENXIToolStripMenuItem.Click += new System.EventHandler(this.PILAINGFENXIToolStripMenuItem_Click);
             // 
             // 管道适应性分析ToolStripMenuItem
             // 
@@ -602,21 +635,37 @@
             // 下端压力分析ToolStripMenuItem
             // 
             this.下端压力分析ToolStripMenuItem.Name = "下端压力分析ToolStripMenuItem";
+
             this.下端压力分析ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+
+            this.下端压力分析ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+
             this.下端压力分析ToolStripMenuItem.Text = "下端压力分析";
             this.下端压力分析ToolStripMenuItem.Click += new System.EventHandler(this.下端压力分析ToolStripMenuItem_Click);
             // 
             // 输量分析ToolStripMenuItem
             // 
             this.输量分析ToolStripMenuItem.Name = "输量分析ToolStripMenuItem";
+
             this.输量分析ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.输量分析ToolStripMenuItem.Text = "输量分析";
+
+            this.输量分析ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.输量分析ToolStripMenuItem.Text = "输量分析";
+            this.输量分析ToolStripMenuItem.Click += new System.EventHandler(this.输量分析ToolStripMenuItem_Click);
+
             // 
             // 管径分析ToolStripMenuItem
             // 
             this.管径分析ToolStripMenuItem.Name = "管径分析ToolStripMenuItem";
+
             this.管径分析ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.管径分析ToolStripMenuItem.Text = "管径分析";
+
+            this.管径分析ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.管径分析ToolStripMenuItem.Text = "管径分析";
+            this.管径分析ToolStripMenuItem.Click += new System.EventHandler(this.管径分析ToolStripMenuItem_Click);
+
             // 
             // 方案分析ToolStripMenuItem
             // 
@@ -962,7 +1011,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbInf.Enabled = false;
             this.rtbInf.ForeColor = System.Drawing.SystemColors.WindowText;
+
             this.rtbInf.Location = new System.Drawing.Point(839, 46);
+
+            this.rtbInf.Location = new System.Drawing.Point(1247, 66);
+            this.rtbInf.Margin = new System.Windows.Forms.Padding(4);
+
             this.rtbInf.Name = "rtbInf";
             this.rtbInf.Size = new System.Drawing.Size(189, 528);
             this.rtbInf.TabIndex = 3;
@@ -982,6 +1036,10 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+
+
+            this.Margin = new System.Windows.Forms.Padding(4);
+
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "中国石油规划总院";

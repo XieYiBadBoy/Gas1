@@ -40,7 +40,8 @@ namespace 天然气供应方案分析与决策软件
         public LNGProjectAndInvestment LngProjectAndInvestment;
         public OptionSet Optionset;
         public LowPressureAnalysis LowpressureAnalysis;
-
+        public OutputAmountAnalysis Outputamount;
+        public PlumberDiameterAnalysis Plumberdiameteranalysis;
         private  string skinPath = @"Resources\";
 
 
@@ -758,6 +759,26 @@ namespace 天然气供应方案分析与决策软件
             LowpressureAnalysis = new LowPressureAnalysis();
             LowpressureAnalysis.MdiParent = this;
             LowpressureAnalysis.Show();
+        }
+
+        private void PILAINGFENXIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 输量分析ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            Outputamount = new OutputAmountAnalysis();
+            Outputamount.MdiParent = this;
+            Outputamount.Show();
+        }
+
+        private void 管径分析ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Plumberdiameteranalysis = new PlumberDiameterAnalysis();
+            Plumberdiameteranalysis.MdiParent = this;
+            Plumberdiameteranalysis.Show();
         }
     }
 }
