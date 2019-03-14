@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace 天然气供应方案分析与决策软件
 {
-    public partial class LowPressureAnalysis : Form
+    public partial class PlumberDiameterAnalysis : Form
     {
-        public LowPressureAnalysis()
+        public PlumberDiameterAnalysis()
         {
             InitializeComponent();
-        }
-
-        private void LowPressureAnalysis_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

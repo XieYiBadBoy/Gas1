@@ -34,3 +34,5 @@ C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与�
 C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.exe
 C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.pdb
 C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.LowPressureAnalysis.resources
+C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.PlumberDiameterAnalysis.resources
+C:\Users\Administrator\Desktop\vs的使用\Gas1\天然气供应方案分析与决策软件\obj\Debug\天然气供应方案分析与决策软件.OutputAmountAnalysis.resources

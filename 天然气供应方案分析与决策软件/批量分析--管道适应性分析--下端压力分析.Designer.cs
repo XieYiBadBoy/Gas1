@@ -67,7 +67,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(680, 27);
+            this.textBox4.Location = new System.Drawing.Point(673, 27);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(55, 25);
             this.textBox4.TabIndex = 10;
@@ -75,7 +75,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(736, 33);
+            this.label7.Location = new System.Drawing.Point(731, 33);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 15);
             this.label7.TabIndex = 8;
@@ -84,7 +84,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(595, 33);
+            this.label8.Location = new System.Drawing.Point(588, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 15);
             this.label8.TabIndex = 9;
@@ -92,7 +92,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(476, 27);
+            this.textBox3.Location = new System.Drawing.Point(472, 27);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(55, 25);
             this.textBox3.TabIndex = 7;
@@ -100,7 +100,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(534, 33);
+            this.label5.Location = new System.Drawing.Point(530, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 5;
@@ -109,7 +109,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(391, 33);
+            this.label6.Location = new System.Drawing.Point(387, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 15);
             this.label6.TabIndex = 6;
@@ -172,7 +172,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(790, 69);
+            this.groupBox1.Size = new System.Drawing.Size(774, 69);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "输入";
@@ -202,10 +202,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(201, 290);
+            this.dataGridView1.Size = new System.Drawing.Size(206, 290);
             this.dataGridView1.TabIndex = 1;
             // 
             // groupBox3
@@ -226,10 +226,10 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView2.Location = new System.Drawing.Point(8, 20);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 20);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(553, 308);
+            this.dataGridView2.Size = new System.Drawing.Size(533, 290);
             this.dataGridView2.TabIndex = 9;
             // 
             // Column2
@@ -262,7 +262,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(441, 483);
+            this.button6.Location = new System.Drawing.Point(432, 482);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(97, 35);
             this.button6.TabIndex = 27;
@@ -271,7 +271,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(577, 483);
+            this.button5.Location = new System.Drawing.Point(561, 482);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(99, 34);
             this.button5.TabIndex = 28;
@@ -280,7 +280,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(703, 483);
+            this.button4.Location = new System.Drawing.Point(687, 482);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(99, 34);
             this.button4.TabIndex = 29;
@@ -289,7 +289,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(703, 427);
+            this.button3.Location = new System.Drawing.Point(687, 427);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(99, 34);
             this.button3.TabIndex = 26;
@@ -298,7 +298,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(577, 427);
+            this.button2.Location = new System.Drawing.Point(561, 427);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 34);
             this.button2.TabIndex = 25;
@@ -307,7 +307,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 427);
+            this.button1.Location = new System.Drawing.Point(12, 427);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 34);
             this.button1.TabIndex = 24;
@@ -352,6 +352,7 @@
             this.MinimizeBox = false;
             this.Name = "LowPressureAnalysis";
             this.Text = "批量分析__管道适应性分析__下端压力分析";
+            this.Load += new System.EventHandler(this.LowPressureAnalysis_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
