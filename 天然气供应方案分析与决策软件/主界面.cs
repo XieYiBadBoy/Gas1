@@ -780,5 +780,10 @@ namespace 天然气供应方案分析与决策软件
             Plumberdiameteranalysis.MdiParent = this;
             Plumberdiameteranalysis.Show();
         }
+
+        private void rtbInf_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
