@@ -19,6 +19,9 @@ namespace 天然气供应方案分析与决策软件
 
         private void 批量分析__管道适应性分析__输量分析_Load(object sender, EventArgs e)
         {
+
+            dataGridView2.TopLeftHeaderCell.Value = "序号";
+
             this.dataGridView2.Rows[0].HeaderCell.Value = "1";
 
             dataGridView2.EnableHeadersVisualStyles = false;
@@ -35,6 +38,8 @@ namespace 天然气供应方案分析与决策软件
             this.dataGridView2.Columns[2].HeaderText = "雷诺数\r\n" + "（无单位）";
             this.dataGridView2.Columns[3].HeaderText = "达西摩阻系数\r\n" + "（无单位）";
 
+
+            dataGridView1.TopLeftHeaderCell.Value = "序号";
 
             this.dataGridView1.Rows[0].HeaderCell.Value = "1";
 
