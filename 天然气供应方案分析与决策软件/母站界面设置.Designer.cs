@@ -70,6 +70,7 @@
             this.label10.TabIndex = 50;
             this.label10.Text = "小时";
             this.label10.UseWaitCursor = true;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txtInput2
             // 
@@ -79,6 +80,8 @@
             this.txtInput2.TabIndex = 49;
             this.txtInput2.Text = "24";
             this.txtInput2.UseWaitCursor = true;
+            this.txtInput2.TextChanged += new System.EventHandler(this.txtInput2_TextChanged);
+            this.txtInput2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput2_KeyPress);
             // 
             // label2
             // 
@@ -89,6 +92,7 @@
             this.label2.TabIndex = 48;
             this.label2.Text = "每日工作时长：";
             this.label2.UseWaitCursor = true;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label9
             // 
@@ -99,6 +103,7 @@
             this.label9.Size = new System.Drawing.Size(41, 12);
             this.label9.TabIndex = 18;
             this.label9.Text = "无单位";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtInput1
             // 
@@ -107,6 +112,8 @@
             this.txtInput1.Size = new System.Drawing.Size(80, 21);
             this.txtInput1.TabIndex = 1;
             this.txtInput1.Text = " 0.89";
+            this.txtInput1.TextChanged += new System.EventHandler(this.txtInput1_TextChanged);
+            this.txtInput1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput1_KeyPress);
             // 
             // label1
             // 
@@ -116,6 +123,7 @@
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "压缩因子：";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button4
             // 
@@ -165,6 +173,7 @@
             this.label52.Size = new System.Drawing.Size(400, 2);
             this.label52.TabIndex = 26;
             this.label52.Text = "label52";
+            this.label52.Click += new System.EventHandler(this.label52_Click);
             // 
             // NatStationSetup
             // 

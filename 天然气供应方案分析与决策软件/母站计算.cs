@@ -29,6 +29,7 @@ namespace 天然气供应方案分析与决策软件
                 string str4 = txtInput4.Text;
                 string str5 = lblInput5.Text;
                 string str6 = txtInput5.Text;
+                Common.ParameterErrorDetectionFlow(str1, str2);
                 ParameterErrorDetectionInput1(str3, str4);
                 ParameterErrorDetectionInput2(str5, str6);
 

@@ -49,6 +49,7 @@ namespace 天然气供应方案分析与决策软件
             this.dataGridView2.Columns[1].HeaderText = "投资\r\n" + "（万元）";
             this.dataGridView2.Columns[2].HeaderText = "占地面积\r\n" + "（万平方米）";
             this.dataGridView2.Columns[3].HeaderText = "工期\r\n" + "（月）";
+            this.dataGridView2.TopLeftHeaderCell.Value = "序号";
 
         }
         private void SaveElement()

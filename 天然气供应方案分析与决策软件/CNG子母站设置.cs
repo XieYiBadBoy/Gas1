@@ -38,73 +38,73 @@ namespace 天然气供应方案分析与决策软件
 
             try
             {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load("XMLFile1.xml"); //加载xml文件
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load("XMLFile1.xml"); //加载xml文件
 
 
-            textBox1.Text = ReadXml(xmlDoc, "TractorInvestment"); ;
-            textBox2.Text = ReadXml(xmlDoc, "BundleInvestment");
-            textBox3.Text = ReadXml(xmlDoc, "BundleScale");
+                textBox1.Text = ReadXml(xmlDoc, "TractorInvestment"); ;
+                textBox2.Text = ReadXml(xmlDoc, "BundleInvestment");
+                textBox3.Text = ReadXml(xmlDoc, "BundleScale");
 
 
-            int index = this.dataGridView1.Rows.Add(5);
-          
-
-            this.dataGridView1.Rows[0].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale6");
-            this.dataGridView1.Rows[0].Cells[1].Value = ReadXml(xmlDoc,"PrimaryStationScale6Investment");
-            this.dataGridView1.Rows[0].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale6Area");
-            this.dataGridView1.Rows[0].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale6ProjectTime");
+                int index = this.dataGridView1.Rows.Add(5);
 
 
-            this.dataGridView1.Rows[1].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale5");
-            this.dataGridView1.Rows[1].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale5Investment");
-            this.dataGridView1.Rows[1].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale5Area");
-            this.dataGridView1.Rows[1].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale5ProjectTime");
-
-            this.dataGridView1.Rows[2].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale4");
-            this.dataGridView1.Rows[2].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale4Investment");
-            this.dataGridView1.Rows[2].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale4Area");
-            this.dataGridView1.Rows[2].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale4ProjectTime");
-
-            this.dataGridView1.Rows[3].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale3");
-            this.dataGridView1.Rows[3].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale3Investment");
-            this.dataGridView1.Rows[3].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale3Area");
-            this.dataGridView1.Rows[3].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale3ProjectTime");
-
-            this.dataGridView1.Rows[4].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale2");
-            this.dataGridView1.Rows[4].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale2Investment");
-            this.dataGridView1.Rows[4].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale2Area");
-            this.dataGridView1.Rows[4].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale2ProjectTime");
-
-            this.dataGridView1.Rows[5].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale1");
-            this.dataGridView1.Rows[5].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale1Investment");
-            this.dataGridView1.Rows[5].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale1Area");
-            this.dataGridView1.Rows[5].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime");
+                this.dataGridView1.Rows[0].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale6");
+                this.dataGridView1.Rows[0].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale6Investment");
+                this.dataGridView1.Rows[0].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale6Area");
+                this.dataGridView1.Rows[0].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale6ProjectTime");
 
 
-            this.dataGridView1.Rows[0].HeaderCell.Value = "1";
-            this.dataGridView1.Rows[1].HeaderCell.Value = "2";
-            this.dataGridView1.Rows[2].HeaderCell.Value = "3";
-            this.dataGridView1.Rows[3].HeaderCell.Value = "4";
-            this.dataGridView1.Rows[4].HeaderCell.Value = "5";
-            this.dataGridView1.Rows[5].HeaderCell.Value = "6";
+                this.dataGridView1.Rows[1].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale5");
+                this.dataGridView1.Rows[1].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale5Investment");
+                this.dataGridView1.Rows[1].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale5Area");
+                this.dataGridView1.Rows[1].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale5ProjectTime");
 
-            int index1 = this.dataGridView2.Rows.Add(1);
+                this.dataGridView1.Rows[2].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale4");
+                this.dataGridView1.Rows[2].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale4Investment");
+                this.dataGridView1.Rows[2].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale4Area");
+                this.dataGridView1.Rows[2].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale4ProjectTime");
 
-            this.dataGridView2.Rows[0].Cells[0].Value = ReadXml(xmlDoc, "SubstationScale2");
-            this.dataGridView2.Rows[0].Cells[1].Value = ReadXml(xmlDoc, "SubstationScale2Investment");
-            this.dataGridView2.Rows[0].Cells[2].Value = ReadXml(xmlDoc, "SubstationScale2Area");
-            this.dataGridView2.Rows[0].Cells[3].Value = ReadXml(xmlDoc, "SubstationScale2ProjectTime");
+                this.dataGridView1.Rows[3].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale3");
+                this.dataGridView1.Rows[3].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale3Investment");
+                this.dataGridView1.Rows[3].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale3Area");
+                this.dataGridView1.Rows[3].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale3ProjectTime");
+
+                this.dataGridView1.Rows[4].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale2");
+                this.dataGridView1.Rows[4].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale2Investment");
+                this.dataGridView1.Rows[4].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale2Area");
+                this.dataGridView1.Rows[4].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale2ProjectTime");
+
+                this.dataGridView1.Rows[5].Cells[0].Value = ReadXml(xmlDoc, "PrimaryStationScale1");
+                this.dataGridView1.Rows[5].Cells[1].Value = ReadXml(xmlDoc, "PrimaryStationScale1Investment");
+                this.dataGridView1.Rows[5].Cells[2].Value = ReadXml(xmlDoc, "PrimaryStationScale1Area");
+                this.dataGridView1.Rows[5].Cells[3].Value = ReadXml(xmlDoc, "PrimaryStationScale1ProjectTime");
 
 
-            this.dataGridView2.Rows[1].Cells[0].Value = ReadXml(xmlDoc, "SubstationScale1");
-            this.dataGridView2.Rows[1].Cells[1].Value = ReadXml(xmlDoc, "SubstationScale1Investment");
-            this.dataGridView2.Rows[1].Cells[2].Value = ReadXml(xmlDoc, "SubstationScale1Area");
-            this.dataGridView2.Rows[1].Cells[3].Value = ReadXml(xmlDoc, "SubstationScale1ProjectTime");
+                this.dataGridView1.Rows[0].HeaderCell.Value = "1";
+                this.dataGridView1.Rows[1].HeaderCell.Value = "2";
+                this.dataGridView1.Rows[2].HeaderCell.Value = "3";
+                this.dataGridView1.Rows[3].HeaderCell.Value = "4";
+                this.dataGridView1.Rows[4].HeaderCell.Value = "5";
+                this.dataGridView1.Rows[5].HeaderCell.Value = "6";
+
+                int index1 = this.dataGridView2.Rows.Add(1);
+
+                this.dataGridView2.Rows[0].Cells[0].Value = ReadXml(xmlDoc, "SubstationScale2");
+                this.dataGridView2.Rows[0].Cells[1].Value = ReadXml(xmlDoc, "SubstationScale2Investment");
+                this.dataGridView2.Rows[0].Cells[2].Value = ReadXml(xmlDoc, "SubstationScale2Area");
+                this.dataGridView2.Rows[0].Cells[3].Value = ReadXml(xmlDoc, "SubstationScale2ProjectTime");
 
 
-            this.dataGridView2.Rows[0].HeaderCell.Value = "1";
-            this.dataGridView2.Rows[1].HeaderCell.Value = "2";
+                this.dataGridView2.Rows[1].Cells[0].Value = ReadXml(xmlDoc, "SubstationScale1");
+                this.dataGridView2.Rows[1].Cells[1].Value = ReadXml(xmlDoc, "SubstationScale1Investment");
+                this.dataGridView2.Rows[1].Cells[2].Value = ReadXml(xmlDoc, "SubstationScale1Area");
+                this.dataGridView2.Rows[1].Cells[3].Value = ReadXml(xmlDoc, "SubstationScale1ProjectTime");
+
+
+                this.dataGridView2.Rows[0].HeaderCell.Value = "1";
+                this.dataGridView2.Rows[1].HeaderCell.Value = "2";
 
                 dataGridView1.EnableHeadersVisualStyles = false;
                 dataGridView2.EnableHeadersVisualStyles = false;
@@ -120,6 +120,7 @@ namespace 天然气供应方案分析与决策软件
                 this.dataGridView1.Columns[1].HeaderText = "投资\r\n" + "（万元）";
                 this.dataGridView1.Columns[2].HeaderText = "占地面积\r\n" + "（万平方米）";
                 this.dataGridView1.Columns[3].HeaderText = "工期\r\n" + "（月）";
+                this.dataGridView1.TopLeftHeaderCell.Value = "序号";
 
                 dataGridView2.RowTemplate.Height = 40; //改变行的高度;
                 //设置标题高度;
@@ -133,13 +134,14 @@ namespace 天然气供应方案分析与决策软件
                 this.dataGridView2.Columns[1].HeaderText = "投资\r\n" + "（万元）";
                 this.dataGridView2.Columns[2].HeaderText = "占地面积\r\n" + "（万平方米）";
                 this.dataGridView2.Columns[3].HeaderText = "工期\r\n" + "（月）";
+                this.dataGridView2.TopLeftHeaderCell.Value = "序号";
 
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -295,7 +297,7 @@ namespace 天然气供应方案分析与决策软件
 
         private void label5_Click(object sender, EventArgs e)
         {
-             
+
         }
 
         private void label6_Click(object sender, EventArgs e)

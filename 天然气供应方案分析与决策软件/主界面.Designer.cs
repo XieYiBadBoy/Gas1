@@ -160,7 +160,7 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1028, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1099, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -394,13 +394,6 @@
             // 工艺计算ToolStripMenuItem
             // 
             this.工艺计算ToolStripMenuItem.Name = "工艺计算ToolStripMenuItem";
-
-
-
-            this.工艺计算ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-
-
-
             this.工艺计算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.工艺计算ToolStripMenuItem.Text = "工艺计算";
             this.工艺计算ToolStripMenuItem.Click += new System.EventHandler(this.工艺计算ToolStripMenuItem_Click);
@@ -408,30 +401,13 @@
             // 耗钢量计算ToolStripMenuItem
             // 
             this.耗钢量计算ToolStripMenuItem.Name = "耗钢量计算ToolStripMenuItem";
-
             this.耗钢量计算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-
-
-            this.耗钢量计算ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-
-
-            this.耗钢量计算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-
-            this.耗钢量计算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-
-
-
             this.耗钢量计算ToolStripMenuItem.Text = "耗钢量计算";
             this.耗钢量计算ToolStripMenuItem.Click += new System.EventHandler(this.耗钢量计算ToolStripMenuItem_Click);
             // 
             // 压气站布置ToolStripMenuItem
             // 
             this.压气站布置ToolStripMenuItem.Name = "压气站布置ToolStripMenuItem";
-
-
-
-            this.压气站布置ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-
             this.压气站布置ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.压气站布置ToolStripMenuItem.Text = "压气站布置";
             this.压气站布置ToolStripMenuItem.Click += new System.EventHandler(this.压气站布置ToolStripMenuItem_Click);
@@ -439,85 +415,30 @@
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-
             this.toolStripMenuItem7.Size = new System.Drawing.Size(133, 6);
-
-
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(156, 6);
-
-
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(133, 6);
-
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(178, 6);
-
-
-
             // 
             // 工程量匡算ToolStripMenuItem
             // 
             this.工程量匡算ToolStripMenuItem.Name = "工程量匡算ToolStripMenuItem";
-
             this.工程量匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-
-
-            this.工程量匡算ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-
-
-            this.工程量匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-
-            this.工程量匡算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-
-
-
             this.工程量匡算ToolStripMenuItem.Text = "工程量匡算";
             this.工程量匡算ToolStripMenuItem.Click += new System.EventHandler(this.工程量匡算ToolStripMenuItem_Click);
             // 
             // 投资量匡算ToolStripMenuItem
             // 
             this.投资量匡算ToolStripMenuItem.Name = "投资量匡算ToolStripMenuItem";
-
             this.投资量匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-
-
-            this.投资量匡算ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-
-
-            this.投资量匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-
-            this.投资量匡算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-
-
-
             this.投资量匡算ToolStripMenuItem.Text = "投资匡算";
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-
-
-
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(156, 6);
-
-
-
             this.toolStripMenuItem8.Size = new System.Drawing.Size(133, 6);
             // 
             // 方案匡算ToolStripMenuItem
             // 
             this.方案匡算ToolStripMenuItem.Name = "方案匡算ToolStripMenuItem";
-
             this.方案匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-
-
-            this.方案匡算ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-
-
-            this.方案匡算ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-
-            this.方案匡算ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-
-
-
             this.方案匡算ToolStripMenuItem.Text = "方案匡算";
             // 
             // CNGfenxiToolStripMenuItem
@@ -862,7 +783,7 @@
             this.toolStripStatusLabel3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 577);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1028, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1099, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -893,7 +814,7 @@
             // 
             this.toolStripStatusLabel6.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(473, 17);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(544, 17);
             this.toolStripStatusLabel6.Spring = true;
             // 
             // toolStripStatusLabel2
@@ -956,7 +877,7 @@
             this.toolStripLabel10});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1028, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1099, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1044,31 +965,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbInf.Enabled = false;
             this.rtbInf.ForeColor = System.Drawing.SystemColors.WindowText;
-
-
-
-            this.rtbInf.Location = new System.Drawing.Point(1280, 57);
-
-
-            this.rtbInf.Location = new System.Drawing.Point(839, 46);
-
-
-            this.rtbInf.Location = new System.Drawing.Point(1247, 66);
-
+            this.rtbInf.Location = new System.Drawing.Point(910, 45);
             this.rtbInf.Margin = new System.Windows.Forms.Padding(4);
             this.rtbInf.Name = "rtbInf";
-
-            this.rtbInf.Size = new System.Drawing.Size(265, 748);
-
             this.rtbInf.Size = new System.Drawing.Size(189, 528);
-
             this.rtbInf.TabIndex = 3;
             this.rtbInf.Text = "";
-
-
             this.rtbInf.Visible = false;
             this.rtbInf.TextChanged += new System.EventHandler(this.rtbInf_TextChanged);
-
             // 
             // Form1
             // 
@@ -1076,7 +980,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1028, 599);
+            this.ClientSize = new System.Drawing.Size(1099, 599);
             this.Controls.Add(this.rtbInf);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);

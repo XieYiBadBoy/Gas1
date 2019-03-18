@@ -42,7 +42,7 @@ namespace 天然气供应方案分析与决策软件
                 double GasWeight = Convert.ToDouble(pipesetup.PipeGasWeight);  //气体比重       GasWeight
                 double Tep = Convert.ToDouble(pipesetup.PipeTep);        //气体平均温度 
                 double PP1 = UpPre;
-                double z1 = CompressibilityFactor(UpPre, GasWeight, Tep);
+                double z1 = calculator.CompressibilityFactor(UpPre, GasWeight, Tep);
                 double RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia, StdFlow, AbsRough);  //计算达西摩阻系数
                 double PP2 = calculator.PipelinePressure(UpPre, StdFlow, RR1, z1, GasWeight, Tep, Length, Dia);
                 int k = 0;

@@ -194,5 +194,86 @@ namespace 天然气供应方案分析与决策软件
             txtInput2.Text = ReadXml(xmlDoc, "DailyWorkTime");
 
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInput2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInput1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label52_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInput1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            //输入0-9和Backspace del 有效
+            if ((e.KeyChar >= 47 && e.KeyChar <= 58) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == 46)                       //小数点      
+            {
+                if (txtInput1.Text.Length <= 0)
+                    e.Handled = true;           //小数点不能在第一位      
+                else
+                {
+                    float f;
+                    if (float.TryParse(txtInput1.Text + e.KeyChar.ToString(), out f))
+                    {
+                        e.Handled = false;
+                    }
+                }
+            }
+        }
+
+        private void txtInput2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            //输入0-9和Backspace del 有效
+            if ((e.KeyChar >= 47 && e.KeyChar <= 58) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == 46)                       //小数点      
+            {
+                if (txtInput2.Text.Length <= 0)
+                    e.Handled = true;           //小数点不能在第一位      
+                else
+                {
+                    float f;
+                    if (float.TryParse(txtInput2.Text + e.KeyChar.ToString(), out f))
+                    {
+                        e.Handled = false;
+                    }
+                }
+            }
+        }
     }
 }

@@ -59,5 +59,10 @@ namespace 天然气供应方案分析与决策软件
         {
             Close();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

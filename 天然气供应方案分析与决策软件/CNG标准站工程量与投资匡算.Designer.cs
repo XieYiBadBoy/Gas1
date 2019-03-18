@@ -181,6 +181,7 @@
             this.txtInput1.Name = "txtInput1";
             this.txtInput1.Size = new System.Drawing.Size(100, 21);
             this.txtInput1.TabIndex = 0;
+            this.txtInput1.TextChanged += new System.EventHandler(this.txtInput1_TextChanged);
             // 
             // groupBox4
             // 

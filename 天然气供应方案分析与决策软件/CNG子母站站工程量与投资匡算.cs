@@ -332,7 +332,7 @@ namespace 天然气供应方案分析与决策软件
 
             }
             //参数检测，判断输入是否含有字符
-            foreach (char c in txtInput1.Text)
+            foreach (char c in txtInput1.Text)  // 遍历
             {
                 if (char.IsLetter(c))
                 {
@@ -369,7 +369,7 @@ namespace 天然气供应方案分析与决策软件
         {
             string path = null;
             loadFile.Multiselect = false;
-            loadFile.Filter = "gsa(*.gsa)|*.gsa";
+            loadFile.Filter = "gsa(*.gsa)|*.gsa";  //filter  过滤器
             if (loadFile.ShowDialog() == DialogResult.OK)
             {
                 path = loadFile.FileName;

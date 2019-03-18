@@ -216,4 +216,12 @@
     <ChartTerminalPoint>700</ChartTerminalPoint>
     <ChartInterval>5</ChartInterval>
   </ComprehensiveAnalysis>
+  <!--批量分析参数设置-->
+  <BatchAnalysis>
+    <InitialStandardFlow>4000</InitialStandardFlow>
+    <Interval>100</Interval>
+    <DiaRough>0.01</DiaRough>
+    <GasWeight>0.6</GasWeight>
+    <GasTep>20</GasTep>
+  </BatchAnalysis>
 </configuration>
