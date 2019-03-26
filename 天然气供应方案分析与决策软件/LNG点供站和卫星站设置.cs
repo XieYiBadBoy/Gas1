@@ -262,5 +262,17 @@ namespace 天然气供应方案分析与决策软件
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string[] data = textBox1.Text.Split(',');
+            int i = 0;
+            foreach(var str in data)
+            {
+                if (i == 6) break;
+                dataGridView1.Rows[i].Cells[0].Value = str;
+                i++;
+            }
+        }
     }
 }

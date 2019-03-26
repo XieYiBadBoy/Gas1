@@ -167,7 +167,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(207, 61);
+            this.label11.Location = new System.Drawing.Point(207, 62);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 17;
@@ -664,7 +664,7 @@
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Location = new System.Drawing.Point(5, 301);
+            this.groupBox5.Location = new System.Drawing.Point(6, 305);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(578, 54);
             this.groupBox5.TabIndex = 8;

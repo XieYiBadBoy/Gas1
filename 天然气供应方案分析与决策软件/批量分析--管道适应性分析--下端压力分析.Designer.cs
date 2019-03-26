@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtInput4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblInput4 = new System.Windows.Forms.Label();
@@ -39,11 +39,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblInput2 = new System.Windows.Forms.Label();
             this.txtInput1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblInput1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.都是 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +68,7 @@
             // txtInput4
             // 
             this.txtInput4.Location = new System.Drawing.Point(502, 17);
-            this.txtInput4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInput4.Margin = new System.Windows.Forms.Padding(2);
             this.txtInput4.Name = "txtInput4";
             this.txtInput4.Size = new System.Drawing.Size(40, 21);
             this.txtInput4.TabIndex = 10;
@@ -98,7 +98,7 @@
             // txtInput3
             // 
             this.txtInput3.Location = new System.Drawing.Point(351, 17);
-            this.txtInput3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInput3.Margin = new System.Windows.Forms.Padding(2);
             this.txtInput3.Name = "txtInput3";
             this.txtInput3.Size = new System.Drawing.Size(40, 21);
             this.txtInput3.TabIndex = 7;
@@ -129,7 +129,7 @@
             // txtInput2
             // 
             this.txtInput2.Location = new System.Drawing.Point(198, 17);
-            this.txtInput2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInput2.Margin = new System.Windows.Forms.Padding(2);
             this.txtInput2.Name = "txtInput2";
             this.txtInput2.Size = new System.Drawing.Size(40, 21);
             this.txtInput2.TabIndex = 4;
@@ -159,21 +159,22 @@
             // txtInput1
             // 
             this.txtInput1.Location = new System.Drawing.Point(64, 17);
-            this.txtInput1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInput1.Margin = new System.Windows.Forms.Padding(2);
             this.txtInput1.Name = "txtInput1";
             this.txtInput1.Size = new System.Drawing.Size(40, 21);
             this.txtInput1.TabIndex = 1;
+            this.txtInput1.TextChanged += new System.EventHandler(this.txtInput1_TextChanged);
             this.txtInput1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInput1_KeyPress);
             // 
-            // label1
+            // lblInput1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 21);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "数据行数：";
+            this.lblInput1.AutoSize = true;
+            this.lblInput1.Location = new System.Drawing.Point(0, 21);
+            this.lblInput1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInput1.Name = "lblInput1";
+            this.lblInput1.Size = new System.Drawing.Size(65, 12);
+            this.lblInput1.TabIndex = 0;
+            this.lblInput1.Text = "数据行数：";
             // 
             // groupBox1
             // 
@@ -188,11 +189,11 @@
             this.groupBox1.Controls.Add(this.lblInput2);
             this.groupBox1.Controls.Add(this.txtInput1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblInput1);
             this.groupBox1.Location = new System.Drawing.Point(6, 5);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(580, 55);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
@@ -208,39 +209,40 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "行";
             // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle13;
-            this.Column1.HeaderText = "供应量（万方/天）";
-            this.Column1.MinimumWidth = 10;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowDrop = true;
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.都是});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(2, 16);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 50;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(161, 238);
+            this.dataGridView1.Size = new System.Drawing.Size(163, 238);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // 都是
+            // 
+            this.都是.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.都是.HeaderText = "天然气输入量";
+            this.都是.Name = "都是";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView2);
-            this.groupBox3.Location = new System.Drawing.Point(178, 69);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(177, 69);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(409, 256);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(410, 256);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "输出";
@@ -256,10 +258,10 @@
             this.Column5});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(2, 16);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(405, 238);
+            this.dataGridView2.Size = new System.Drawing.Size(406, 238);
             this.dataGridView2.TabIndex = 9;
             // 
             // Column2
@@ -293,7 +295,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(321, 381);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(73, 28);
             this.button6.TabIndex = 27;
@@ -304,47 +306,51 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(418, 381);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(74, 27);
             this.button5.TabIndex = 28;
             this.button5.Text = "清除（R）";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(512, 381);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(74, 27);
             this.button4.TabIndex = 29;
             this.button4.Text = "关闭（O）";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(512, 337);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(74, 27);
             this.button3.TabIndex = 26;
             this.button3.Text = "导出（E）";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(418, 337);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(74, 27);
             this.button2.TabIndex = 25;
             this.button2.Text = "导入（L）";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(6, 337);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 27);
             this.button1.TabIndex = 24;
@@ -365,10 +371,10 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(6, 69);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(165, 256);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(167, 256);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "输入（天然气供应量）";
@@ -389,7 +395,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LowPressureAnalysis";
@@ -417,10 +423,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblInput2;
         private System.Windows.Forms.TextBox txtInput1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblInput1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -436,5 +441,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 都是;
     }
 }

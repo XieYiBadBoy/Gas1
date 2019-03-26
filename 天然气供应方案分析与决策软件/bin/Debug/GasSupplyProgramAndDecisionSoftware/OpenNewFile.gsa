@@ -191,4 +191,15 @@
     <CNGCoefficientC></CNGCoefficientC>
     <CNGCoefficientD></CNGCoefficientD>
   </ComprehensiveAnalysis>
+  <!--批量分析参数设置-->
+  <BatchAnalysis>
+    <InitialStandardFlow>210</InitialStandardFlow>
+    <Interval>100</Interval>
+    <DiaRough>0.01</DiaRough>
+    <GasWeight>0.6</GasWeight>
+    <GasTep>20</GasTep>
+  </BatchAnalysis>
+  <AHP>
+    
+  </AHP>
 </configuration>

@@ -79,7 +79,7 @@ namespace 天然气供应方案分析与决策软件
 
         private string ReadXml(XmlDocument xmlDoc, string s)
         {
-            string Str = "configuration/CNGStandardSation/" + s;
+            string Str = "configuration/CNGStandardStation/" + s;
             XmlNode xn0 = xmlDoc.SelectSingleNode(Str);
             return xn0.InnerText;
         }

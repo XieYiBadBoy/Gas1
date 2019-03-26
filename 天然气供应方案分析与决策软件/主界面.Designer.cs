@@ -94,6 +94,7 @@
             this.方案分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ZOHEFENXIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.临界曲线法ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.层次分析法ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TONGJUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.由月量测算不平均系数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.归一化月不平均系数ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -187,7 +188,7 @@
             // 
             this.新建ToolStripMenuItem.Name = "新建ToolStripMenuItem";
             this.新建ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.新建ToolStripMenuItem.Text = "新建";
             this.新建ToolStripMenuItem.Click += new System.EventHandler(this.新建ToolStripMenuItem_Click);
             // 
@@ -195,64 +196,64 @@
             // 
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
             this.打开ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.打开ToolStripMenuItem.Text = "打开";
             this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
             // GAUNBIToolStripMenuItem
             // 
             this.GAUNBIToolStripMenuItem.Name = "GAUNBIToolStripMenuItem";
-            this.GAUNBIToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.GAUNBIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.GAUNBIToolStripMenuItem.Text = "关闭";
             this.GAUNBIToolStripMenuItem.Click += new System.EventHandler(this.关闭ToolStripMenuItem_Click);
             // 
             // GUANBISUOYOUToolStripMenuItem
             // 
             this.GUANBISUOYOUToolStripMenuItem.Name = "GUANBISUOYOUToolStripMenuItem";
-            this.GUANBISUOYOUToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.GUANBISUOYOUToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.GUANBISUOYOUToolStripMenuItem.Text = "关闭所有";
             this.GUANBISUOYOUToolStripMenuItem.Click += new System.EventHandler(this.关闭所有ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(144, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // BAOCUNToolStripMenuItem
             // 
             this.BAOCUNToolStripMenuItem.Name = "BAOCUNToolStripMenuItem";
             this.BAOCUNToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.BAOCUNToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.BAOCUNToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.BAOCUNToolStripMenuItem.Text = "保存";
             this.BAOCUNToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
             // 
             // LINGCUNWEIToolStripMenuItem
             // 
             this.LINGCUNWEIToolStripMenuItem.Name = "LINGCUNWEIToolStripMenuItem";
-            this.LINGCUNWEIToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.LINGCUNWEIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.LINGCUNWEIToolStripMenuItem.Text = "另存为";
             this.LINGCUNWEIToolStripMenuItem.Click += new System.EventHandler(this.LINGCUNWEIToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(144, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // 最近文件ToolStripMenuItem
             // 
             this.最近文件ToolStripMenuItem.Name = "最近文件ToolStripMenuItem";
-            this.最近文件ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.最近文件ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.最近文件ToolStripMenuItem.Text = "最近文件";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(144, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
             // 
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -630,7 +631,8 @@
             // ZOHEFENXIToolStripMenuItem
             // 
             this.ZOHEFENXIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.临界曲线法ToolStripMenuItem});
+            this.临界曲线法ToolStripMenuItem,
+            this.层次分析法ToolStripMenuItem});
             this.ZOHEFENXIToolStripMenuItem.Name = "ZOHEFENXIToolStripMenuItem";
             this.ZOHEFENXIToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.ZOHEFENXIToolStripMenuItem.Text = "综合分析";
@@ -642,6 +644,13 @@
             this.临界曲线法ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.临界曲线法ToolStripMenuItem.Text = "临界曲线法";
             this.临界曲线法ToolStripMenuItem.Click += new System.EventHandler(this.临界曲线法ToolStripMenuItem_Click);
+            // 
+            // 层次分析法ToolStripMenuItem
+            // 
+            this.层次分析法ToolStripMenuItem.Name = "层次分析法ToolStripMenuItem";
+            this.层次分析法ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.层次分析法ToolStripMenuItem.Text = "层次分析法";
+            this.层次分析法ToolStripMenuItem.Click += new System.EventHandler(this.层次分析法ToolStripMenuItem_Click);
             // 
             // TONGJUToolStripMenuItem
             // 
@@ -1115,6 +1124,7 @@
         private System.Windows.Forms.ToolStripMenuItem 输量分析ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 管径分析ToolStripMenuItem;
         private System.Windows.Forms.RichTextBox rtbInf;
+        private System.Windows.Forms.ToolStripMenuItem 层次分析法ToolStripMenuItem;
     }
 }
 

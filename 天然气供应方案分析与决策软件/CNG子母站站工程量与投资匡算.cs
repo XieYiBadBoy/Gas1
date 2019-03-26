@@ -63,6 +63,7 @@ namespace 天然气供应方案分析与决策软件
         private void ClearTextBox()
         {
             txtInput1.Text = "";
+            txtOuput1.Text = "";
             txtOuput2.Text = "";
             txtOuput3.Text = "";
             txtOuput4.Text = "";

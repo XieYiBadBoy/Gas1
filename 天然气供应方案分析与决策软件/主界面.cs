@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Xml.Linq;
 
 namespace 天然气供应方案分析与决策软件
 {
@@ -133,16 +134,18 @@ namespace 天然气供应方案分析与决策软件
         {
             string SourcePath = "GasSupplyProgramAndDecisionSoftware";
             string destPath = null;
-            if (Directory.Exists(SourcePath) == false)//如果不存在就创建file文件夹
+            if (Directory.Exists(SourcePath))//如果不存在就创建file文件夹
             {
                 Directory.CreateDirectory(SourcePath);
             }
             string strAttURL = "OpenNewFile.gsa";
-            if (File.Exists(strAttURL) == true)//如果不存在就创建file文件夹
+            if (File.Exists(strAttURL))//如果不存在就创建file文件夹
             {
                 destPath = Path.Combine(SourcePath, Path.GetFileName(strAttURL));
                 System.IO.File.Copy(@strAttURL, destPath, true);
                 OpenProject(destPath);
+                XMLOP.filePath = destPath;
+                XMLOP.xmlDoc = XDocument.Load(destPath);
             }
         }
 
@@ -161,6 +164,8 @@ namespace 天然气供应方案分析与决策软件
                 //string[] selectedFiles = ofd.FileNames;  //Multiselect 为 true时;
                 
                 OpenProject(selectedFile);
+                XMLOP.filePath = selectedFile;
+                XMLOP.xmlDoc = XDocument.Load(selectedFile);
             }
         }
 
@@ -784,6 +789,13 @@ namespace 天然气供应方案分析与决策软件
         private void rtbInf_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void 层次分析法ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComprisiveAnalysisAHP AnalyticHierarchyProcess = new ComprisiveAnalysisAHP();
+            AnalyticHierarchyProcess.MdiParent = this;
+            AnalyticHierarchyProcess.Show();
         }
     }
 }

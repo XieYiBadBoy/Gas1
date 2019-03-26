@@ -271,7 +271,6 @@ namespace 天然气供应方案分析与决策软件
                 double RE = calculator.LeiNuoXiShu(Tep, GasWeight, Dia1, StdFlow);
                 double RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia1, StdFlow, AbsRough);
                 double Dia2 = PipelineDiameter1(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
-                //double dia2 = calculator.PipelineDiameter(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
                 while (Math.Abs(Dia2 - Dia1) > 0.001)
                 {
                     Dia1 = Dia2;
@@ -279,10 +278,6 @@ namespace 天然气供应方案分析与决策软件
                     RR1 = calculator.DaXiXiShu(Tep, GasWeight, Dia1, StdFlow, AbsRough);
                     Dia2 = PipelineDiameter1(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
                 }
-
-
-                //double Dia2 = calculator.PipelineDiameter(StdFlow, RR1, Z1, GasWeight, Tep, Length, UpPre, DownPre);
-
                 txtOutput1.Text = Dia2.ToString("0.00");
                 txtOutput2.Text = (calculator.MeanVelocity(StdFlow, Dia2) * bn).ToString("0.000");
                 txtOutput3.Text = RE.ToString("0.000");
@@ -455,28 +450,42 @@ namespace 天然气供应方案分析与决策软件
             txtOutput4.Text = "";
         }
 
+
         private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
         {
+            PipeClearOutput();
             Changed2();
+        }
+
+        private void PipeClearOutput()
+        {
+            txtOutput1.Text = "";
+            txtOutput2.Text = "";
+            txtOutput3.Text = "";
+            txtOutput4.Text = "";
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            PipeClearOutput();
             Changed1();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
+            PipeClearOutput();
             Changed3();
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
+            PipeClearOutput();
             Changed4();
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
+            PipeClearOutput();
             Changed5();
         }
 

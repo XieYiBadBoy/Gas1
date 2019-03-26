@@ -143,12 +143,12 @@
   </CNGStandardStationRoughEstimate>
   <!--LNG工程量与投资匡算-->
   <LNGGasificattionStationRoughEstimate>
-    <PrimaryStationScale1>500</PrimaryStationScale1>
-    <PrimaryStationScale2>300</PrimaryStationScale2>
-    <PrimaryStationScale3>150</PrimaryStationScale3>
-    <PrimaryStationScale4>100</PrimaryStationScale4>
-    <PrimaryStationScale5>50</PrimaryStationScale5>
-    <PrimaryStationScale6>25</PrimaryStationScale6>
+    <PrimaryStationScale1>900</PrimaryStationScale1>
+    <PrimaryStationScale2>400</PrimaryStationScale2>
+    <PrimaryStationScale3>800</PrimaryStationScale3>
+    <PrimaryStationScale4>600</PrimaryStationScale4>
+    <PrimaryStationScale5>180</PrimaryStationScale5>
+    <PrimaryStationScale6>120</PrimaryStationScale6>
     <PrimaryStationCount1>15</PrimaryStationCount1>
     <PrimaryStationCount2>1</PrimaryStationCount2>
     <PrimaryStationCount3>1</PrimaryStationCount3>
@@ -195,7 +195,7 @@
     <PrimaryStationScale4GasificattionCapacity>1.8</PrimaryStationScale4GasificattionCapacity>
     <PrimaryStationScale5GasificattionCapacity>0.9</PrimaryStationScale5GasificattionCapacity>
     <PrimaryStationScale6GasificattionCapacity>0.45</PrimaryStationScale6GasificattionCapacity>
-    <PrimaryStationGasificattionRate>600</PrimaryStationGasificattionRate>
+    <PrimaryStationGasificattionRate>120,180,600,800,400,900,1888</PrimaryStationGasificattionRate>
     <PrimaryStationColdInsulation>0.1</PrimaryStationColdInsulation>
   </LNGGasificattionStationRoughEstimate>
   <!--综合分析参数设置-->

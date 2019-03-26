@@ -129,7 +129,18 @@ namespace 天然气供应方案分析与决策软件
         private void Add3()
         {
             try
-            {  
+            {
+                string str1 = lblInput2.Text;
+                string str2 = txtInput2.Text;
+                string str3 = lblInput4.Text;
+                string str4 = txtInput4.Text;
+                string str5 = lblInput5.Text;
+                string str6 = txtInput5.Text;
+                Common.ParameterErrorDetectionFlow(str1, str2);
+                Common.ParameterErrorDetectioPressure(str1, str2);
+                Common.ParameterErrorDetectioPressure(str1, str2);
+
+
                 double z = Convert.ToDouble(SecSetup .SecStationFactor);    //压缩机因子
                 double StdFlow3 = Convert.ToDouble(txtInput2.Text);   //标准体积流量       StdFlow
                 double Time = Convert.ToDouble(SecSetup.SecStationTime);    //子站加气机工作时间 Time  
@@ -168,6 +179,7 @@ namespace 天然气供应方案分析与决策软件
         {
             try
             {
+
 
                 double StdFlow4 = Convert.ToDouble(txtInput2.Text);   //标准体积流量       StdFlow
                 double Time = Convert.ToDouble(txtInput5.Text);      //每日工作时长       Time
@@ -260,7 +272,7 @@ namespace 天然气供应方案分析与决策软件
         private void Clear2()
         {
             txtInput2.Text = "";
-            txtInput4.Text = "";
+            txtInput5.Text = "";
             txtOutput3.Text = "";
             txtOutput5.Text = "";
         }
@@ -303,11 +315,11 @@ namespace 天然气供应方案分析与决策软件
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 path = saveFile.FileName;
-                SaveCurrentParameters("OpenNewFile.gsa", path);
+                SaveCurrentParameters1("OpenNewFile.gsa", path);
             }
         }
 
-        private void SaveCurrentParameters(string sourcePath, string targetPath)
+        private void SaveCurrentParameters1(string sourcePath, string targetPath)
         {
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(sourcePath); //加载xml文件
@@ -368,11 +380,11 @@ namespace 天然气供应方案分析与决策软件
             if (loadFile.ShowDialog() == DialogResult.OK)
             {
                 path = loadFile.FileName;
-                LoadCurrentParameters(path);
+                LoadCurrentParameters1(path);
             }
         }
 
-        private void LoadCurrentParameters(string path)
+        private void LoadCurrentParameters1(string path)
         {
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(path); //加载xml文件
